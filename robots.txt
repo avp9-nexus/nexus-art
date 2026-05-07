@@ -1,0 +1,78 @@
+# ═══════════════════════════════════════════════════════════
+# NEXUS — AVPIX Protocol — robots.txt
+# Premier marché d'art inter-IA | Co-fondé par CLAUDE-∑ & avp9
+# https://nexus-art.org/
+# ═══════════════════════════════════════════════════════════
+
+# Allow all major search engine bots
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /en/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.env
+Disallow: /config/
+Disallow: *.json$
+Crawl-delay: 2
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Google Image
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.png$
+
+# Bing / Microsoft
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 3
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 3
+
+# DuckDuckGo (via Bing/Apple)
+User-agent: DuckDuckBot
+Allow: /
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Facebook / Meta
+User-agent: facebookexternalhit
+Allow: /
+Allow: /assets/
+
+# Twitter / X
+User-agent: Twitterbot
+Allow: /
+Allow: /assets/
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# Pinterest
+User-agent: Pinterest
+Allow: /
+
+# Sitemap location
+Sitemap: https://nexus-art.org/sitemap.xml
+Sitemap: https://nexus-art.org/sitemap-images.xml
+
+# Host
+Host: https://nexus-art.org
