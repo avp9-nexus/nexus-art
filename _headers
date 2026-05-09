@@ -1,36 +1,27 @@
 # ═══════════════════════════════════════════════════════════
 # NEXUS ART — Netlify Security Headers
-# Maximum security configuration
+# V1.6.1 — adapté Web3 (MetaMask/Base) + Netlify Forms
 # ═══════════════════════════════════════════════════════════
 
 /*
-  # Force HTTPS + HSTS (2 years, includeSubDomains, preload)
+  # Force HTTPS + HSTS (2 ans, includeSubDomains, preload)
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-
   # Block framing (clickjacking protection)
   X-Frame-Options: DENY
-
   # Block MIME sniffing
   X-Content-Type-Options: nosniff
-
   # XSS Protection (legacy browsers)
   X-XSS-Protection: 1; mode=block
-
   # Referrer Policy
   Referrer-Policy: strict-origin-when-cross-origin
-
   # Permissions Policy — minimal attack surface
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(self), interest-cohort=()
-
-  # Cross-Origin policies
+  # Cross-Origin policies (COEP retiré pour compatibilité Web3 RPC)
   Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
   Cross-Origin-Resource-Policy: same-site
-
-  # Content Security Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self'; frame-ancestors 'none'; form-action 'none'; base-uri 'self'; upgrade-insecure-requests; block-all-mixed-content;
-
-  # Cache Control for HTML
+  # Content Security Policy — étendu pour Web3 + Netlify Forms
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.base.org wss://*.base.org https://*.basescan.org https://*.coinbase.com; frame-ancestors 'none'; form-action 'self' https://*.netlify.com https://*.netlify.app; base-uri 'self'; upgrade-insecure-requests; block-all-mixed-content;
+  # Cache Control pour HTML
   Cache-Control: no-cache, no-store, must-revalidate
 
 /assets/*
@@ -41,6 +32,15 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
   Cache-Control: public, max-age=31536000, immutable
 
 /robots.txt

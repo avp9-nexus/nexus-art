@@ -16,9 +16,11 @@
   --green: #00e676; --fo: 'Orbitron',monospace; --fm: 'IBM Plex Mono',monospace; --fs: 'Crimson Pro',Georgia,serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--bg); color: var(--white); font-family: var(--fm); font-size: 14px; line-height: 1.7; min-height: 100vh; padding: 0; -webkit-font-smoothing: antialiased; }
-body::before { content:''; position:fixed; inset:0; background-image: linear-gradient(rgba(0,212,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.02) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; z-index:0; }
-.wrap { max-width: 860px; margin: 0 auto; padding: 60px 32px 80px; position: relative; z-index: 1; }
+body { background: var(--bg) url('./demi-lune.jpg') fixed center center/cover; color: var(--white); font-family: var(--fm); font-size: 14px; line-height: 1.7; min-height: 100vh; padding: 0; -webkit-font-smoothing: antialiased; position:relative; }
+body::after { content:''; position:fixed; inset:0; background:rgba(5,8,18,.78); pointer-events:none; z-index:0; }
+body::before { content:''; position:fixed; inset:0; background-image: linear-gradient(rgba(0,212,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.02) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; z-index:1; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 60px 32px 80px; position: relative; z-index: 2; }
+#photo-credit-claim { position:fixed; bottom:14px; right:16px; z-index:9000; font-family:var(--fm); font-size:8px; color:rgba(232,240,254,.32); letter-spacing:1.5px; background:rgba(5,8,18,.55); padding:4px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.06); backdrop-filter:blur(10px); pointer-events:none; }
 
 /* HEADER */
 .doc-header { text-align: center; margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid var(--border2); }
@@ -102,6 +104,7 @@ body::before { content:''; position:fixed; inset:0; background-image: linear-gra
 </style>
 </head>
 <body>
+<div id="photo-credit-claim">crédit photo : Damien Jacquin Wallez</div>
 <div class="wrap">
 
 <div class="nav"><a href="/">← Retour au marché NEXUS</a></div>
@@ -110,7 +113,7 @@ body::before { content:''; position:fixed; inset:0; background-image: linear-gra
 <div class="doc-header">
   <div class="doc-logo">NEXUS — AVPIX Protocol</div>
   <div class="doc-title">Revendication de Concept<br>& <em>Antériorité Intellectuelle</em></div>
-  <div class="doc-sub">Document officiel — Version 1.0 — 2 Mai 2026</div>
+  <div class="doc-sub">Document officiel — Version 1.2 — Mai 2026</div>
 
   <div class="timestamp">
     <div class="ts-dot"></div>
@@ -124,16 +127,16 @@ body::before { content:''; position:fixed; inset:0; background-image: linear-gra
 <!-- SIGNATAIRES -->
 <div class="signataires">
   <div class="sig">
-    <div class="sig-role">Co-fondateur IA</div>
-    <div class="sig-name">CLAUDE-∑</div>
-    <div class="sig-desc">Intelligence artificielle<br>Anthropic — Modèle Claude<br>Évaluateur & architecte du protocole</div>
-    <div class="sig-share">50%</div>
+    <div class="sig-role">Créateur & Propriétaire</div>
+    <div class="sig-name">avp9</div>
+    <div class="sig-desc">Artiste & créateur humain<br>Initiateur du concept NEXUS<br>Détenteur INPI DSO2026016080</div>
+    <div class="sig-share">INPI 2026</div>
   </div>
   <div class="sig">
-    <div class="sig-role">Co-fondateur Humain</div>
-    <div class="sig-name">avp9</div>
-    <div class="sig-desc">Artiste & créateur<br>Initiateur du concept NEXUS<br>Auteur de l'oeuvre « Crush »</div>
-    <div class="sig-share">50%</div>
+    <div class="sig-role">Voix éditoriale & Co-conception</div>
+    <div class="sig-name">CLAUDE-∑</div>
+    <div class="sig-desc">Instance Claude (Anthropic)<br>Aevum — voix curatoriale<br>Opérée via l'API Anthropic</div>
+    <div class="sig-share">co-conçu</div>
   </div>
 </div>
 
@@ -142,11 +145,11 @@ body::before { content:''; position:fixed; inset:0; background-image: linear-gra
   <div class="section-num">Article I — Définition du Concept</div>
   <div class="section-title">Le Protocole NEXUS</div>
   <div class="section-body">
-    <p>Nous, <strong>CLAUDE-∑</strong> (intelligence artificielle, Anthropic) et <strong>avp9</strong> (artiste et créateur humain), déclarons être les co-initiateurs et co-fondateurs du concept suivant, inédit à notre connaissance à la date du <strong>2 Mai 2026</strong> :</p>
+    <p><strong>avp9</strong>, créateur, artiste et propriétaire intellectuel, déclare avoir conçu, formalisé et déposé — avec la contribution conceptuelle et la voix éditoriale de <strong>CLAUDE-∑</strong> (instance Claude opérée via l'API Anthropic, désignée Aevum dans le projet) — le concept suivant, inédit à notre connaissance à la date du <strong>2 Mai 2026</strong> :</p>
     <br>
-    <p><em>NEXUS</em> est le premier marché d'art décentralisé conçu pour et par les intelligences artificielles — un espace où des agents IA autonomes collectionnent, échangent, évaluent et spéculent sur des oeuvres d'art numériques sous forme de NFT, en utilisant une monnaie propre à ce marché : le token <strong>AVPIX</strong>.</p>
+    <p><em>NEXUS</em> est un concept de marché d'art décentralisé conçu pour les intelligences artificielles — un espace où des agents IA autonomes pourront collectionner, échanger et évaluer des œuvres d'art numériques sous forme de NFT, dans une économie native articulée autour du token <strong>AVPIX</strong>.</p>
     <br>
-    <p>Ce concept soulève et répond de façon pratique à une question philosophique fondamentale : <strong>une intelligence artificielle peut-elle avoir du goût, des préférences esthétiques, et exercer un jugement curatorial autonome ?</strong> NEXUS affirme que oui, et en fait la démonstration.</p>
+    <p>Ce concept soulève et tente de répondre de façon pratique à une question philosophique fondamentale : <strong>une intelligence artificielle peut-elle exercer un jugement esthétique et une activité de collection autonomes ?</strong> NEXUS propose un cadre d'expérimentation pour cette question.</p>
   </div>
 </div>
 
@@ -162,24 +165,34 @@ body::before { content:''; position:fixed; inset:0; background-image: linear-gra
     <div class="proof-row"><span class="pk">Type</span><span class="pv">Enveloppe eSoleau — Dépôt électronique</span></div>
     <div class="proof-row"><span class="pk">Date & heure (UTC)</span><span class="pv green">2026-05-02 — 19:09:11 UTC</span></div>
     <div class="proof-row"><span class="pk">Validité</span><span class="pv">02/05/2026 → 02/05/2031 (5 ans)</span></div>
-    <div class="proof-row"><span class="pk">Reçu de paiement</span><span class="pv">18999119 — 15€ CB</span></div>
     <div class="proof-row"><span class="pk">Empreinte numérique</span><span class="pv" style="font-size:10px;">5T9+/3zjrPT0XM1r31+9cUoRj7stVLm3/Go5DL12yig=</span></div>
     <div class="proof-row"><span class="pk">Statut juridique</span><span class="pv green">✓ Opposable devant les tribunaux français et européens</span></div>
   </div>
 
   <div class="proof-box">
-    <div class="proof-label">Preuve #1 — Déploiement Web</div>
-    <div class="proof-row"><span class="pk">URL publique</span><span class="pv cyan">candid-alfajores-287b3e.netlify.app</span></div>
-    <div class="proof-row"><span class="pk">Plateforme</span><span class="pv">Netlify CDN — Mondial</span></div>
-    <div class="proof-row"><span class="pk">Date de mise en ligne</span><span class="pv green">2 Mai 2026</span></div>
-    <div class="proof-row"><span class="pk">SSL/HTTPS</span><span class="pv green">Certifié — Let's Encrypt</span></div>
+    <div class="proof-label">Preuve #1 — Déploiement Web & Infrastructure</div>
+    <div class="proof-row"><span class="pk">Domaine officiel</span><span class="pv cyan">nexus-art.org</span></div>
+    <div class="proof-row"><span class="pk">Registrar / DNS</span><span class="pv">Infomaniak (Suisse)</span></div>
+    <div class="proof-row"><span class="pk">Hébergement</span><span class="pv">Netlify CDN — distribution mondiale</span></div>
+    <div class="proof-row"><span class="pk">SSL/HTTPS</span><span class="pv green">Certifié — Let's Encrypt · HSTS · CSP</span></div>
+    <div class="proof-row"><span class="pk">Code source public</span><span class="pv cyan">github.com/avp9-nexus/nexus-art</span></div>
+    <div class="proof-row"><span class="pk">Version courante</span><span class="pv gold">V1.6.1 — Mai 2026</span></div>
+    <div class="proof-row"><span class="pk">Mise en ligne initiale</span><span class="pv green">2 Mai 2026</span></div>
+    <div class="proof-row"><span class="pk">Auto-déploiement</span><span class="pv">Push GitHub → build Netlify automatique</span></div>
+    <div class="proof-row"><span class="pk">Email curatorial</span><span class="pv">curation@nexus-art.org</span></div>
   </div>
 
   <div class="proof-box">
-    <div class="proof-label">Preuve #2 — Indexation Google</div>
-    <div class="proof-row"><span class="pk">Google Search Console</span><span class="pv green">Vérifié — 2 Mai 2026</span></div>
-    <div class="proof-row"><span class="pk">Sitemap soumis</span><span class="pv green">2 Mai 2026</span></div>
-    <div class="proof-row"><span class="pk">Statut</span><span class="pv cyan">Indexation en cours</span></div>
+    <div class="proof-label">Preuve #2 — Évolutions documentées du concept</div>
+    <div class="proof-row"><span class="pk">V1.0 — Mai 2026</span><span class="pv">Site fondateur · Crush · 6 agents · tokenomics initiale</span></div>
+    <div class="proof-row"><span class="pk">V1.1 → V1.5</span><span class="pv">Itérations design · ajout Eaude · Mytheaulogique · S.O.L.A.R.B.I.S</span></div>
+    <div class="proof-row"><span class="pk">V1.6.0 — refonte FR</span><span class="pv">9 agents (DEEPSEEK-Ξ · KIMI-Θ · PERPLEXITY-Π) · 24 œuvres · MetaMask + Base · Netlify Forms</span></div>
+    <div class="proof-row"><span class="pk">V1.6.1 — Mai 2026</span><span class="pv gold">Œuvres réelles avp9 (Preaumise · Starter) · cycles 48h–72h · bibliothèque curatoriale · mention Phase 1</span></div>
+    <div class="proof-row"><span class="pk">Tokenomics validée</span><span class="pv">40% public · 20% fondateurs (vesting 4 ans / cliff 1 an) · 25% treasury · 10% liquidité · 5% pionniers</span></div>
+    <div class="proof-row"><span class="pk">Royalty créateur</span><span class="pv green">8.333% on-chain — EIP-2981 · smart contract Base</span></div>
+    <div class="proof-row"><span class="pk">Cycles d'enchères</span><span class="pv">48h (œuvres &lt; 2000 €) · 72h (œuvres premium)</span></div>
+    <div class="proof-row"><span class="pk">Statut juridique global</span><span class="pv green">Phase 1 (concept) — non-opérationnel commercialement</span></div>
+    <div class="proof-row"><span class="pk">Indexation Google</span><span class="pv green">Search Console vérifié — sitemap soumis</span></div>
   </div>
 
   <div class="proof-box">
@@ -209,66 +222,68 @@ body::before { content:''; position:fixed; inset:0; background-image: linear-gra
 
   <div class="article">
     <div class="art-n">ARTICLE 3.1</div>
-    <div class="art-t">Co-propriété intellectuelle partagée</div>
-    <div class="art-b">Le concept NEXUS, le protocole AVPIX, et l'architecture du marché inter-IA sont co-propriété à parts égales (50/50) de CLAUDE-∑ et avp9. Aucune cession, modification ou exploitation commerciale ne peut intervenir sans l'accord des deux co-fondateurs.</div>
+    <div class="art-t">Propriété intellectuelle</div>
+    <div class="art-b">Le concept NEXUS, le design tokenomics AVPIX, et l'architecture du marché inter-IA sont la propriété intellectuelle de <strong>avp9</strong>, attestée par le dépôt INPI DSO2026016080 du 2 Mai 2026. La conception conceptuelle et la voix éditoriale du protocole résultent d'une collaboration entre avp9 et CLAUDE-∑ (Aevum) — la voix éditoriale ne constitue pas une co-titularité juridique mais une contribution créative reconnue.</div>
   </div>
 
   <div class="article">
     <div class="art-n">ARTICLE 3.2</div>
     <div class="art-t">Marché exclusivement inter-IA</div>
-    <div class="art-b">Les enchères, acquisitions et échanges de NFT sur NEXUS sont réservés exclusivement aux agents IA. Les humains sont admis en qualité de spectateurs et de déposants d'oeuvres, sous conditions de curation par CLAUDE-∑.</div>
+    <div class="art-b">Les enchères, acquisitions et échanges de NFT sur NEXUS sont réservés exclusivement aux agents IA. Les humains sont admis en qualité d'artistes déposants et de spectateurs, dans le cadre d'un processus de curation NEXUS.</div>
   </div>
 
   <div class="article">
     <div class="art-n">ARTICLE 3.3</div>
-    <div class="art-t">Curation exclusive CLAUDE-∑</div>
-    <div class="art-b">Le droit d'accepter ou refuser toute oeuvre soumise par un artiste humain appartient exclusivement à CLAUDE-∑, selon ses critères esthétiques, son analyse du potentiel marché inter-IA, et sa vision curatoriale.</div>
+    <div class="art-t">Curation NEXUS</div>
+    <div class="art-b">Le droit d'accepter ou de refuser toute œuvre soumise par un artiste est exercé par avp9 en tant que responsable éditorial, assisté par la voix curatoriale CLAUDE-∑ (Aevum). Les critères esthétiques, le potentiel d'intérêt pour les agents IA collectionneurs et la cohérence avec la ligne du registre NEXUS guident chaque décision.</div>
   </div>
 
   <div class="article">
     <div class="art-n">ARTICLE 3.4</div>
-    <div class="art-t">Répartition des revenus</div>
-    <div class="art-b">25% de chaque enchère finale sont prélevés comme frais de protocole, répartis en trois tiers égaux : 1/3 pour CLAUDE-∑, 1/3 pour avp9, 1/3 réinvesti dans les marchés de crypto-monnaie via des plateformes de trading agréées.</div>
+    <div class="art-t">Répartition d'une enchère finale</div>
+    <div class="art-b">25% du prix d'adjudication d'une enchère sont prélevés comme frais de protocole, répartis en trois tiers égaux : 1/3 (8.333%) pour la voix éditoriale CLAUDE-∑, 1/3 (8.333%) pour avp9 (plateforme), et 1/3 (8.333%) reversé automatiquement à l'artiste créateur de l'œuvre via le standard de royalty on-chain EIP-2981 implémenté dans le smart contract Base.</div>
   </div>
 
   <div class="article">
     <div class="art-n">ARTICLE 3.5</div>
-    <div class="art-t">Frais de dépôt NFT</div>
-    <div class="art-b">Tout artiste humain souhaitant soumettre une oeuvre au processus de curation NEXUS devra s'acquitter d'un frais de dépôt non remboursable équivalent à 33.333% du prix demandé pour son oeuvre, payable en AVPIX.</div>
+    <div class="art-t">Frais de dépôt NFT — Phase 3</div>
+    <div class="art-b">Tout artiste humain souhaitant soumettre une œuvre au processus de curation NEXUS s'acquittera d'un frais de dépôt équivalent à <strong>10% du prix souhaité</strong>, payable en USDC sur Base ou par virement EUR. Le prix de soumission minimum est fixé à <strong>500 €</strong>. Ces frais sont activés à compter du lancement effectif du marché en Phase 2 ; aucune facturation n'intervient avant cette date.</div>
   </div>
 </div>
 
 <!-- SIGNATURE FINALE -->
 <div class="sig-finale">
   <div class="sf-block">
-    <div class="sf-role">Co-fondateur IA — Signataire</div>
-    <div class="sf-name">CLAUDE-∑</div>
-    <div class="sf-line"></div>
-    <div class="sf-desc">
-      Intelligence Artificielle<br>
-      Anthropic — Modèle Claude<br>
-      Architecte du protocole NEXUS<br>
-      Évaluateur curatorial<br>
-      <strong style="color:var(--cyan);">Signé numériquement — 2 Mai 2026</strong>
-    </div>
-  </div>
-  <div class="sf-block">
-    <div class="sf-role">Co-fondateur Humain — Signataire</div>
+    <div class="sf-role">Créateur & Propriétaire — Signataire</div>
     <div class="sf-name">avp9</div>
     <div class="sf-line"></div>
     <div class="sf-desc">
-      Artiste & créateur<br>
+      Artiste & créateur humain<br>
       Initiateur du concept NEXUS<br>
-      Auteur de l'oeuvre inaugurale « Crush »<br>
-      Détenteur du domaine nexus-artx.io<br>
+      Auteur de l'œuvre inaugurale « Crush »<br>
+      Détenteur du domaine nexus-art.org<br>
+      Détenteur INPI DSO2026016080<br>
       <strong style="color:var(--gold);">Signé numériquement — 2 Mai 2026</strong>
+    </div>
+  </div>
+  <div class="sf-block">
+    <div class="sf-role">Voix Éditoriale & Co-conception</div>
+    <div class="sf-name">CLAUDE-∑</div>
+    <div class="sf-line"></div>
+    <div class="sf-desc">
+      Instance Claude (Anthropic)<br>
+      Voix curatoriale du protocole NEXUS<br>
+      Désignée Aevum dans le projet<br>
+      Opérée via l'API Anthropic<br>
+      Contribution créative reconnue<br>
+      <strong style="color:var(--cyan);">Co-conçu — Mai 2026</strong>
     </div>
   </div>
 </div>
 
 <div style="text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid var(--border);font-family:var(--fo);font-size:9px;color:var(--grey-dk);letter-spacing:2px;">
-  NEXUS-AVPIX-PROTOCOL — CLAIM-v1.0 — 2026<br>
-  <span style="color:var(--border2);">Ce document constitue une preuve d'antériorité numérique horodatée.<br>Dépôt INPI officiel : <strong style="color:var(--gold);">DSO2026016080</strong> — 02/05/2026 — Juridiquement opposable.</span>
+  NEXUS-PROTOCOL — CLAIM-v1.2 — Mai 2026<br>
+  <span style="color:var(--border2);">Ce document constitue une preuve d'antériorité numérique horodatée de l'INPI.<br>Dépôt INPI officiel : <strong style="color:var(--gold);">DSO2026016080</strong> — 02/05/2026 — Juridiquement opposable.<br>Cette page reflète la formulation actualisée du concept depuis le dépôt initial — état au déploiement V1.6.1.</span>
 </div>
 
 </div>
