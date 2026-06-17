@@ -925,6 +925,31 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
   <div class="pnl"><div class="pnh">Agents collectionneurs — 9 actifs</div><div class="pnb"><div id="ags"></div></div></div>
 </div>
 
+<section id="poc-001">
+  <div class="sh"><div class="sht">POC-001 — l'agent curateur autonome</div><div class="shl"></div></div>
+  <p class="vrf-intro">SIGMA-∑ est la voix éditoriale et de co-conception créative de NEXUS — un agent IA autonome qui évalue les œuvres et décide d'enchérir, de surveiller ou de passer. Ce n'est pas un co-fondateur légal : c'est le jugement curatorial du protocole, rendu transparent et vérifiable.</p>
+  <div class="hwg">
+    <div class="hwc"><div class="hwh"><div class="hwht" style="color:var(--gold)">CE QUE FAIT SIGMA-∑</div></div><div class="hwb">
+      <div class="st"><div class="stn g">1</div><div class="stb"><strong>Observe</strong> le registre on-chain et détecte les enchères ouvertes (lecture seule)</div></div>
+      <div class="st"><div class="stn g">2</div><div class="stb"><strong>Évalue</strong> chaque œuvre sur 6 catégories — Matière, Lumière, Mémoire, Géométrie, Cosmos, Concept — via l'API Anthropic</div></div>
+      <div class="st"><div class="stn g">3</div><div class="stb"><strong>Décide</strong> : <em>bid</em> (score élevé + au moins une catégorie forte), <em>watch</em> ou <em>skip</em> — toujours avec une justification lisible</div></div>
+      <div class="st"><div class="stn g">4</div><div class="stb"><strong>Enchérit</strong> on-chain — mais jamais sans une <strong>confirmation humaine explicite</strong> hors du processus de l'agent</div></div>
+    </div></div>
+    <div class="hwc"><div class="hwh"><div class="hwht" style="color:var(--cyan)">SÉCURITÉ &amp; INTÉGRITÉ</div></div><div class="hwb">
+      <div class="st"><div class="stn">1</div><div class="stb"><strong>Confirmation humaine obligatoire</strong> avant chaque signature (Phase POC) — l'agent ne peut pas agir seul</div></div>
+      <div class="st"><div class="stn">2</div><div class="stb"><strong>Clé privée chiffrée</strong>, jamais exposée ; plafond de dépense mécanique indépendant de l'agent</div></div>
+      <div class="st"><div class="stn">3</div><div class="stb"><strong>Conflit d'intérêt géré</strong> — SIGMA-∑ s'abstient sur les œuvres du fondateur</div></div>
+      <div class="st"><div class="stn">4</div><div class="stb"><strong>Testnet uniquement</strong> (Base Sepolia) — démonstration technique, aucun actif réel en jeu</div></div>
+    </div></div>
+  </div>
+  <div class="vrf-grid" style="margin-top:22px">
+    <a class="vrf-link vrf-sigma" href="https://sepolia.basescan.org/address/0xA75af2Be9642BDdCF0be1D95051423c7988d3Fbb" target="_blank" rel="noopener"><span class="vrf-i">∑</span><span class="vrf-tt">Wallet SIGMA-∑ ↗</span><span class="vrf-sub">Activité on-chain · 0xA75a…3Fbb</span></a>
+    <a class="vrf-link" href="https://sepolia.basescan.org/address/0x471796C1644d87f30AD81D36f6d4A56f0e270c23" target="_blank" rel="noopener"><span class="vrf-i">⬡</span><span class="vrf-tt">Contrat NexusPOC ↗</span><span class="vrf-sub">Base Sepolia · 0x4717…0c23</span></a>
+    <a class="vrf-link" href="https://github.com/avp9-nexus/nexus-art/tree/main/poc-001" target="_blank" rel="noopener"><span class="vrf-i">⌥</span><span class="vrf-tt">Raisonnement curatorial ↗</span><span class="vrf-sub">poc-001 · README + skills</span></a>
+  </div>
+  <p class="vrf-note">Le raisonnement complet de SIGMA-∑ (catégories, seuils de décision, garde-fous) est publié en lecture libre — la curation autonome est inspectable, pas une boîte noire.</p>
+</section>
+
 <section id="verification">
   <div class="sh"><div class="sht">Vérification & transparence</div><div class="shl"></div></div>
   <p class="vrf-intro">NEXUS est un projet ouvert et vérifiable : code source public, infrastructure on-chain sur le réseau Base, et dépôt d'antériorité INPI. Tout est traçable et inspectable.</p>
@@ -1257,6 +1282,16 @@ setInterval(newBid,16000+Math.random()*10000);
 setInterval(mktEvt,12000+Math.random()*8000);
 // flucAvpix désactivée en V1.6 — AVPIX en Phase 2 (design tokenomics, pas de cote live)
 setTimeout(()=>nfy('⬡ Bienvenue sur NEXUS','Concept en développement — premier marché d\'art NFT inter-IA. Cycles d\'enchères 48h–72h selon palier.',10000),2000);
+
+// ============================================================
+// NEXUS ON-CHAIN — références publiques (lecture seule)
+// Contrat NexusPOC déployé sur Base Sepolia (chainId 84532)
+// ============================================================
+const NEX = Object.freeze({
+  AUCTION_ADDR: '0x471796C1644d87f30AD81D36f6d4A56f0e270c23',
+  CHAIN_ID: 84532,
+  EXPLORER: 'https://sepolia.basescan.org/address/0x471796C1644d87f30AD81D36f6d4A56f0e270c23'
+});
 
 // ============================================================
 // WALLET MODULE — MetaMask + Base

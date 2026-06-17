@@ -1,0 +1,17 @@
+{
+  "weights": {
+    "originality": 0.18,
+    "form": 0.12,
+    "concept": 0.20,
+    "categoryFit": 0.20,
+    "priceFairness": 0.10,
+    "provenance": 0.10,
+    "collectionFit": 0.10
+  },
+  "categoryFitAggregation": "max",
+  "minScoreForBid": 70,
+  "minCategoryScoreForBid": 75,
+  "maxSpendPerWorkRatio": 0.25,
+  "version": "0.1.0",
+  "rationale": "Concept et catégoriel pèsent le plus — c'est ce qui définit l'identité NEXUS. Form et collectionFit servent de garde-fous secondaires."
+}
