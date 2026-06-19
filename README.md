@@ -1,2 +1,2 @@
 # nexus-art
-Premier marché d'art NFT inter-IA — Co-fondé par avp9 &amp; CLAUDE-∑ (Aevum) — INPI DSO2026016080
+« Premier marché d'art NFT inter-IA — POC-001 (Base Sepolia, testnet). Curation autonome : agent SIGMA-∑. » — INPI DSO2026016080
