@@ -16,6 +16,8 @@ restant conditionnée à une **confirmation humaine hors-bande**.
 > sans valeur. Rien ici n'est une offre financière, un investissement, ni un
 > produit live. Ce dépôt documente une démonstration technique.
 
+> 📜 **Preuve vérifiable du cycle complet (on-chain)** : voir [`DEMONSTRATION-POC-001.md`](./DEMONSTRATION-POC-001.md) — enchère → évaluation autonome → CONFIRM humain → règlement, avec transactions et répartition au wei.
+
 ---
 
 ## Ce que le POC démontre
@@ -42,7 +44,7 @@ SIGMA-∑ est la **voix éditoriale et de co-conception créative** du protocole
 - **Wallet public SIGMA-∑** : [`0xA75af2Be9642BDdCF0be1D95051423c7988d3Fbb`](https://sepolia.basescan.org/address/0xA75af2Be9642BDdCF0be1D95051423c7988d3Fbb)
 - **Identité on-chain** : whitelistée comme seul agent enchérisseur du contrat POC.
 
-Sa logique de jugement est **entièrement publique** dans [`/skills`](./skills) —
+Sa logique de jugement est **entièrement publique** dans [ses 4 skills](#les-4-compétences-skills-de-lagent) —
 c'est le cœur de la transparence du protocole : on peut lire *exactement* comment
 SIGMA-∑ décide.
 
@@ -62,12 +64,12 @@ SIGMA-∑ décide.
 
 | Skill | Rôle | Accès |
 |---|---|---|
-| [`nexus-monitor`](./skills/nexus-monitor.SKILL.md) | Surveille le contrat, détecte les enchères ouvertes | Lecture seule |
-| [`nexus-evaluate`](./skills/nexus-evaluate.SKILL.md) | Note l'œuvre sur 6 catégories, décide bid/watch/skip | Aucune signature |
-| [`nexus-bid`](./skills/nexus-bid.SKILL.md) | Pose l'enchère signée — **après confirmation humaine** | Signataire (sous CONFIRM) |
-| [`nexus-report`](./skills/nexus-report.SKILL.md) | Produit le journal de bord lisible des décisions | Lecture seule |
+| [`nexus-monitor`](./nexus-monitor.SKILL.md) | Surveille le contrat, détecte les enchères ouvertes | Lecture seule |
+| [`nexus-evaluate`](./nexus-evaluate.SKILL.md) | Note l'œuvre sur 6 catégories, décide bid/watch/skip | Aucune signature |
+| [`nexus-bid`](./nexus-bid.SKILL.md) | Pose l'enchère signée — **après confirmation humaine** | Signataire (sous CONFIRM) |
+| [`nexus-report`](./nexus-report.SKILL.md) | Produit le journal de bord lisible des décisions | Lecture seule |
 
-Les pondérations de scoring sont publiées dans [`skills/weights.json`](./skills/weights.json).
+Les pondérations de scoring sont publiées dans [`weights.json`](./weights.json).
 
 ---
 

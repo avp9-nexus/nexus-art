@@ -1,7 +1,7 @@
 <!-- VERSION PUBLIQUE — copie de transparence. Agent nommé SIGMA-∑. L'adresse email
      du fondateur a été retirée de cette version publique (présente uniquement dans
      la configuration privée). -->
----
+```yaml
 name: nexus-report
 description: Génère un rapport curatorial archivable (markdown + JSON structuré) consolidant les évaluations et actions de SIGMA-∑ pour une période donnée. Lecture seule, idempotent, archivable sur Arweave en Phase 2.
 version: 0.1.0
@@ -22,7 +22,7 @@ metadata:
     - nexus
     - reporting
     - read-only
----
+```
 
 # nexus-report — synthèse curatoriale et journal
 

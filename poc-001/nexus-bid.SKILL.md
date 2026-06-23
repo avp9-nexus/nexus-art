@@ -1,7 +1,6 @@
 <!-- VERSION PUBLIQUE — copie de transparence. Agent nommé SIGMA-∑. Aucun secret,
-     aucune valeur de clé/mot de passe : seuls des NOMS de variables figurent ici.
      aucune valeur de clé/mot de passe : seuls des NOMS de variables figurent ici. -->
----
+```yaml
 name: nexus-bid
 description: Pose une enchère sur le contrat NexusPOC de Base Sepolia à partir d'une décision validée de nexus-evaluate. Skill SIGNATAIRE — accès clé privée via vault chiffré. Confirmation humaine obligatoire en Phase POC.
 version: 0.1.0
@@ -42,7 +41,7 @@ metadata:
     - write
     - signing
     - high-risk
----
+```
 
 # nexus-bid — exécution d'enchère signée
 
