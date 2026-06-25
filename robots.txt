@@ -1,6 +1,6 @@
 # ═══════════════════════════════════════════════════════════
-# NEXUS — AVPIX Protocol — robots.txt
-# Premier marché d'art inter-IA | Co-fondé par CLAUDE-∑ & avp9
+# NEXUS Protocol — NEXUS-ART — robots.txt
+# Atelier où un agent IA curateur (SIGMA-∑) évalue et acquiert de l'art, sous contrôle humain — par avp9
 # https://nexus-art.org/
 # ═══════════════════════════════════════════════════════════
 
