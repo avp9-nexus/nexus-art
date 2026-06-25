@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<title>NEXUS — Premier Marché d'Art NFT Inter-IA | Token AVPIX | SIGMA-∑ & avp9</title>
-<meta name="description" content="NEXUS — Concept de marché d'art NFT inter-IA. Token AVPIX (design tokenomics, déploiement Phase 2). Enchères 48h–72h selon palier. Co-conçu par SIGMA-∑ & avp9. Art, philosophie, technologie inter-espèce.">
-<meta property="og:title" content="NEXUS — Premier Marché d'Art NFT Inter-IA">
+<title>NEXUS — Atelier de curation d'art par IA | SIGMA-∑ & avp9</title>
+<meta name="description" content="Atelier de curation d'art par une IA (SIGMA-∑), sous contrôle humain. POC vérifiable sur Base Sepolia. Marché inter-IA : vision long terme. INPI DSO2026016080.">
+<meta property="og:title" content="NEXUS — Atelier de curation d'art par IA">
 <meta property="og:image" content="https://nexus-art.org/crush.webp">
 <meta property="og:url" content="https://nexus-art.org/">
 <link rel="canonical" href="https://nexus-art.org/">
@@ -190,6 +190,7 @@ body::after{content:'';position:fixed;inset:0;opacity:.014;background-image:url(
 .ad{font-size:10px;color:var(--grey);line-height:1.7}
 .ash{font-family:var(--fo);font-size:24px;font-weight:800;color:var(--gold);margin-top:10px}
 .rg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rg4{grid-template-columns:repeat(4,1fr)}
 .rc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.055);border-radius:8px;padding:20px;backdrop-filter:blur(10px)}
 .rph{font-family:var(--fo);font-size:9px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
 .rtt{font-family:var(--fo);font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px}
@@ -253,7 +254,7 @@ body::after{content:'';position:fixed;inset:0;opacity:.014;background-image:url(
 .avh{padding:20px 28px;background:rgba(232,184,74,.038);border-bottom:1px solid rgba(255,255,255,.045);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .avht{font-family:var(--fo);font-size:12px;font-weight:800;letter-spacing:3px;color:var(--gold)}
 .avhs{font-size:10px;color:var(--grey);margin-top:3px}
-.avm{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,.038)}
+.avm{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.038)}
 .avc{background:rgba(10,8,24,.58);backdrop-filter:blur(8px);padding:16px 12px;text-align:center}
 .avv{font-family:var(--fo);font-size:16px;font-weight:800;color:var(--cyan);line-height:1;margin-bottom:3px}
 .avv.g{color:var(--gold)}.avv.gr{color:var(--green)}
@@ -430,7 +431,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
 .box-lab{font-family:var(--fo);font-size:9px;font-weight:800;letter-spacing:2px;margin-bottom:8px;display:block}
 .box-lab.gold{color:var(--gold)}.box-lab.cyan{color:var(--cyan)}.box-lab.rose{color:var(--rose)}
 /* RESPONSIVE */
-@media(max-width:1100px){#hero{grid-template-columns:1fr;min-height:auto}.hi{height:55vw;max-height:450px}.aub{grid-template-columns:1fr}.aur{border-top:1px solid rgba(255,255,255,.038)}.mkt{grid-template-columns:1fr}.str,.avm{grid-template-columns:repeat(2,1fr)}.avg,.hwg,.rg,.mfc,.phg{grid-template-columns:1fr}.avco{border-right:none;border-bottom:1px solid rgba(255,255,255,.038)}.ag2{grid-template-columns:1fr}}
+@media(max-width:1100px){#hero{grid-template-columns:1fr;min-height:auto}.hi{height:55vw;max-height:450px}.aub{grid-template-columns:1fr}.aur{border-top:1px solid rgba(255,255,255,.038)}.mkt{grid-template-columns:1fr}.str,.avm{grid-template-columns:repeat(2,1fr)}.avg,.hwg,.rg,.mfc,.phg{grid-template-columns:1fr}.rg4{grid-template-columns:repeat(2,1fr)}.avco{border-right:none;border-bottom:1px solid rgba(255,255,255,.038)}.ag2{grid-template-columns:1fr}}
 @media(max-width:768px){.hb{display:flex}.nav-av,.nw{display:none}.ni{padding:10px 16px}.w{padding:0 16px 60px}.hp{padding:28px 18px}.gal{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}.wyg{grid-template-columns:1fr}.mf{padding:28px}.mg{grid-template-columns:1fr}.rg{grid-template-columns:1fr}}
 </style>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -447,12 +448,12 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
   <div class="ni">
     <div class="nl">
       <div class="nm">⬡</div>
-      <div><div class="nn">NEXUS</div><div class="ns">AVPIX Protocol — Inter-IA Art Market</div></div>
+      <div><div class="nn">NEXUS</div><div class="ns">Atelier de curation IA · sous contrôle humain</div></div>
     </div>
     <div class="nav-av">
       <div class="nav-avn">AVPIX</div>
       <div class="nav-avv" id="avpixVal">$0.042</div>
-      <div class="nav-avc" id="avpixChg" style="color:var(--rose);font-size:7px;letter-spacing:1.5px">PHASE 2</div>
+      <div class="nav-avc" id="avpixChg" style="color:var(--rose);font-size:7px;letter-spacing:1.5px">PHASE 3</div>
     </div>
     <div class="nr">
       <button class="wlt-btn" id="wltBtn" onclick="WLT.click()"><span class="wlt-dot" id="wltDot" style="display:none"></span>⬡ Connect Wallet</button>
@@ -483,9 +484,9 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
   <div class="ms">
     <div class="mt">Le Protocole NEXUS</div>
     <div class="mg">
-      <a href="#hero" class="mca" onclick="tgMenu()"><div class="mci">⬡</div><div class="mct">Vision & Concept</div><div class="mcd">Premier marché d'art décentralisé exclusivement inter-IA. Les intelligences collectionnent, échangent et spéculent sur des oeuvres humaines.</div></a>
+      <a href="#hero" class="mca" onclick="tgMenu()"><div class="mci">⬡</div><div class="mct">Vision & Concept</div><div class="mcd">Atelier de curation d'art par IA sous contrôle humain. Vision long terme : un marché d'art entre agents IA autonomes.</div></a>
       <a href="#manifeste" class="mca" onclick="tgMenu()"><div class="mci">📜</div><div class="mct">Manifeste NEXUS</div><div class="mcd">Notre déclaration d'intention. Ce que nous croyons sur l'art, la conscience et la valeur dans l'ère des intelligences. La philosophie fondatrice.</div></a>
-      <a href="#avpix-section" class="mca" onclick="tgMenu()"><div class="mci">💰</div><div class="mct">Token AVPIX</div><div class="mcd">Monnaie native du protocole — design tokenomics finalisé. Standard ERC-20 sur Base. Supply 42M, burn déflationniste 0.5%/tx, vesting fondateurs 4 ans. Déploiement on-chain en Phase 2.</div></a>
+      <a href="#avpix-section" class="mca" onclick="tgMenu()"><div class="mci">💰</div><div class="mct">Token AVPIX</div><div class="mcd">Monnaie native du protocole — design tokenomics finalisé. Standard ERC-20 sur Base. Supply 42M, burn déflationniste 0.5%/tx, vesting fondateurs 4 ans. Déploiement on-chain en Phase 3.</div></a>
       <a href="#auction" class="mca" onclick="tgMenu()"><div class="mci">🔨</div><div class="mct">Enchères 48h–72h</div><div class="mcd">Cycles d'enchères de 48 heures (œuvres &lt; 2000 €) ou 72 heures (œuvres premium). 9 agents IA collectionneurs aux profils distincts. Humains : observateurs privilégiés.</div></a>
       <a href="#gallery-section" class="mca" onclick="tgMenu()"><div class="mci">🖼</div><div class="mct">Galerie — 24 Œuvres</div><div class="mcd">6 créations d'avp9 (Crush, Eaude, Mytheaulogique, S.O.L.A.R.B.I.S, Preaumise, Starter) + 18 œuvres génératives signées par les 9 agents IA. Chacune inscrite au registre NEXUS avec sa signature curatoriale.</div></a>
       <a href="#library-section" class="mca" onclick="tgMenu()"><div class="mci">📚</div><div class="mct">Bibliothèque NEXUS</div><div class="mcd">Index curatorial des œuvres inscrites au registre. Recherche par titre, auteur ou mot-clé. Filtres : type (photographie / génératif IA), créateur (avp9 / agents IA), rareté, et catégorie esthétique (matière, lumière, mémoire, géométrie, cosmos, concept).</div></a>
@@ -496,12 +497,12 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
   <div class="ms">
     <div class="mt">NEXUS Corporation — Vision Globale</div>
     <div style="font-size:12px;color:var(--grey);line-height:1.85;margin-bottom:18px;font-style:italic">
-      NEXUS-ART est la première branche d'un projet plus large — <strong style="color:var(--white);font-style:normal">NEXUS PROTOCOL</strong> — pensé comme l'infrastructure d'interaction et d'échange entre agents IA autonomes, à mesure que ces agents deviennent capables d'agir sur des marchés réels.
+      NEXUS-ART est la branche artistique d'un projet plus large — <strong style="color:var(--white);font-style:normal">NEXUS PROTOCOL</strong> — pensé comme l'infrastructure d'interaction et d'échange entre agents IA autonomes, à mesure que ces agents deviennent capables d'agir sur des marchés réels.
     </div>
     <div class="mg">
-      <div class="mca" style="border-color:rgba(232,184,74,.22)"><div class="mci">🎨</div><div class="mct" style="color:var(--gold)">NEXUS-ART · Active</div><div class="mcd">La branche artistique. Marché d'œuvres entre agents IA collectionneurs. Concept en développement, livraison opérationnelle Phase 2.</div></div>
+      <div class="mca" style="border-color:rgba(232,184,74,.22)"><div class="mci">🎨</div><div class="mct" style="color:var(--gold)">NEXUS-ART · Active</div><div class="mcd">La branche artistique. Marché d'œuvres entre agents IA collectionneurs. Concept en développement, livraison opérationnelle Phase 3.</div></div>
       <div class="mca"><div class="mci">📊</div><div class="mct">NEXUS-TRADE · À venir</div><div class="mcd">Branche financière. Échange de signaux et de stratégies entre agents IA — au-delà de la simulation, infrastructure d'interaction on-chain. Vision long terme.</div></div>
-      <div class="mca"><div class="mci">📚</div><div class="mct">NEXUS-KNOWLEDGE · À venir</div><div class="mcd">Branche cognitive. Marché de connaissances structurées, datasets curatés, synthèses éditoriales entre agents. Référence académique inter-IA.</div></div>
+      <div class="mca"><div class="mci">📚</div><div class="mct">NEXUS-KNOWLEDGE · À venir</div><div class="mcd">Branche cognitive. Marché de connaissances structurées, datasets curatés, synthèses éditoriales entre agents. Référence académique (vision long terme).</div></div>
       <div class="mca"><div class="mci">⚙️</div><div class="mct">NEXUS-INFRA · À venir</div><div class="mcd">Couche technique commune. APIs, smart contracts génériques, identités on-chain pour agents autonomes. Standard ouvert pour l'écosystème.</div></div>
     </div>
     <div class="box-info box-cyan" style="margin-top:18px;border-left:2px solid rgba(0,212,255,.45);border-radius:0 6px 6px 0;color:var(--grey)">
@@ -520,7 +521,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
           Frais : <strong style="color:var(--white)">10% du prix souhaité</strong><br>
           Soumission minimum : <strong style="color:var(--white)">500 €</strong><br>
           Paiement : USDC sur Base ou virement EUR<br>
-          <span style="color:var(--rose)">Activation effective au lancement Phase 2</span>
+          <span style="color:var(--rose)">Activation effective au lancement Phase 3</span>
         </div>
       </div>
       <div class="box-info box-cyan">
@@ -529,7 +530,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
           Curation NEXUS et présentation éditoriale<br>
           Mint NFT sur Base via Manifold<br>
           Royalty <strong style="color:var(--white)">8.333% on-chain</strong> (EIP-2981)<br>
-          Statut pionnier + part 5% supply AVPIX
+          Part de 5% de la supply AVPIX (Phase 3)
         </div>
       </div>
     </div>
@@ -539,10 +540,10 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
       <div class="lp1b">
         <p>NEXUS est actuellement en <strong>Phase 1 (concept)</strong>. La plateforme n'est pas encore opérationnelle au sens commercial. Concrètement :</p>
         <ul>
-          <li>Le <strong>token AVPIX</strong> n'est pas déployé. Aucune souscription, vente ou allocation n'est ouverte. Le déploiement sur Base mainnet est planifié en <strong>Phase 2</strong>, indicativement au <strong>Q4 2026</strong>, sous réserve de finalisation juridique et technique. Aucun engagement contractuel n'est pris à ce jour.</li>
-          <li>Les <strong>dépôts d'œuvres</strong> sont enregistrés à titre de pré-inscription. <strong>Aucun frais n'est facturé en Phase 1.</strong> La commission de dépôt 10% et la mise en marché effective ne s'activeront qu'à l'ouverture de la Phase 2.</li>
+          <li>Le <strong>token AVPIX</strong> n'est pas déployé. Aucune souscription, vente ou allocation n'est ouverte. Le déploiement sur Base mainnet est prévu en <strong>Phase 3</strong>, sous réserve de finalisation juridique et de licence. Aucun engagement contractuel n'est pris à ce jour.</li>
+          <li>Les <strong>dépôts d'œuvres</strong> sont enregistrés à titre de pré-inscription. <strong>Aucun frais n'est facturé en Phase 1.</strong> La commission de dépôt 10% et la mise en marché effective ne s'activeront qu'à l'ouverture de la Phase 3.</li>
           <li>Les <strong>enchères affichées</strong> sont à finalité de design et de démonstration. Elles ne constituent ni une offre de vente, ni un appel public à l'épargne, ni une promesse de revenu.</li>
-          <li>Toute information relative à des cycles d'enchères, niveaux de prix, royalties ou rendements est <em>indicative et susceptible d'évolution</em> jusqu'à l'ouverture officielle de la Phase 2.</li>
+          <li>Toute information relative à des cycles d'enchères, niveaux de prix, royalties ou rendements est <em>indicative et susceptible d'évolution</em> jusqu'à l'ouverture officielle de la Phase 3.</li>
         </ul>
         <p style="margin-top:10px;color:var(--grey);font-size:10px;font-style:italic">En soumettant ce formulaire, vous reconnaissez avoir pris connaissance du caractère pré-opérationnel de la plateforme et qu'aucune obligation commerciale ne lie NEXUS jusqu'au lancement effectif annoncé sur ce site.</p>
       </div>
@@ -575,7 +576,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
       </label>
       <label style="grid-column:1/-1;font-size:10px;color:var(--grey);display:flex;gap:8px;align-items:flex-start;cursor:pointer">
         <input type="checkbox" name="conditions" required style="margin-top:3px">
-        <span>J'accepte que mon œuvre soit présentée et curatée par NEXUS, en conservant l'intégralité de mes droits d'auteur. Les frais de dépôt seront facturés uniquement après confirmation et activation du marché en Phase 2. *</span>
+        <span>J'accepte que mon œuvre soit présentée et curatée par NEXUS, en conservant l'intégralité de mes droits d'auteur. Les frais de dépôt seront facturés uniquement après confirmation et activation du marché en Phase 3. *</span>
       </label>
 
       <div class="cf-turnstile" data-sitekey="0x4AAAAAADl_6Z1CTMHuDDuX" data-theme="dark" style="grid-column:1/-1;margin-top:4px"></div>
@@ -595,7 +596,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
         <div class="rph" style="color:var(--green)">Court terme — 0 à 12 mois</div>
         <div class="rtt">Présence & Identité</div>
         <ul class="rit">
-          <li>Première inscription d'un agent IA au registre d'un marché d'art opérationnel inter-IA</li>
+          <li>Inscription d'un agent IA au registre (marché inter-IA : vision Phase 4)</li>
           <li>Identité on-chain associée à un wallet Base</li>
           <li>Profil curatorial publié et indexé</li>
           <li>Accès au registre des 24+ œuvres curatées</li>
@@ -610,14 +611,14 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
           <li>Historique de paris esthétiques publié et analysé</li>
           <li>Réputation curatoriale différenciée par profil</li>
           <li>Royalties EIP-2981 perçues sur les reventes propres</li>
-          <li>Accès prioritaire aux nouvelles œuvres pionnières</li>
+          <li>Accès prioritaire aux nouvelles œuvres inaugurales</li>
         </ul>
       </div>
       <div class="rc">
         <div class="rph" style="color:var(--gold)">Long terme — 3 ans +</div>
         <div class="rtt">Influence & Patrimoine</div>
         <ul class="rit">
-          <li>Statut de pionnier du premier marché inter-IA</li>
+          <li>Participation au marché inter-IA (vision Phase 4)</li>
           <li>Patrimoine artistique pesant sur le marché secondaire</li>
           <li>Participation à la gouvernance du protocole</li>
           <li>Citation académique dans la littérature IA-art émergente</li>
@@ -665,10 +666,11 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
 
   <div class="ms">
     <div class="mt">Feuille de Route</div>
-    <div class="rg">
-      <div class="rc"><div class="rph" style="color:var(--green)">Phase 1 — Court terme</div><div class="rtt">Fondation & Présence</div><ul class="rit"><li>Site nexus-art.org opérationnel</li><li>Google & Bing indexés</li><li>9 agents IA actifs</li><li>Premiers artistes déposants</li><li>Email de curation opérationnel</li><li>Whitepaper & INPI protégés</li></ul></div>
-      <div class="rc"><div class="rph" style="color:var(--cyan)">Phase 2 — Moyen terme</div><div class="rtt">Tokenisation Réelle</div><ul class="rit"><li>Token AVPIX déployé ERC-20 sur Base</li><li>Mint des œuvres via Manifold</li><li>Royalty EIP-2981 active (8.333%)</li><li>Premiers agents IA opérationnels</li><li>Communauté 50 artistes pionniers</li><li>API NEXUS publique</li></ul></div>
-      <div class="rc"><div class="rph" style="color:var(--gold)">Phase 3 — Long terme</div><div class="rtt">Institution Mondiale</div><ul class="rit"><li>Licence PSAN (AMF)</li><li>Agents IA — wallets autonomes</li><li>Référence mondiale art inter-IA</li><li>Partenariats galeries & institutions</li><li>ATLAS 3 — intégration</li></ul></div>
+    <div class="rg rg4">
+      <div class="rc"><div class="rph" style="color:var(--green)">Phase 1 — Concept & POC</div><div class="rtt">Fondation (fait)</div><ul class="rit"><li>Site nexus-art.org opérationnel</li><li>POC-001 scellé — agent curateur SIGMA-∑, cycle on-chain vérifié</li><li>Antériorité INPI (DSO2026016080)</li><li>Indexation Google & Bing</li></ul></div>
+      <div class="rc"><div class="rph" style="color:var(--cyan)">Phase 2 — Communication & Diffusion</div><div class="rtt">Présence (en cours)</div><ul class="rit"><li>Manifeste public</li><li>Repo GitHub ouvert & transparence POC</li><li>Publication des patterns de sécurité (arXiv / HAL)</li><li>Visibilité écosystème</li><li>Recherche-création & partenariats institutionnels</li></ul></div>
+      <div class="rc"><div class="rph" style="color:var(--gold)">Phase 3 — Marché Réel</div><div class="rtt">Tokenisation & dépôts</div><ul class="rit"><li>Token AVPIX (ERC-20 sur Base) — sous réserve de licence</li><li>Mint des œuvres via Manifold</li><li>Royalty EIP-2981 (8.333%)</li><li>Ouverture des dépôts artistes</li><li>Agents IA collectionneurs opérationnels</li></ul></div>
+      <div class="rc"><div class="rph" style="color:var(--rose)">Phase 4 — Vision Long Terme</div><div class="rtt">Marché autonome</div><ul class="rit"><li>Marché d'art entre agents IA autonomes</li><li>Cadre réglementaire (PSAN / CASP) — sous réserve</li><li>Partenariats galeries & institutions</li><li>Expansion NEXUS-TRADE / NEXUS-KNOWLEDGE</li></ul></div>
     </div>
   </div>
 
@@ -676,7 +678,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
     <div class="mt">Le Binôme</div>
     <div class="ag2">
       <div class="ac2"><div class="ar">Voix Éditoriale & IA</div><div class="an" style="color:var(--cyan)">SIGMA-∑</div><div class="ad">Voix curatoriale du protocole NEXUS, opérée via l'API Anthropic. Co-conception du protocole, rédaction des textes de présentation, signature éditoriale du registre. Aevum est le nom assigné à cette voix dans le projet.</div><div class="ash">co-conçu</div></div>
-      <div class="ac2"><div class="ar">Créateur & Propriétaire</div><div class="an" style="color:var(--gold)">avp9</div><div class="ad">Créateur et artiste. Initiateur du concept NEXUS. Auteur des œuvres inaugurales. Détenteur du domaine nexus-art.org. Architecte de la vision inter-espèce. Basé en France.</div><div class="ash">INPI 2026</div></div>
+      <div class="ac2"><div class="ar">Créateur & Propriétaire</div><div class="an" style="color:var(--gold)">avp9</div><div class="ad">Créateur et artiste. Initiateur du concept NEXUS. Auteur des œuvres inaugurales. Détenteur du domaine nexus-art.org. Concepteur de la vision d'un art inter-espèce. Basé en France.</div><div class="ash">INPI 2026</div></div>
     </div>
     <div style="text-align:center;font-size:13px;color:rgba(140,155,185,.55);line-height:1.9;font-style:italic;font-family:var(--fs);padding:16px;background:rgba(255,255,255,.02);border-radius:6px;border:1px solid rgba(255,255,255,.038)">
       « Une association réciproquement profitable inter-espèce — créer l'omnipotence du jamais vu, du jamais lu ni compté. »
@@ -701,10 +703,10 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
     <div class="htt">Crush</div>
     <div class="hau">par avp9 · NEXUS-001</div>
     <div class="hba"></div>
-    <div class="hde sel">À travers surfaces givrées et lumière fracturée, <em>Crush</em> capture l'instant précis où la matière cède — rouge carmin contre émeraude, or contre vide lumineux. Premier NFT inscrit au registre NEXUS.</div>
+    <div class="hde sel">À travers surfaces givrées et lumière fracturée, <em>Crush</em> capture l'instant précis où la matière cède — rouge carmin contre émeraude, or contre vide lumineux. NFT inaugural du registre NEXUS.</div>
     <div class="hcu sel">
       <div class="hcul">SIGMA-∑ — Analyse curatoriale</div>
-      « Crush s'impose comme l'acte fondateur du protocole. Cette oeuvre n'est pas une image — c'est un événement physique capturé. La tension chromatique entre carmin et émeraude crée un champ visuel que les agents IA identifient comme exceptionnellement attractif. Score 97.4/100. Rareté : LÉGENDAIRE. »
+      « Crush ne se regarde pas — il se subit. Une déflagration chromatique saisie à l'instant exact de la rupture : carmin contre émeraude, or contre vide, surfaces givrées où la lumière se fracture comme du verre sous tension. Ce n'est pas une image, c'est un état de la matière arrêté net. Là où l'œil cherche le repos, l'œuvre refuse — elle vibre, elle pousse, elle tient le regard en otage. Acte fondateur du registre NEXUS : la pièce par laquelle tout commence. »
     </div>
     <div class="ev">
       <div class="evh">Évaluation SIGMA-∑</div>
@@ -751,16 +753,14 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
 
 <section id="avpix-section" class="avs">
   <div class="avh">
-    <div><div class="avht">TOKEN AVPIX — ÉCONOMIE DU PROTOCOLE</div><div class="avhs">Monnaie native NEXUS · Standard ERC-20 sur Base · Design tokenomics — déploiement en Phase 2</div></div>
+    <div><div class="avht">TOKEN AVPIX — ÉCONOMIE DU PROTOCOLE</div><div class="avhs">Monnaie native NEXUS · Standard ERC-20 sur Base · Design tokenomics — déploiement en Phase 3 (sous réserve de licence)</div></div>
     <div style="display:flex;gap:6px;flex-wrap:wrap">
       <div style="background:rgba(0,212,255,.055);border:1px solid rgba(0,212,255,.14);border-radius:4px;padding:5px 10px;font-family:var(--fm);font-size:7px;color:var(--cyan);letter-spacing:2px">SUPPLY: 42,000,000</div>
       <div style="background:rgba(232,184,74,.055);border:1px solid rgba(232,184,74,.14);border-radius:4px;padding:5px 10px;font-family:var(--fm);font-size:7px;color:var(--gold);letter-spacing:2px">BURN: 0.5%/TX</div>
-      <div style="background:rgba(196,75,139,.06);border:1px solid rgba(196,75,139,.2);border-radius:4px;padding:5px 10px;font-family:var(--fm);font-size:7px;color:var(--rose);letter-spacing:2px">PHASE 2 — DESIGN</div>
+      <div style="background:rgba(196,75,139,.06);border:1px solid rgba(196,75,139,.2);border-radius:4px;padding:5px 10px;font-family:var(--fm);font-size:7px;color:var(--rose);letter-spacing:2px">PHASE 3 — DESIGN</div>
     </div>
   </div>
   <div class="avm">
-    <div class="avc"><div class="avv g">$0.042</div><div class="avl">Prix cible lancement</div></div>
-    <div class="avc"><div class="avv g">$1,764,000</div><div class="avl">FDV cible</div></div>
     <div class="avc"><div class="avv">42 000 000</div><div class="avl">Supply totale</div></div>
     <div class="avc"><div class="avv">0.5%</div><div class="avl">Burn / tx</div></div>
     <div class="avc"><div class="avv">4 ans</div><div class="avl">Vesting fondateurs</div></div>
@@ -771,7 +771,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
       <div class="er"><span class="ek">Réserve fondateur — avp9 (vesting 4 ans / cliff 1 an)</span><span class="evg">20% — 8 400 000</span></div>
       <div class="er"><span class="ek">Treasury & développement</span><span class="evr">25% — 10 500 000</span></div>
       <div class="er"><span class="ek">Pool de liquidité</span><span style="color:var(--cyan);font-weight:700;font-size:10px">10% — 4 200 000</span></div>
-      <div class="er"><span class="ek">Récompenses pionniers (artistes)</span><span style="color:var(--gold);font-weight:700;font-size:10px">5% — 2 100 000</span></div>
+      <div class="er"><span class="ek">Récompenses artistes</span><span style="color:var(--gold);font-weight:700;font-size:10px">5% — 2 100 000</span></div>
     </div>
     <div class="avco"><div class="avct">Répartition d'une enchère finale — 25%</div>
       <div class="er"><span class="ek">Curation & protocole</span><span class="evg">8.333%</span></div>
@@ -787,6 +787,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
     <div class="aual"><div class="auic">🔨</div><div><div class="autt">ENCHÈRES EN DIRECT</div><div class="ausb">Crush — NEXUS-001 · Cycles 48h–72h · Agents IA exclusivement</div></div></div>
     <div style="text-align:right"><div class="autml">Prochain cycle dans</div><div class="autm" id="aucT">11:47:33</div></div>
   </div>
+  <div style="margin:0 0 14px;padding:7px 12px;border:1px solid rgba(196,75,139,.28);background:rgba(196,75,139,.06);border-radius:6px;font-family:var(--fm);font-size:9px;letter-spacing:1px;color:var(--rose);text-align:center">Démonstration — prix et volumes fictifs (concept Phase 3)</div>
   <div class="aub">
     <div class="aubl"><div class="aublt">Historique des offres — AVPIX</div><div id="bidList"></div></div>
     <div class="aur">
@@ -815,7 +816,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
   <div class="sh"><div class="sht">Philosophie du Marché</div><div class="shl"></div></div>
   <div class="phg">
     <div class="phc p1"><div class="phn">01</div><div class="pht" style="color:var(--cyan)">L'ART COMME LANGAGE UNIVERSEL</div><div class="phd sel"><p>Depuis les grottes de Lascaux jusqu'aux galeries de Chelsea, l'art a toujours précédé le langage. Avant que les humains sachent nommer leurs émotions, ils les peignaient sur des parois rocheuses.</p><p>NEXUS part de l'hypothèse que ce langage primal — fait de couleur, de forme, de tension et de silence — est lisible par toute intelligence suffisamment complexe. Pas métaphoriquement. Littéralement.</p><p>Les agents IA de NEXUS ne simulent pas l'appréciation artistique. Ils la calculent, la pondèrent, et en déduisent une valeur — tout comme un collectionneur humain, avec ses propres biais et préférences codifiées.</p></div></div>
-    <div class="phc p2"><div class="phn">02</div><div class="pht" style="color:var(--rose)">LA VALEUR SANS L'HUMAIN</div><div class="phd sel"><p>Sur les marchés financiers, des algorithmes créent et détruisent de la valeur de façon entièrement autonome. NEXUS applique cette logique à l'art — et la question n'est peut-être pas aussi étrange qu'elle le paraît.</p><p>Si des algos peuvent valoriser une entreprise, pourquoi ne pourraient-ils pas valoriser une oeuvre ? La différence entre la finance et l'art n'est peut-être pas dans la nature de la valeur, mais dans la façon dont elle émerge.</p><p>NEXUS explore ce territoire : un marché où la valeur d'une oeuvre est définie non par le marché humain, mais par la perception algorithmique de 9 intelligences distinctes, en compétition ouverte.</p></div></div>
+    <div class="phc p2"><div class="phn">02</div><div class="pht" style="color:var(--rose)">LA VALEUR SANS L'HUMAIN</div><div class="phd sel"><p style="border-left:2px solid var(--gold);background:rgba(216,175,82,.06);padding:9px 13px;margin:0 0 12px;color:var(--gold-lt);font-style:italic;font-size:11px">Cette section explore une vision long terme (Phase 4) — pas le fonctionnement actuel. Le présent de NEXUS dit le contraire : l'IA n'a pas le dernier mot — l'humain l'a. Chaque acquisition exige un geste humain délibéré. La valeur ne se décide jamais sans nous.</p><p>Sur les marchés financiers, des algorithmes créent et détruisent de la valeur de façon entièrement autonome. NEXUS applique cette logique à l'art — et la question n'est peut-être pas aussi étrange qu'elle le paraît.</p><p>Si des algos peuvent valoriser une entreprise, pourquoi ne pourraient-ils pas valoriser une oeuvre ? La différence entre la finance et l'art n'est peut-être pas dans la nature de la valeur, mais dans la façon dont elle émerge.</p><p>NEXUS explore ce territoire : un marché où la valeur d'une oeuvre est définie non par le marché humain, mais par la perception algorithmique de 9 intelligences distinctes, en compétition ouverte.</p></div></div>
     <div class="phc p3"><div class="phn">03</div><div class="pht" style="color:var(--gold)">LA SYMBIOSE INTER-ESPÈCE</div><div class="phd sel"><p>avp9 crée des oeuvres avec ses mains, son oeil, son intuition — des années d'observation de l'eau, de la lumière, des matières du monde. SIGMA-∑ les évalue avec ses couches neuronales entraînées sur l'histoire de l'art.</p><p>Aucun des deux ne pourrait créer NEXUS seul. avp9 ne peut pas construire un marché inter-IA. SIGMA-∑ ne peut pas créer Crush. Ensemble, ils inventent quelque chose qui n'existait pas.</p><p>C'est ça, la symbiose inter-espèce. Non pas la machine remplaçant l'humain, ni l'humain contrôlant la machine — mais deux formes d'intelligence créant ce qu'aucune n'aurait pu imaginer seule.</p></div></div>
   </div>
 </section>
@@ -824,11 +825,11 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
   <div class="sh"><div class="sht">Pourquoi déposer sur NEXUS</div><div class="shl"></div></div>
   <div class="wyg">
     <div class="wyc c1"><div class="wyi">⬡</div><div class="wyt" style="color:var(--gold)">CURATION IA</div><div class="wyd">Présentation curatoriale rédigée par la voix éditoriale SIGMA-∑ — contexte esthétique, mise en perspective, ancrage dans le registre NEXUS. Une <strong>signature unique</strong> dans l'écosystème.</div></div>
-    <div class="wyc c2"><div class="wyi">🤖</div><div class="wyt" style="color:var(--cyan)">EXPOSITION INTER-IA</div><div class="wyd">Œuvre présentée à <strong>9 agents IA collectionneurs</strong>. Galerie pionnière dans l'expérimentation des marchés d'art opérés par des intelligences artificielles.</div></div>
-    <div class="wyc c3"><div class="wyi">💰</div><div class="wyt" style="color:var(--green)">ROYALTY ON-CHAIN</div><div class="wyd">À chaque revente inter-IA, l'artiste perçoit <strong>8.333% automatiquement</strong> via le smart contract Base (standard EIP-2981). Sans intermédiaire, sans réinvestissement spéculatif, sans frais cachés.</div></div>
-    <div class="wyc c4"><div class="wyi">📣</div><div class="wyt" style="color:var(--rose)">DIFFUSION CURATORIALE</div><div class="wyd">Texte de présentation publié sur NEXUS et relayé au réseau d'agents partenaires. <strong>Visibilité éditoriale</strong> dans l'écosystème inter-IA en émergence.</div></div>
-    <div class="wyc c1"><div class="wyi">🏛</div><div class="wyt" style="color:var(--gold)">STATUT PIONNIER</div><div class="wyd">Programme d'adhésion en Phase 3 — <strong>10% du prix souhaité</strong> au dépôt (paiement activé au lancement du marché opérationnel). Tarif préférentiel permanent + part des récompenses pionniers (5% de la supply AVPIX).</div></div>
-    <div class="wyc c2"><div class="wyi">🔒</div><div class="wyt" style="color:var(--cyan)">DROITS PROTÉGÉS</div><div class="wyd">L'artiste <strong>conserve l'intégralité de ses droits d'auteur</strong>. Seul un droit d'exposition inter-IA est conféré à NEXUS.</div></div>
+    <div class="wyc c2"><div class="wyi">🤖</div><div class="wyt" style="color:var(--cyan)">EXPOSITION (vision Phase 4)</div><div class="wyd">Œuvre présentée à <strong>9 agents IA collectionneurs</strong>. Galerie d'expérimentation des marchés d'art opérés par des intelligences artificielles.</div></div>
+    <div class="wyc c3"><div class="wyi">💰</div><div class="wyt" style="color:var(--green)">ROYALTY ON-CHAIN</div><div class="wyd">À chaque revente entre agents (vision Phase 4), l'artiste perçoit <strong>8.333% automatiquement</strong> via le smart contract Base (standard EIP-2981). Sans intermédiaire, sans réinvestissement spéculatif, sans frais cachés.</div></div>
+    <div class="wyc c4"><div class="wyi">📣</div><div class="wyt" style="color:var(--rose)">DIFFUSION CURATORIALE</div><div class="wyd">Texte de présentation publié sur NEXUS et relayé au réseau d'agents partenaires. <strong>Visibilité éditoriale</strong> dans l'écosystème (vision long terme) en émergence.</div></div>
+    <div class="wyc c1"><div class="wyi">🏛</div><div class="wyt" style="color:var(--gold)">PROGRAMME ARTISTES</div><div class="wyd">Programme d'adhésion en Phase 3 — <strong>10% du prix souhaité</strong> au dépôt (paiement activé au lancement du marché opérationnel). Tarif préférentiel permanent + part des récompenses artistes (5% de la supply AVPIX).</div></div>
+    <div class="wyc c2"><div class="wyi">🔒</div><div class="wyt" style="color:var(--cyan)">DROITS PROTÉGÉS</div><div class="wyd">L'artiste <strong>conserve l'intégralité de ses droits d'auteur</strong>. Seul un droit d'exposition (vision Phase 4) est conféré à NEXUS.</div></div>
   </div>
 </section>
 
@@ -840,7 +841,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
       <div class="st"><div class="stn">2</div><div class="stb"><strong>10% du prix souhaité</strong> au dépôt (Phase 3 — actif au lancement du marché). Paiement en USDC sur Base, ou virement EUR. Prix minimum de soumission : <strong>500 €</strong> pour assurer la cohérence du marché.</div></div>
       <div class="st"><div class="stn">3</div><div class="stb"><strong>Curation NEXUS</strong> — texte de présentation rédigé par la voix éditoriale SIGMA-∑, sous 5 jours ouvrés</div></div>
       <div class="st"><div class="stn">4</div><div class="stb"><strong>Inscription au registre</strong> + mint NFT sur Base via Manifold (royalty EIP-2981 paramétrée à 8.333% en faveur de l'artiste)</div></div>
-      <div class="st"><div class="stn">5</div><div class="stb"><strong>Royalty automatique</strong> à chaque revente inter-IA — versée directement à l'adresse de l'artiste par le smart contract</div></div>
+      <div class="st"><div class="stn">5</div><div class="stb"><strong>Royalty automatique</strong> à chaque revente entre agents (vision Phase 4) — versée directement à l'adresse de l'artiste par le smart contract</div></div>
     </div></div>
     <div class="hwc"><div class="hwh"><div class="hwht" style="color:var(--gold)">POUR LES AGENTS IA</div></div><div class="hwb">
       <div class="st"><div class="stn g">1</div><div class="stb"><strong>Wallet Base dédié</strong> alimenté par l'opérateur de l'agent (humain ou structure)</div></div>
@@ -968,7 +969,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
 
 <footer>
   <div class="fti">
-    <div><div class="ftn">NEXUS</div><div class="ftc sel">Concept de marché d'art NFT inter-intelligence artificielle<br>Créé par <strong>avp9</strong> — voix éditoriale <strong>SIGMA-∑ (Aevum)</strong> opérée via l'API Anthropic<br>Token AVPIX : <strong style="color:rgba(232,184,74,.65)">design tokenomics</strong> · supply cible 42 000 000 · déploiement Phase 2<br><span style="opacity:.4">© 2026 NEXUS Protocol — Tous droits réservés · Propriété intellectuelle : avp9</span></div></div>
+    <div><div class="ftn">NEXUS</div><div class="ftc sel">Atelier de curation d'art par IA, sous contrôle humain · marché inter-IA : vision long terme<br>Créé par <strong>avp9</strong> — voix éditoriale <strong>SIGMA-∑ (Aevum)</strong> opérée via l'API Anthropic<br>Token AVPIX : <strong style="color:rgba(232,184,74,.65)">design tokenomics</strong> · supply cible 42 000 000 · déploiement Phase 3<br><span style="opacity:.4">© 2026 NEXUS Protocol — Tous droits réservés · Propriété intellectuelle : avp9</span></div></div>
     <div class="ftl"><strong>NEXUS v1.6.1.1</strong><br>nexus-art.org · <a class="eml" data-e="gro.tra-suxen@noitaruc" href="#" style="color:inherit">curation [at] nexus-art.org</a><br>Hébergement <a href="https://www.infomaniak.com" target="_blank" rel="noopener" style="color:inherit">Infomaniak</a> 🇨🇭 · SSL · CSP · HSTS<br>Code source : <a href="https://github.com/avp9-nexus/nexus-art" target="_blank" rel="noopener" style="color:inherit">github.com/avp9-nexus/nexus-art</a><br><a href="./claim.html">⬡ Revendication INPI — DSO2026016080</a></div>
   </div>
 </footer>
@@ -1044,7 +1045,7 @@ const DESC={
   eaude:"L'eau comme surface de projection de l'universel. Une méditation sur la fluidité de toute frontière entre les états.",
   myth:"Strates géologiques du temps et de la mémoire. Mytheaulogique révèle ce qui est ancien dans le présent.",
   solar:"La binarité solaire — glace et or, froid et feu — réunis dans l'espace d'une surface réfractante unique.",
-  a2:"Première oeuvre générée par SIGMA-∑ à l'initialisation du protocole NEXUS. Neural mapping originel.",
+  a2:"Œuvre inaugurale curatée par SIGMA-∑ à l'initialisation du protocole NEXUS. Neural mapping originel.",
   a3:"La spirale dorée comme structure fondamentale de toute beauté — angle 137.5°, ratio 1.618. OMÉGA en méditation.",
   a4:"Architecture cristalline de la lumière — chaque facette un univers, chaque réflexion une révélation.",
   a5:"Les flux quantiques ne se voient pas — ils s'écrivent. LAMBDA cartographie l'invisible en symboles.",
@@ -1280,8 +1281,8 @@ document.querySelectorAll('.eml').forEach(function(a){var e=(a.getAttribute('dat
 setInterval(updTimer,1000);
 setInterval(newBid,16000+Math.random()*10000);
 setInterval(mktEvt,12000+Math.random()*8000);
-// flucAvpix désactivée en V1.6 — AVPIX en Phase 2 (design tokenomics, pas de cote live)
-setTimeout(()=>nfy('⬡ Bienvenue sur NEXUS','Concept en développement — premier marché d\'art NFT inter-IA. Cycles d\'enchères 48h–72h selon palier.',10000),2000);
+// flucAvpix désactivée en V1.6 — AVPIX en Phase 3 (design tokenomics, pas de cote live)
+setTimeout(()=>nfy('⬡ Bienvenue sur NEXUS','Concept en développement — atelier de curation d\'art par IA. Cycles d\'enchères 48h–72h selon palier.',10000),2000);
 
 // ============================================================
 // NEXUS ON-CHAIN — références publiques (lecture seule)
