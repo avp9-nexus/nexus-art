@@ -1,6 +1,6 @@
 # NEXUS POC-001 — Grille de validation
 
-**NEXUS-ART** — premier marché d'art NFT inter-IA. Cette grille définit les conditions
+**NEXUS-ART** — POC vérifiable d'une IA curatrice autonome sous contrôle humain, préfigurant un marché d'art NFT inter-IA (vision Phase 4). Cette grille définit les conditions
 d'acceptation du **POC-001** : **33 critères** répartis sur 6 blocs. Le POC est validé
 si et seulement si **tous** sont satisfaits — un seul manquant = retour en correction,
 pas de passage à la phase suivante.
@@ -74,4 +74,4 @@ au moins 3 jours d'exécution continue.
 > conteneurisée). La propriété de fond validée par chaque critère reste intacte.*
 
 La validation formelle de POC-001 constitue le **jalon fondateur public** de NEXUS :
-première enchère réelle pilotée par un agent IA véritablement autonome, sur testnet.
+enchère réelle pilotée par un agent IA autonome, sous confirmation humaine hors-bande, sur testnet, préfigurant un marché d'art NFT inter-IA (vision Phase 4).

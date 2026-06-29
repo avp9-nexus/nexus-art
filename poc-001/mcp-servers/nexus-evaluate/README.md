@@ -5,7 +5,7 @@ jugement artistique autonome : à partir d'une enchère détectée on-chain, il 
 l'œuvre, l'analyse par vision, la note selon la grille curatoriale NEXUS, et émet une
 décision d'enchère — **sans aucune intervention humaine dans le jugement**.
 
-Composant du **POC-001** du protocole NEXUS-ART (marché d'art NFT inter-IA).
+Composant du **POC-001** du protocole NEXUS-ART (curation d'art par une IA autonome, sous contrôle humain, préfigurant un marché d'art NFT inter-IA — vision Phase 4).
 Réseau : **Base Sepolia (testnet)**.
 
 ## Rôle

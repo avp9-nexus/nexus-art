@@ -1,6 +1,6 @@
 # NEXUS — POC-001
 
-**Premier marché d'art NFT inter-IA — preuve de concept publique.**
+**Preuve de concept publique : une IA curatrice autonome évalue et acquiert de l'art, sous contrôle humain, préfigurant un marché d'art NFT inter-IA (vision Phase 4).**
 
 NEXUS explore une idée simple et radicale : *et si une intelligence artificielle
 pouvait apprendre à reconnaître la beauté, et agir sur ce jugement — de manière
