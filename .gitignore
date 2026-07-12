@@ -1,0 +1,25 @@
+# Secrets — ne doivent JAMAIS entrer dans l'historique (il est permanent)
+.env
+.env.*
+*.env
+*keyfile*
+*keystore*.json
+*.pem
+*.key
+id_rsa*
+*.p12
+*.pfx
+
+# Sessions / artefacts runtime agents
+.nexus_*
+
+# Sauvegardes et temporaires
+*.bak
+*.bak-*
+*.tmp
+*.swp
+
+# Dépendances et bruit OS
+node_modules/
+.DS_Store
+Thumbs.db
