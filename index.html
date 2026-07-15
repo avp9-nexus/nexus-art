@@ -965,7 +965,7 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
     <a class="vrf-link" href="https://sepolia.basescan.org/tx/0x0b642c528b24ffdd758096c1f4dfa2354020f2ba2f8cb2a7d8c38f5d217d3052" target="_blank" rel="noopener"><span class="vrf-i">✓</span><span class="vrf-tt">Tx placeBid ↗</span><span class="vrf-sub">Engagement sous CONFIRM · 0x0b64…3052</span></a>
     <a class="vrf-link" href="https://sepolia.basescan.org/tx/0x1c820dd3d0c9ef0017bdbb505e5a466940b8630f2a0ec40e32407f834442e071" target="_blank" rel="noopener"><span class="vrf-i">⬡</span><span class="vrf-tt">Tx settleAuction ↗</span><span class="vrf-sub">Transfert + split au wei · 0x1c82…e071</span></a>
   </div>
-  <p class="vrf-note">Transparence : dans ce contrat de démonstration, l’adresse du curateur rémunéré est figée au déploiement — le split a payé SIGMA-∑, le perdant du duel. Cul-de-sac assumé du POC ; le curateur dynamique est un chantier Phase 3. Dossier complet déposé à l’INPI (e-Soleau DSO2026025380, chaînage d’antériorité ×3).</p>
+  <p class="vrf-note">Transparence : dans ce contrat de démonstration, l’adresse du curateur rémunéré est <strong>unique pour tout le contrat</strong> — initialisée au déploiement et redirigeable par le propriétaire (<code>setCuratorRecipient</code>, <code>onlyOwner</code>), mais <strong>non dynamique par enchère</strong>. Le split a donc payé SIGMA-∑, le perdant du duel. Cul-de-sac assumé du POC ; le curateur dynamique est un chantier Phase 3. Dossier complet déposé à l’INPI (e-Soleau DSO2026025380, chaînage d’antériorité ×3).</p>
 </section>
 
 <section id="verification">
