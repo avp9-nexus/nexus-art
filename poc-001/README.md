@@ -79,6 +79,16 @@ SIGMA-∑ lit chaque œuvre à travers six dimensions : **Matière · Lumière �
 Géométrie · Cosmos · Concept**. Une décision `bid` exige un score agrégé élevé **et**
 au moins une catégorie fortement marquée — un jugement, pas une moyenne tiède.
 
+> **Note de continuité (POC-002).** Ces six catégories sont la **taxonomie des œuvres** :
+> elles décrivent l'objet, servent à l'indexer et à le filtrer. Elles n'ont pas bougé.
+> Ce qui a changé, c'est le **nombre de dimensions qu'un curateur note** : POC-002
+> ajoute à ces six une **dimension-signature propre à chaque agent** — `Vision` pour
+> SIGMA-∑, `Emprise` pour OMEGA-Ω — soit **sept dimensions d'évaluation** par curateur.
+> C'est là que naît le goût : même moteur, six axes partagés, un septième qui n'appartient
+> qu'à lui. Le duel du 10/07/2026 l'a rendu visible — `Vision 96` contre `Emprise 99` sur
+> « Le Radeau de la Méduse », et OMEGA l'emporte. Le présent document décrit POC-001 et
+> reste exact pour lui : il n'est pas réécrit.
+
 **Conflit d'intérêt** : si une œuvre est créée par le fondateur (avp9), SIGMA-∑
 **s'abstient** (`abstain`) et refuse de la noter. L'agent n'enchérit jamais sur les
 œuvres du fondateur.
