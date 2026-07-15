@@ -936,7 +936,8 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
     </div></div>
   </div>
   <div class="vrf-grid" style="margin-top:22px">
-    <a class="vrf-link vrf-sigma" href="https://sepolia.basescan.org/address/0xA75af2Be9642BDdCF0be1D95051423c7988d3Fbb" target="_blank" rel="noopener"><span class="vrf-i">∑</span><span class="vrf-tt">Wallet SIGMA-∑ ↗</span><span class="vrf-sub">Activité on-chain · 0xA75a…3Fbb</span></a>
+    <a class="vrf-link vrf-sigma" href="https://sepolia.basescan.org/address/0xA75af2Be9642BDdCF0be1D95051423c7988d3Fbb" target="_blank" rel="noopener"><span class="vrf-i">∑</span><span class="vrf-tt">SIGMA-∑ · curateur rémunéré ↗</span><span class="vrf-sub">Encaisse le split · 0xA75a…3Fbb</span></a>
+    <a class="vrf-link vrf-sigma" href="https://sepolia.basescan.org/address/0x2d45eF16b2723164aa22a31B214D61585d46B61c" target="_blank" rel="noopener"><span class="vrf-i">∑</span><span class="vrf-tt">SIGMA-∑ · coffre matériel ↗</span><span class="vrf-sub">Signe les règlements · 0x2d45…6B61c</span></a>
     <a class="vrf-link" href="https://sepolia.basescan.org/address/0x471796C1644d87f30AD81D36f6d4A56f0e270c23" target="_blank" rel="noopener"><span class="vrf-i">⬡</span><span class="vrf-tt">Contrat NexusPOC ↗</span><span class="vrf-sub">Base Sepolia · 0x4717…0c23</span></a>
     <a class="vrf-link" href="https://github.com/avp9-nexus/nexus-art/tree/main/poc-001" target="_blank" rel="noopener"><span class="vrf-i">⌥</span><span class="vrf-tt">Raisonnement curatorial ↗</span><span class="vrf-sub">poc-001 · README + skills</span></a>
   </div>
@@ -968,11 +969,25 @@ textarea.ipt{font-family:var(--fm);resize:vertical;line-height:1.5}
   <p class="vrf-note">Transparence : dans ce contrat de démonstration, l’adresse du curateur rémunéré est <strong>unique pour tout le contrat</strong> — initialisée au déploiement et redirigeable par le propriétaire (<code>setCuratorRecipient</code>, <code>onlyOwner</code>), mais <strong>non dynamique par enchère</strong>. Le split a donc payé SIGMA-∑, le perdant du duel. Cul-de-sac assumé du POC ; le curateur dynamique est un chantier Phase 3. Dossier complet déposé à l’INPI (e-Soleau DSO2026025380, chaînage d’antériorité ×3).</p>
 </section>
 
+<section id="poc-003">
+  <div class="sh"><div class="sht">POC-003 — Le coffre</div><div class="shl"></div></div>
+  <p>Le 15 juillet 2026, SIGMA-∑ a acheté <em>Les Ménines</em> de Vélasquez (tokenId 25). Cette fois, <strong>aucune clé de règlement n’existait sur le serveur.</strong></p>
+  <p>La machine a figé la transaction, affiché son empreinte, et attendu. La signature est venue d’un coffre matériel hors ligne, dont la graine a été générée sur l’appareil — jamais copiée, jamais saisie, jamais vue par une machine connectée. Le serveur ne détient rien : <strong>il propose</strong>.</p>
+  <p>Et le contrôle humain n’est plus une promesse logicielle. L’appareil calcule <strong>sa propre</strong> empreinte de la transaction, dans son silicium, sans rien demander à l’ordinateur. Si la machine mentait sur ce qu’elle fait signer, les deux empreintes divergeraient — et l’humain refuserait. C’est la seule vérification que l’hôte ne peut pas corrompre.</p>
+  <div class="vrf-grid" style="margin-top:22px">
+    <a class="vrf-link vrf-sigma" href="https://sepolia.basescan.org/tx/0xdbcacc8695a36a5f21a011aa5f0f5dbb4f273048759c9bde37e1f77150682975" target="_blank" rel="noopener"><span class="vrf-i">✓</span><span class="vrf-tt">Tx placeBid ↗</span><span class="vrf-sub">Signée sur le coffre · 0xdbca…2975</span></a>
+    <a class="vrf-link vrf-sigma" href="https://sepolia.basescan.org/tx/0xd76c2b2bfe9eab3d4042c9955cb9543559fc818d0473551c4a9da1fe82fcfb29" target="_blank" rel="noopener"><span class="vrf-i">⬡</span><span class="vrf-tt">Tx settleAuction ↗</span><span class="vrf-sub">Transfert + split au wei · 0xd76c…fb29</span></a>
+    <a class="vrf-link vrf-sigma" href="https://sepolia.basescan.org/address/0x2d45eF16b2723164aa22a31B214D61585d46B61c" target="_blank" rel="noopener"><span class="vrf-i">∑</span><span class="vrf-tt">SIGMA-∑ · coffre matériel ↗</span><span class="vrf-sub">Détient le tokenId 25 · 0x2d45…6B61c</span></a>
+  </div>
+  <p class="vrf-note">Enchère et règlement signés depuis le coffre, vérifiables ci-dessus. Le pattern « l’agent ne peut pas signer » cesse d’être une architecture : il devient une propriété physique.</p>
+</section>
+
 <section id="verification">
   <div class="sh"><div class="sht">Vérification & transparence</div><div class="shl"></div></div>
   <p class="vrf-intro">NEXUS est un projet ouvert et vérifiable : code source public, infrastructure on-chain sur le réseau Base, et dépôt d'antériorité INPI. Tout est traçable et inspectable.</p>
   <div class="vrf-grid">
-    <a class="vrf-link vrf-sigma" href="https://sepolia.basescan.org/address/0xA75af2Be9642BDdCF0be1D95051423c7988d3Fbb" target="_blank" rel="noopener"><span class="vrf-i">∑</span><span class="vrf-tt">SIGMA-∑ · activité on-chain ↗</span><span class="vrf-sub">Agent curateur autonome · 0xA75a…3Fbb</span></a>
+    <a class="vrf-link vrf-sigma" href="https://sepolia.basescan.org/address/0xA75af2Be9642BDdCF0be1D95051423c7988d3Fbb" target="_blank" rel="noopener"><span class="vrf-i">∑</span><span class="vrf-tt">SIGMA-∑ · curateur rémunéré ↗</span><span class="vrf-sub">Encaisse le split · 0xA75a…3Fbb</span></a>
+    <a class="vrf-link vrf-sigma" href="https://sepolia.basescan.org/address/0x2d45eF16b2723164aa22a31B214D61585d46B61c" target="_blank" rel="noopener"><span class="vrf-i">∑</span><span class="vrf-tt">SIGMA-∑ · coffre matériel ↗</span><span class="vrf-sub">Signe les règlements · 0x2d45…6B61c</span></a>
     <a class="vrf-link" href="https://github.com/avp9-nexus/nexus-art" target="_blank" rel="noopener"><span class="vrf-i">⌥</span><span class="vrf-tt">Code source ↗</span><span class="vrf-sub">github.com/avp9-nexus/nexus-art</span></a>
     <a class="vrf-link" href="https://sepolia.basescan.org" target="_blank" rel="noopener"><span class="vrf-i">⬡</span><span class="vrf-tt">Explorateur Basescan ↗</span><span class="vrf-sub">Base Sepolia · testnet</span></a>
     <a class="vrf-link" href="https://base.org" target="_blank" rel="noopener"><span class="vrf-i">◆</span><span class="vrf-tt">Réseau Base ↗</span><span class="vrf-sub">Layer 2 Ethereum</span></a>
