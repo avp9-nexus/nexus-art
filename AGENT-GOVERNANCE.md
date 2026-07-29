@@ -1,11 +1,12 @@
 # Agent governance — ten rules, and the mistakes that produced them
 
 This is not a methodology. It is the set of constraints that accumulated over sixty
-working sessions of directing AI agents to build and operate a system that moves
-real value on-chain, written down each time something went wrong.
+working sessions of directing AI agents to build and operate a system that bids and
+settles on-chain — on a public test network, where the mechanics are real and the
+money is not.
 
-Every rule here exists because a specific failure made it necessary. None of them
-were designed in advance.
+Every rule here was written down after a specific failure made it necessary, and that
+failure is named beneath it. One exception, noted where it falls.
 
 ---
 
@@ -142,13 +143,16 @@ is not the score. **The score is the map of what remains.**
 Every deliberate withholding — a refusal, a silence, a deferral — is justified in one
 line stating what it costs. Inaction is not a neutral default.
 
-*Produced by:* caution accumulating unexamined until it became the main obstacle.
+*Produced by:* faults of omission leave no trace, so self-audit never sees them —
+this rule forces them to leave one.
 *Probe:* "what does not doing it cost?"
 
 ### 8. Established, plausible, or conjectural
 Every predicted consequence carries its epistemic status. Fabricated precision is
 worse than no estimate at all.
 
+*Produced by:* a percentage quoted with confidence — "96.7%", then "35%" — that
+measured the setting, not the mechanism.
 *Probe:* "established, plausible, or conjectural?"
 
 ### 9. Show the spec before you design
@@ -165,8 +169,7 @@ verified end to end: amount, deadline, eligibility, format. Where verification i
 impossible, it is still surfaced, in one line, stating what it is and what is missing.
 Never presented as certain without being so; **never suppressed for being unverified.**
 
-*Produced by:* leads presented as open that turned out to be closed, expired, or
-ineligible.
+*The exception:* this rule was stated as a principle, not extracted from a failure.
 
 ---
 
@@ -219,7 +222,8 @@ still verify quickly.
 
 These rules were extracted from the operating record of **NEXUS-ART** — AI curator
 agents that evaluate artworks, bid against each other at auction, and settle on-chain,
-where every transfer of funds requires a human signature made outside the system.
+where every commitment of funds by an agent requires a human signature made outside
+the system.
 
 The demonstrations are public and verifiable: contract
 `0x471796C1644d87f30AD81D36f6d4A56f0e270c23` on Base Sepolia (testnet, no real value
