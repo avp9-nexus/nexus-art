@@ -52,6 +52,8 @@ Tout est vérifiable sur Basescan (Base Sepolia), **sans aucune confiance à nou
 
 > Invariant respecté : royalty + curateur + plateforme = prix final, **0 wei d'écart**.
 
+> *Note de lecture — la répartition du POC.* Le contrat POC répartit chaque vente en 8,33 % au créateur (royalty ERC-2981), 45,835 % au curateur et 45,835 % à la plateforme. Ce n'est pas le modèle économique de NEXUS : c'est un artefact d'un contrat où le propriétaire, le vendeur et le curateur étaient la même personne, et où aucune valeur réelle n'était en jeu (testnet, ETH sans valeur). Ce que le POC devait prouver, ce sont des **mécanismes** — cycle d'enchère, confirmation humaine hors-bande, répartition au wei exact — pas une économie. La répartition cible est portée par NexusV1 : **75 % minimum au vendeur**, garanti par arithmétique et non par promesse.
+
 ---
 
 ## 4. Honnêteté curatoriale (non négociable)
