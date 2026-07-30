@@ -1,4 +1,4 @@
-# Agent governance — ten rules, and the mistakes that produced them
+# Agent governance — eleven rules, and the mistakes that produced them
 
 This is not a methodology. It is the set of constraints that accumulated over sixty
 working sessions of directing AI agents to build and operate a system that bids and
@@ -137,6 +137,9 @@ Every search reports three columns: **found · searched-without-result · not-se
 The third is named explicitly, never left silent. Finding what you were looking for
 is not the score. **The score is the map of what remains.**
 
+*Produced by:* a glob that missed by a single character — the file was named `v1.1`,
+the search used `v1_1` — and the verdict "it does not exist", accepted without a second
+query. Twenty-one hours out of twenty-four, lost.
 *Probe:* "which query did you run against your own answer?"
 
 ### 7. Restraint has a cost — name it
@@ -170,6 +173,20 @@ impossible, it is still surfaced, in one line, stating what it is and what is mi
 Never presented as certain without being so; **never suppressed for being unverified.**
 
 *The exception:* this rule was stated as a principle, not extracted from a failure.
+
+### 11. A description of what the system does is a claim
+
+Any sentence describing system behaviour on a public surface — "the agent cannot…",
+"every transfer requires…", "the system moves…" — cites the specification line or the
+measurement that establishes it, or it does not get written. A description without a
+source is a statement of fact wearing the clothes of prose.
+
+*Produced by:* four false descriptive sentences in a single day, two of them lines of
+this very file, public for several hours before they were caught. The rules above cover
+numbers, dates and URLs; they cover state; they cover third-party content. **None of them
+covered a descriptive sentence** — which is most of what a public document is made of.
+This rule exists because publishing this file created the gap it closes.
+*Probe:* "which spec or which measurement establishes this sentence?"
 
 ---
 
