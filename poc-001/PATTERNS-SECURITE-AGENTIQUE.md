@@ -170,3 +170,20 @@ durcissements tracés séparément.
 L'objectif n'est pas une sécurité absolue — elle n'existe pas — mais une **réduction de
 surface honnête et vérifiable** : faire en sorte qu'une défaillance de l'agent, le maillon
 le moins prévisible, ne puisse pas se traduire en dommage irréversible.
+
+---
+
+## Le versant épistémique
+
+Ces patterns bornent ce qu'un agent compromis peut **faire**. Ils ne bornent pas ce qu'un
+agent peut **affirmer** — une erreur factuelle publiée n'engage aucune signature, ne
+franchit aucun plafond de dépense, et n'est arrêtée par aucun fail-fermé.
+
+[`AGENT-GOVERNANCE.md`](../AGENT-GOVERNANCE.md) (en anglais) traite ce second versant :
+les contraintes qui rendent une affirmation non vérifiée **visible** avant qu'elle
+n'atteigne une surface publique.
+
+Les deux documents partent de la même prémisse — **on ne suppose pas l'agent fiable** — et
+y répondent de la même façon : la contrainte vit **hors de l'agent**, là où il ne peut pas
+l'atteindre. La confirmation hors-bande et l'étiquetage `[MESURÉ]` / `[INFÉRÉ]` sont le
+même mécanisme, appliqué à deux natures de dommage : l'irréversible et le faux.

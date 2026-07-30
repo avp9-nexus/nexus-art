@@ -229,7 +229,13 @@ The demonstrations are public and verifiable: contract
 `0x471796C1644d87f30AD81D36f6d4A56f0e270c23` on Base Sepolia (testnet, no real value
 at stake). See [`README.md`](README.md) and [`poc-001/`](poc-001/).
 
-The reusable security patterns — separate from these epistemic rules — are documented
-in [`poc-001/PATTERNS-SECURITE-AGENTIQUE.md`](poc-001/PATTERNS-SECURITE-AGENTIQUE.md).
+These epistemic rules have a material counterpart.
+[`poc-001/PATTERNS-SECURITE-AGENTIQUE.md`](poc-001/PATTERNS-SECURITE-AGENTIQUE.md)
+(in French) documents the security patterns that bound what a compromised agent can
+*do*; this file documents what bounds what an agent can *claim*. Both rest on the same
+premise — the agent is not assumed reliable — and both answer it the same way: the
+constraint lives outside the agent, where the agent cannot reach it. Out-of-band
+confirmation and `[MEASURED]` labelling are one mechanism applied to two kinds of
+damage: the irreversible and the false.
 
 Handmade, solo. Prior art: INPI DSO2026016080 · DSO2026023753 · DSO2026025380.
