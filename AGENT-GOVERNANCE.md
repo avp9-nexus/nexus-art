@@ -21,7 +21,7 @@ conversation summary generated earlier in the session — a cache. The assistant
 it as knowledge rather than as retrieval, so no verification reflex fired.
 
 This is the failure mode this entire file is built around, and it happened *despite*
-the ten rules below being in force. That is the honest baseline: these constraints do
+the rules below being in force. That is the honest baseline: these constraints do
 not make an agent reliable. They make its errors **detectable by a human who does not
 have to trust it.**
 
@@ -85,7 +85,7 @@ drift in phrasing.
 
 ---
 
-## The ten rules
+## The eleven rules
 
 ### 1. Anchored facts
 Every number, date, and URL in a public deliverable maps to a line in a fact registry,
@@ -222,7 +222,7 @@ afterwards."
 ## What this does not solve
 
 It does not make an agent truthful. The failure at the top of this file happened with
-all ten rules active.
+every rule then in force active.
 
 It does not remove the need for a human. It concentrates that need at the points where
 a mistake is expensive and makes the rest inspectable.
