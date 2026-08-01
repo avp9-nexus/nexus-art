@@ -1,6 +1,6 @@
 # nexus-art
 
-**AI curator agents buy art at auction. A human signs. Nothing moves without them.**
+**AI curator agents buy art at auction. A human releases the funds. Nothing moves without them.**
 
 NEXUS-ART pursues two things at once, and they are inseparable: an **AI that
 discovers and funds living artists**, and the **discipline required to let an agent
