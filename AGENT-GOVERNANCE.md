@@ -205,6 +205,40 @@ hold.**
 
 ---
 
+## Asserted provenance is not produced provenance
+
+The rules above ask every assertion to carry its origin: measured, inferred, or
+stated by the human. Across seventeen classified entries in the register, the number
+of errors caught by that labelling — or by any rule asking the agent to check itself
+before asserting — is **zero**. Eleven were caught by an external artefact, three by
+the human reading, three could not be classified.
+
+The reason looks structural rather than tunable. A self-issued provenance label is
+a claim by the same process that makes the assertion, evaluated at the same moment,
+with the same failure rate. It behaves as a trigger: it makes the writer stop and
+go measure. It never settles anything.
+
+This is not an argument against provenance. It is an argument about who issues it.
+OWASP's Top 10 for Agentic Applications, entry ASI09, gets the shape right in its
+sixth mitigation: *"Attach verifiable metadata — source identifiers, timestamps, and
+integrity hashes — to all recommendations and external data."* None of those is
+issued by the agent. Each is checkable against something the agent does not control.
+
+So the distinction that survives the data is not provenance versus no provenance.
+It is **provenance the agent asserts** versus **provenance an artefact produces**.
+Only the second has ever caught anything here.
+
+The same entry marks where action-level gating stops. Its enforcement clause reads
+*"block actions lacking trusted provenance or exceeding the agent's declared
+scope."* Actions. The metadata reaches the statement; the enforcement never does.
+Publishing is an action and classifies cleanly, but no gate grades a publication by
+the truth of the sentence inside it — the class of "publish this document" is
+identical either way. Admission control bounds whether, never what.
+
+*Probe:* "who issued that provenance — the agent, or something it does not control?"
+
+---
+
 ## Delivery discipline
 
 **One block, one mission.** "Complete" describes whether a unit of work is executable,
@@ -228,6 +262,11 @@ It does not remove the need for a human. It concentrates that need at the points
 a mistake is expensive and makes the rest inspectable.
 
 It does not scale to unsupervised operation. Every probe assumes someone is reading.
+
+It does not close the gap it names. Provenance issued by an artefact requires an
+artefact for every class of claim, and this record does not have one for prose.
+The labels here remain self-issued; what the rules add is that a human can see
+which is which.
 
 What it does is narrower and, in practice, sufficient: it makes the difference between
 *measured* and *believed* visible on the page, so that a human who trusts nothing can
@@ -254,5 +293,14 @@ premise — the agent is not assumed reliable — and both answer it the same wa
 constraint lives outside the agent, where the agent cannot reach it. Out-of-band
 confirmation and `[MEASURED]` labelling are one mechanism applied to two kinds of
 damage: the irreversible and the false.
+
+The material counterpart maps onto two OWASP AISVS 1.0 requirements at Level 3:
+**C9.2.8** (approvals cryptographically bound to action parameters, requester
+identity, execution context, and a unique single-use nonce) and **C9.2.9** (key
+material used to issue approvals isolated from the agent runtime). C9.2.9 is
+satisfied — the signing key lives on a hardware device on a separate machine.
+C9.2.8 is claimed for two of its four elements only: action parameters and
+single-use nonce. Requester identity and execution context are not claimed, and
+neither term is defined anywhere in the eighteen files of AISVS 1.0/en.
 
 Handmade, solo. Prior art: INPI DSO2026016080 · DSO2026023753 · DSO2026025380.
