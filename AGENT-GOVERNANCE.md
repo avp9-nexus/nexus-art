@@ -1,4 +1,4 @@
-# Agent governance — eleven rules, and the mistakes that produced them
+# Agent governance — twelve rules, and the mistakes that produced them
 
 This is not a methodology. It is the set of constraints that accumulated over sixty
 working sessions of directing AI agents to build and operate a system that bids and
@@ -85,7 +85,7 @@ drift in phrasing.
 
 ---
 
-## The eleven rules
+## The twelve rules
 
 ### 1. Anchored facts
 Every number, date, and URL in a public deliverable maps to a line in a fact registry,
@@ -187,6 +187,18 @@ numbers, dates and URLs; they cover state; they cover third-party content. **Non
 covered a descriptive sentence** — which is most of what a public document is made of.
 This rule exists because publishing this file created the gap it closes.
 *Probe:* "which spec or which measurement establishes this sentence?"
+
+### 12. A correction is verified on the whole proposition
+
+When a sentence is reported as false, the correction is checked against the entire
+claim, not the term that was flagged. After the edit, grep for the **widest** form of
+the falsehood — the load-bearing verb, not the words that were changed.
+
+*Produced by:* a correction commit that replaced "every transfer of funds" with "every
+commitment of funds" and left "requires a human signature" untouched. The claim stayed
+false, now carrying the authority of a correction. It was read as a validated source
+for three days and copied onto four surfaces before a full grep found it.
+*Probe:* "which grep did you run after the fix, and on which word?"
 
 ---
 
