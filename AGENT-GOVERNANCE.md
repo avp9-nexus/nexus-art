@@ -278,8 +278,8 @@ still verify quickly.
 
 These rules were extracted from the operating record of **NEXUS-ART** — AI curator
 agents that evaluate artworks, bid against each other at auction, and settle on-chain,
-where every commitment of funds by an agent requires a human signature made outside
-the system.
+where every commitment of funds by an agent passes through a human confirmation
+issued outside the system.
 
 The demonstrations are public and verifiable: contract
 `0x471796C1644d87f30AD81D36f6d4A56f0e270c23` on Base Sepolia (testnet, no real value
