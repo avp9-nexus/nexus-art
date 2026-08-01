@@ -190,15 +190,19 @@ This rule exists because publishing this file created the gap it closes.
 
 ### 12. A correction is verified on the whole proposition
 
-When a sentence is reported as false, the correction is checked against the entire
-claim, not the term that was flagged. After the edit, grep for the **widest** form of
-the falsehood — the load-bearing verb, not the words that were changed.
+A correction is checked on the flagged term **and** on the entire claim: the meaning
+after the edit, not only the word that changed. A falsehood can survive in any
+constituent — the verb, a quantifier, a negation, a modality, a tense — and a partial
+correction hands it the authority of a fix. After the edit, identify what in the
+corrected sentence could still carry the falsehood, and grep for that form, not for
+the words that moved.
 
 *Produced by:* a correction commit that replaced "every transfer of funds" with "every
 commitment of funds" and left "requires a human signature" untouched. The claim stayed
 false, now carrying the authority of a correction. It was read as a validated source
 for three days and copied onto four surfaces before a full grep found it.
-*Probe:* "which grep did you run after the fix, and on which word?"
+*Probe:* "what in the corrected sentence could still be false — and which grep looked
+for it?"
 
 ---
 
