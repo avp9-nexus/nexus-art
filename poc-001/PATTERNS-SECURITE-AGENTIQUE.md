@@ -187,3 +187,102 @@ Les deux documents partent de la même prémisse — **on ne suppose pas l'agent
 y répondent de la même façon : la contrainte vit **hors de l'agent**, là où il ne peut pas
 l'atteindre. La confirmation hors-bande et l'étiquetage `[MESURÉ]` / `[INFÉRÉ]` sont le
 même mécanisme, appliqué à deux natures de dommage : l'irréversible et le faux.
+
+---
+
+## Ce qu'une attestation ne peut pas prouver
+
+Les patterns ci-dessus produisent des **traces** : un registre chaîné, des empreintes de
+fichiers, des journaux d'exécution. Une trace sert à établir qu'une chose a eu lieu. Reste
+à savoir ce qu'elle établit exactement — et la réponse est plus étroite qu'il n'y paraît.
+
+*Note de périmètre : les mécanismes discutés ci-dessous — registre chaîné, épinglage
+d'empreinte, vérificateur hors-ligne — sont **postérieurs à POC-001** et leur code ne se
+trouve pas dans ce dépôt, contrairement aux trois composants listés plus haut. Ce qui suit
+est donc une leçon de conception, pas une lecture de code publié.*
+
+> **Une attestation produite dans le périmètre qu'elle atteste ne contraint pas ce
+> périmètre.** Elle en établit la *cohérence interne*, et la cohérence interne est
+> précisément ce qu'un adversaire présent dans le périmètre sait produire.
+
+Nous avons rencontré cette forme sur trois objets sans rapport, et chaque fois par une
+source différente :
+
+| L'attestation | Ce qu'elle prouve | Ce qu'elle ne prouve pas |
+|---|---|---|
+| **Un registre chaîné** (chaque entrée porte l'empreinte de la précédente) | l'**intérieur** : aucune entrée située entre l'origine et la tête ne peut être modifiée, retirée ou réordonnée sans casser un lien | l'**exhaustivité**, et seulement dans un cas précis. Une **réécriture de la dernière entrée** n'est contrainte par aucun successeur : rien hors du fichier n'enregistre quelle devrait être la tête. En revanche, un fichier **effacé** est un rouge par défaut chez nous — c'est à l'appelant de déclarer qu'aucune évaluation n'a encore eu lieu, jamais au vérificateur de le deviner — et une **troncature** laisse derrière elle les pièces brutes de ses entrées disparues, que le vérificateur signale comme orphelines |
+| **Un binaire qui hache son propre fichier**, contre une valeur épinglée à l'extérieur | la **dérive** : le binaire exécuté n'est plus celui qui a été validé | la **falsification**, à condition d'y arriver. Le binaire calcule *et* compare : un binaire modifié peut écrire l'empreinte de l'original. Le même écart existe pour un artefact signé par l'infrastructure de publication de l'organisation elle-même — il passe les contrôles de provenance parce qu'il est authentiquement signé par qui devait le signer. ⚠️ Mais atteindre cette limite suppose d'avoir **déjà** obtenu l'écriture sur le binaire déployé : chez nous l'agent n'a aucun verbe pour y parvenir et le code est monté en lecture seule. C'est une limite du dernier pattern, pas une porte d'entrée |
+| **Un producteur qui atteste que son mandat court toujours** | rien | qu'il ait encore le droit de produire. Un agent dont la finalité a cessé continue d'émettre un historique cohérent, horodaté, mutuellement consistant — et creux — parce que rien dans son propre périmètre d'écriture ne sait que son autorité a expiré. ⚠️ Cette classe est ici **documentée et non implémentée, à dessein** : notre mandat *est* le geste humain qui lance l'exécution, il n'y a ni planificateur ni tâche périodique, donc un producteur orphelin ne peut pas dériver — il ne peut qu'être invoqué. À vingt agents et du renouvellement d'équipe, elle mord ; à cette échelle, un champ « mandat valide » serait vert sur chaque enregistrement et n'apprendrait rien |
+
+La première ligne, nous l'avons écrite contre nous-mêmes : la thèse fondatrice de notre
+registre — *un journal chaîné prouve qu'il n'en manque aucun* — était fausse, et c'est une
+revue adverse qui l'a établie. La deuxième nous a été confirmée par un document de
+référence sur la sécurité de la chaîne d'approvisionnement des modèles. La troisième nous
+a été apportée par un praticien de la gestion des identités, dans les termes de son
+métier : *une identité n'a pas le droit d'écrire son propre journal d'audit*.
+
+**Trois domaines, trois sources indépendantes, une seule forme.** C'est ce qui la fait
+passer du statut de thèse maison à celui de classe.
+
+Et le tableau ci-dessus n'est pas un constat d'impuissance : chaque ligne de la colonne de
+droite a été **rétrécie** par un correctif daté. La brèche d'origine — *effacer, tronquer,
+réécrire, les trois passent verts* — s'est réduite à un seul cas, la réécriture de la
+dernière entrée, parce que le vérificateur a cessé de rendre vert sur un fichier qu'il
+n'avait jamais ouvert et qu'il liste désormais les pièces brutes sans entrée. Ce qui reste
+n'est pas ce que nous n'avons pas cherché à fermer : c'est ce qu'un dispositif interne à
+son propre périmètre **ne peut pas** fermer, quel que soit le soin qu'on y met.
+
+Le nommer sert à deux choses. Il empêche de lire une trace pour plus qu'elle ne dit. Et il
+désigne précisément ce qu'un contrôle **extérieur** au périmètre apporterait, le jour où
+l'on en dispose — un horodatage tiers, un journal signé par l'infrastructure, un ancrage
+public. C'est la même logique que la confirmation hors-bande, appliquée à la preuve plutôt
+qu'à l'action : ce qui contraint utilement se trouve là où l'agent ne peut pas l'atteindre.
+
+### La conséquence pratique : nommer un champ d'après ce qu'il mesure
+
+Si une attestation ne peut établir que la cohérence interne, alors un champ ne doit jamais
+porter le nom de la propriété qu'on aimerait qu'il prouve.
+
+`empreinte_épinglée: vrai` est admissible : cela signifie « une valeur de référence existe
+hors de cet artefact, et l'empreinte calculée lui correspond ». `binaire_authentique: vrai`
+ne l'est pas : le contrôle ne l'établit pas, et le nom laisse croire que si.
+
+C'est une contrainte de vocabulaire, et elle coûte peu. Elle évite qu'un lecteur — humain
+ou machine — traite une déclaration bornée comme une preuve.
+
+Corollaire, dans l'autre sens : **un contrôle sans contre-preuve n'entre pas dans un
+schéma.** Un champ qui vaudrait « conforme » sur chaque enregistrement jusqu'à la fin des
+temps n'apprend rien, et personne ne saura jamais s'il fonctionne. Un champ qui ne sait
+pas rougir n'est pas un contrôle, c'est une déclaration.
+
+### Et cette section s'applique à elle-même
+
+Nous tenons un registre daté des préventions : les fautes qui allaient être commises et ce
+qui les a arrêtées. Neuf y sont recensées sur une fenêtre à trace complète. Nous les avons
+publiées comme preuve que la prévention arrive.
+
+Un lecteur extérieur nous a proposé le test qui manquait — celui que nous appliquions déjà
+à nos règles, sans l'appliquer à nos preuves : **quelle mesure cette prévention a-t-elle
+causée ?** Une prévention qui a produit un instrument est inspectable : l'instrument
+existe, il est daté, un tiers peut le lancer sur un cas qu'il choisit. Une prévention qui
+n'a produit qu'une phrase est exactement la revendication invérifiable que cette section
+décrit.
+
+Au test, **quatre sur neuf** seulement avaient laissé un instrument. Deux des gardes que
+nous croyions les plus solides étaient des phrases : ils vivaient dans un script recréé à
+chaque usage, donc nulle part où quiconque puisse les relancer. Ils sont devenus des
+instruments le jour où le test l'a montré — ce qui porte le compte à cinq, plus un partiel.
+
+Nous laissons le chiffre visible plutôt que le compte initial. Une section qui affirme
+qu'une attestation ne prouve que sa propre cohérence ne peut pas, dans le même document,
+présenter ses propres préventions comme des preuves sans dire lesquelles en sont.
+
+Ce que le test a produit, en revanche, mérite d'être dit aussi : un instrument. Le geste le
+plus fréquent de notre travail — la modification contrôlée d'un document de référence —
+avait ses garde-fous dans un script réécrit à chaque usage. Nous en avons fait un outil
+durable, avec son banc : douze cas, dont neuf où le garde doit **refuser**, et le banc
+vérifie que le message nomme la cause et que le fichier est resté intact. Il a servi dès la
+passe suivante, et il a refusé pour la bonne raison au premier essai.
+
+C'est la seule chose que nous savons dire d'une prévention : non pas qu'elle a eu lieu,
+mais ce qu'elle a laissé derrière elle que quelqu'un d'autre puisse lancer.
