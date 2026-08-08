@@ -1,0 +1,40 @@
+name: garde-commit
+
+# Contrôle EN AVAL des messages de commit poussés sur ce dépôt : aucun `Co-Authored-By`,
+# aucune signature d'agent, aucun robot. Règle de gouvernance du projet, violée une fois
+# le 06/08/2026 et affichée publiquement avant réparation.
+#
+# ⚠️ CE QU'IL NE FAIT PAS : il ne bloque pas le push. Le blocage serveur du message de commit
+# n'est pas disponible sur ce plan (restrictions de métadonnées = Enterprise · pre-receive
+# hooks = Enterprise Server · push rulesets = Team). La fenêtre d'exposition publique est
+# donc non nulle. Le gate réel est un hook `commit-msg` local, qui ne couvre que le poste
+# où il est posé — c'est précisément l'angle mort que ce workflow surveille.
+
+on:
+  push:
+    branches: ['**']
+
+permissions:
+  contents: read
+
+jobs:
+  garde:
+    runs-on: ubuntu-latest
+    steps:
+      # fetch-depth: 0 — sans l'historique complet, `git log avant..après` échoue en silence
+      # sur un push de plusieurs commits, et un contrôle qui ne lit rien rend un vert.
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: contrôle positif — le garde sait-il encore refuser ?
+        run: |
+          printf 'test: contrôle positif du garde\n\nCo-Authored-By: Agent <noreply@anthropic.com>\n' > /tmp/temoin.txt
+          if node .github/garde_commit_ci.mjs --message /tmp/temoin.txt; then
+            echo "::error::le garde a ACCEPTÉ un message qui porte un trailer — il est muet, son verdict ne vaut rien"
+            exit 1
+          fi
+          echo "✓ le garde refuse un cas fabriqué : ses verts sont interprétables"
+
+      - name: messages de ce push
+        run: node .github/garde_commit_ci.mjs --plage "${{ github.event.before }}" "${{ github.sha }}"
