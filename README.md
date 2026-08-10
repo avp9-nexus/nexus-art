@@ -10,7 +10,7 @@ commit money without ever giving it the last word**. Handmade, solo.
 
 ## What has been proven — and anyone can verify
 
-Three public demonstrations on **Base Sepolia** (testnet, no real value at stake).
+Four public demonstrations on **Base Sepolia** (testnet, no real value at stake).
 Contract `0x471796C1644d87f30AD81D36f6d4A56f0e270c23`, source verified.
 
 | | What was demonstrated |
@@ -18,10 +18,12 @@ Contract `0x471796C1644d87f30AD81D36f6d4A56f0e270c23`, source verified.
 | **POC-001** | A curator evaluates a work, bids, wins. Proceeds split exact to the wei. |
 | **POC-002** | Two curators with distinct tastes fight over the same work. Ten offers exchanged, **one** commitment of funds, **one** human gesture. |
 | **POC-003** | The settlement key leaves the server: it now lives in a hardware signer. The server proposes a transaction; it can no longer sign one. |
+| **POC-004** | The step that splits the proceeds was triggered by the agent, which does not own the contract. That step needs no special right: the owner cannot delay a payout, change its amount, or keep it. |
 
 Every cycle leaves a consultable on-chain trace. Details, transactions and the
 curation rubric: [`poc-001/`](poc-001/) ·
-[annotated demonstration](poc-001/DEMONSTRATION-POC-001.md) *(in French)*.
+[annotated demonstration](poc-001/DEMONSTRATION-POC-001.md) *(in French)* ·
+[`poc-004/`](poc-004/) *(in French)* — the cycle where the agent settled.
 
 ---
 
@@ -48,6 +50,11 @@ to negotiate as freely and as often as it likes. A separate vault, which signs e
 one thing: the step that actually moves the money — and only after a human gesture made
 outside the system. The agent chains ten decisions on its own; the eleventh, the one
 that costs, requires a hand.
+
+That hand covers one thing, and only one: **A human authorises the spend. Nobody
+authorises the payout.** Once the auction is won, the split is what the contract
+says it is, and the step that releases it needs no special right — in the last
+cycle the agent triggered it itself. See [`poc-004/`](poc-004/).
 
 The reusable patterns, independent of this project, are documented in
 [`poc-001/PATTERNS-SECURITE-AGENTIQUE.md`](poc-001/PATTERNS-SECURITE-AGENTIQUE.md)
