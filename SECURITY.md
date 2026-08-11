@@ -32,6 +32,24 @@ the Security tab. It opens a private channel visible only to the maintainer.
 
 Please do not open a public issue for a security finding.
 
+## Safe harbor
+
+If you research this repository in good faith and within the scope above, I will not
+pursue legal action against you, and I will not ask anyone to act against you on my
+behalf. What other people do on their own initiative is not mine to promise.
+
+Good faith means you stay on the test network, you do not access, alter or copy data that
+is not yours, you do not degrade the service for anyone else, and you tell me privately
+before you tell the public.
+
+If you cross the scope by accident, stop, and tell me, you are still covered. A researcher
+who has to choose between saying nothing and losing this protection will say nothing, and
+I would rather know.
+
+This covers what is mine to give: the contract on Base Sepolia and the documents in this
+repository. It does not extend to infrastructure other people operate, GitHub, Netlify and
+the public RPC endpoints included. Their terms are theirs, not mine to waive.
+
 ## Response
 
 This project is maintained by one person, alongside other work. Reports are read and
