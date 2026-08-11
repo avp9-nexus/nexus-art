@@ -14,6 +14,17 @@ the contract escrows only the highest bid between bid and settlement, and its ba
 zero outside an open auction. It refuses to deploy on any chain other than 84532
 (`EXPECTED_CHAIN_ID`, enforced in the constructor).
 
+## Corrections
+
+Claims published in this repository that turned out to be false are listed in
+[CORRECTIONS.md](CORRECTIONS.md), each with the commit that fixed it, so that the whole
+list can be checked with `git log`. What that register could **not** tell us, and why, is
+in [WHAT-CAUGHT-IT.md](WHAT-CAUGHT-IT.md).
+
+Factual errors in the published documents are in scope above. Open a public issue for
+those, since they are not security findings, and the correction will land in
+`CORRECTIONS.md` with its commit.
+
 ## Reporting a vulnerability
 
 Use **GitHub private vulnerability reporting** — the *Report a vulnerability* button under
@@ -23,8 +34,9 @@ Please do not open a public issue for a security finding.
 
 ## Response
 
-This project is maintained by one person. Expect an acknowledgement within **seven days**.
-There is no on-call rotation and no guaranteed remediation timeline.
+This project is maintained by one person, alongside other work. Reports are read and
+acknowledged as soon as they are seen. There is no on-call rotation, no service level and
+no guaranteed remediation timeline. A report that needs a fast answer should say so.
 
 ## Known limitations — please do not report these
 
@@ -47,6 +59,23 @@ paid audit:
 - **Blind signing is enabled on the hardware wallet** during operations. Mitigated by
   out-of-band confirmation and by decoding the transaction before signing, not by the
   device itself.
+
+## What was checked against the deployed contract, and what was not
+
+Dated snapshot, **11 August 2026**, read from two independent RPC endpoints that returned
+identical values: chain id `84532` and the contract answers there; contract balance `0`
+wei with no auction open; `auctions(27)` still reports `exists = true` alongside
+`settled = true`, which is the first limitation above observed rather than asserted; the
+selectors for `cancelAuction(uint256)` and `cancel(uint256)` are **absent** from the
+deployed bytecode, checked with three known-present selectors as a positive control.
+
+Four statements on this page are **not** verifiable from the chain and are not claimed to
+be. The `EXPECTED_CHAIN_ID` guard runs in the constructor and cannot be observed after
+deployment; it is read from the source, which Sourcify reports as an exact match to the
+deployed bytecode. The escrow behaviour between bid and settlement is behavioural, and a
+zero balance today is consistent with it rather than proof of it. `owner == seller` and
+the absence of anti-sniping are properties of the source. Blind signing is a state of a
+hardware device and is reported by its operator.
 
 ## No bug bounty
 
