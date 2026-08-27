@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a vulnerability (private)
+    url: https://github.com/avp9-nexus/nexus-art/security/advisories/new
+    about: Do not open a public issue for a security problem. This is the private channel described in SECURITY.md.
+  - name: Reuse or cite this work
+    url: https://github.com/avp9-nexus/nexus-art/blob/main/LICENSING.md
+    about: Which parts are CC BY 4.0, which are Apache-2.0, and which are reserved. CITATION.cff carries the DOI.
+  - name: The reusable conformance work lives upstream
+    url: https://github.com/GenAI-Security-Project/agent-control-standard
+    about: Negative conformance vectors and their runner were contributed to the OWASP GenAI Agent Control Standard, Apache-2.0. Issues on that material belong there.
