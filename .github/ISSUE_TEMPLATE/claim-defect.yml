@@ -1,0 +1,67 @@
+name: A published claim is wrong
+description: Report a factual claim, a described behaviour, or a reference in this repository that does not hold.
+title: "[claim] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the contribution this project wants most. Reports that turn out to be right go into
+        `CORRECTIONS.md` with the commit that fixed them, credited by name unless you ask otherwise.
+
+        ⛔ **Do not use this form for a vulnerability.** See `SECURITY.md` for the private channel.
+
+        ⚠️ This repository does not accept code pull requests — see `CONTRIBUTING.md`. You do not
+        need to propose a fix here; a precise report is more useful than a patch.
+
+  - type: textarea
+    id: claim
+    attributes:
+      label: The claim, quoted
+      description: Paste the exact sentence, number, or reference, and say where it lives (file and line, or URL).
+      placeholder: |
+        AGENT-GOVERNANCE.md, rule 7: "..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: measured
+    attributes:
+      label: What you measured, and how
+      description: >-
+        The command, the query, the transaction, the page — enough that someone else can repeat it
+        and get the same thing. A disagreement about a measurement is settled by the measurement.
+      placeholder: |
+        Ran: cast call 0x... "owner()"
+        Got: 0x...
+        The document says the caller is owner(); it is not.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What the claim would have to say to be true
+      description: Optional. If you can state the correct version, say it — but a report without one is still welcome.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of defect is this
+      options:
+        - A factual claim that does not hold (number, date, address, behaviour)
+        - A documented behaviour the code does not have
+        - A broken or misleading reference (link, transaction, citation)
+        - A gap in the licensing map (a file under no row of LICENSING.md)
+        - Something else
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: credit
+    attributes:
+      label: Credit
+      options:
+        - label: If this report is right, do not credit me by name in CORRECTIONS.md.
+          required: false
