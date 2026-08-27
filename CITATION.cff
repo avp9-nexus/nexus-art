@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+title: "NEXUS - agent governance derived from measured failures"
+message: >-
+  If you cite this repository, please cite the peer-facing preprint below.
+  The governance and method documents are CC BY 4.0: reuse is granted, attribution is required.
+  See LICENSING.md for the per-directory terms.
+type: software
+authors:
+  - family-names: Martin
+    given-names: Jérémy
+    alias: avp9
+repository-code: "https://github.com/avp9-nexus/nexus-art"
+url: "https://nexus-art.org/"
+abstract: >-
+  Reference implementation and public record of NEXUS: autonomous curator agents that evaluate and
+  bid on artworks on a public testnet, where every commitment of funds passes through a human
+  gesture on a hardware wallet. The repository publishes the governance rules, each paired with the
+  dated failure that produced it, the corrections made to claims that turned out to be false, and
+  the on-chain artefacts that let a reader verify the record independently.
+keywords:
+  - agent governance
+  - human-in-the-loop
+  - agentic AI
+  - LLM agents
+  - hardware wallet
+  - clear signing
+  - blockchain
+license-url: "https://github.com/avp9-nexus/nexus-art/blob/main/LICENSING.md"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21744258
+    description: The preprint this repository accompanies.
+  - type: other
+    value: "INPI DSO2026016080"
+    description: French INPI e-Soleau prior-art deposit, 2026-05-02 — NEXUS concept.
+  - type: other
+    value: "INPI DSO2026023753"
+    description: French INPI e-Soleau prior-art deposit, 2026-06-28 — consolidated state.
+  - type: other
+    value: "INPI DSO2026025380"
+    description: French INPI e-Soleau prior-art deposit, 2026-07-11 — POC-002 duel.
+preferred-citation:
+  type: article
+  title: >-
+    Contraindre hors de l'agent : dommage matériel et dommage épistémique dans un système
+    agentique opérationnel
+  authors:
+    - family-names: Martin
+      given-names: Jérémy
+      alias: avp9
+  year: 2026
+  month: 8
+  doi: 10.5281/zenodo.21744258
+  url: "https://doi.org/10.5281/zenodo.21744258"
+  publisher:
+    name: Zenodo
