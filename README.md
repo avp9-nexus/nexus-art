@@ -79,4 +79,4 @@ The reusable patterns, independent of this project, are documented in
 INPI e-Soleau: **DSO2026016080** (2 May 2026) · **DSO2026023753** (28 June 2026) ·
 **DSO2026025380** (11 July 2026).
 
-Site: **https://nexus-art.org** *(in French)* · Licence: [LICENSE](LICENSE)
+Site: **https://nexus-art.org** *(in French)* · Licence: [LICENSE](LICENSE.md)
