@@ -1,6 +1,56 @@
 SPDX-License-Identifier: LicenseRef-NEXUS-Reference-Only-1.0
 SPDX-FileCopyrightText: 2026 avp9 (M.J) — INPI DSO2026016080
 
+NEXUS — Licensing / Licence
+
+This repository holds three kinds of material under three different terms. The map below says
+which terms apply where; the default terms at the end of this file apply to anything not listed.
+Files under the two open licences carry an SPDX-License-Identifier line, so the terms are
+readable by tooling and not only by people.
+
+== The map ==
+
+Governance and method documents — CC BY 4.0
+  (full text: https://creativecommons.org/licenses/by/4.0/legalcode)
+  AGENT-GOVERNANCE.md, MANIFESTE.md, CORRECTIONS.md, WHAT-CAUGHT-IT.md,
+  poc-001/PATTERNS-SECURITE-AGENTIQUE.md, poc-001/DEMONSTRATION-POC-001.md,
+  poc-001/VALIDATION.md
+
+Tooling and reference code — Apache-2.0
+  (full text: https://www.apache.org/licenses/LICENSE-2.0)
+  .github/garde_commit_ci.mjs, .github/workflows/garde-commit.yml,
+  poc-001/mcp-servers/**, poc-001/*.SKILL.md, poc-001/weights.json
+
+Artworks, website, and the deployed contract — Reserved
+  (default terms below, LicenseRef-NEXUS-Reference-Only-1.0)
+  the .webp files, index.html, claim.html, favicons and site assets,
+  contracts/NexusPOC.sol
+
+== Why the split is shaped this way ==
+
+The governance documents are meant to circulate. They are cited in public standards work, and
+an all-rights-reserved notice made that citation legally awkward for the people most likely to
+do it. CC BY 4.0 removes the friction and makes attribution mandatory rather than optional,
+which is the outcome this project actually wants: the material is reusable, and every reuse
+carries the provenance.
+
+The code is small and was written to be lifted. Apache-2.0 is the license already used by the
+projects this work is contributed to, so a maintainer can take a file across without a licence
+review.
+
+The artworks and the deployed contract stay reserved, and that is deliberate. They carry the
+INPI prior-art deposits listed below. The contract is published so that anyone can verify the
+on-chain deployment byte for byte - verification does not require a right to redeploy, and
+granting one would change what the deposit protects. The artworks are the work itself.
+
+== Attribution ==
+
+For the CC BY 4.0 material, attribute as:
+  avp9 / NEXUS - INPI DSO2026016080 - https://github.com/avp9-nexus/nexus-art
+For academic or standards citation, see CITATION.cff, which carries the Zenodo DOI.
+
+== Default terms (everything not listed in the map above) ==
+
 NEXUS POC-001 — Licence / License
 Copyright (c) 2026 avp9 (M.J). Tous droits reserves / All rights reserved.
 INPI DSO2026016080.
@@ -23,3 +73,12 @@ You MAY: view this source code, and cite or reference it with attribution
 You MAY NOT, without the prior written permission of the rights holder: use,
 copy, reproduce, modify, distribute, or create derivative works from any part
 of this repository, for any purpose, including commercial use.
+
+== What this file does not change ==
+
+- GitHub will keep displaying "Other" as the repository licence: the majority of the repository
+  is reserved, and licensee classifies a repository by a single detected licence. That label is
+  accurate - this is a mixed-licence repository, and this file is the map.
+- Nothing here grants a patent licence, and no patent is claimed.
+- If a licence header contradicts this map, or a file appears in no row, that is a defect worth
+  reporting - open an issue. A licensing map that is wrong is worse than none.
