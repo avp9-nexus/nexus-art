@@ -1,7 +1,7 @@
 # Licensing
 
 This repository holds three kinds of material under three different terms. The root
-[`LICENSE`](LICENSE) is the default and applies to anything not listed below.
+[`LICENSE`](LICENSE.md) is the default and applies to anything not listed below.
 
 Files under the two open licences carry an `SPDX-License-Identifier` line, so the terms are
 readable by tooling and not only by people. The root `LICENSE` carries
@@ -13,7 +13,7 @@ readable by tooling and not only by people. The root `LICENSE` carries
 | --- | --- | --- |
 | **Governance and method documents** | `AGENT-GOVERNANCE.md`, `MANIFESTE.md`, `CORRECTIONS.md`, `WHAT-CAUGHT-IT.md`, `poc-001/PATTERNS-SECURITE-AGENTIQUE.md`, `poc-001/DEMONSTRATION-POC-001.md`, `poc-001/VALIDATION.md` | **CC BY 4.0** - [full text](https://creativecommons.org/licenses/by/4.0/legalcode) |
 | **Tooling and reference code** | `.github/garde_commit_ci.mjs`, `.github/workflows/garde-commit.yml`, `poc-001/mcp-servers/**`, `poc-001/*.SKILL.md`, `poc-001/weights.json` | **Apache-2.0** - [full text](https://www.apache.org/licenses/LICENSE-2.0) |
-| **Artworks, website, and the deployed contract** | the `.webp` files, `index.html`, `claim.html`, favicons and site assets, `contracts/NexusPOC.sol` | **Reserved** - [`LICENSE`](LICENSE), `LicenseRef-NEXUS-Reference-Only-1.0` |
+| **Artworks, website, and the deployed contract** | the `.webp` files, `index.html`, `claim.html`, favicons and site assets, `contracts/NexusPOC.sol` | **Reserved** - [`LICENSE`](LICENSE.md), `LicenseRef-NEXUS-Reference-Only-1.0` |
 
 ## Why the split is shaped this way
 
@@ -28,7 +28,7 @@ projects this work is contributed to, so a maintainer can take a file across wit
 review.
 
 **The artworks and the deployed contract stay reserved, and that is deliberate.** They carry the
-INPI prior-art deposits listed in [`LICENSE`](LICENSE). The contract is published so that anyone
+INPI prior-art deposits listed in [`LICENSE`](LICENSE.md). The contract is published so that anyone
 can verify the on-chain deployment byte for byte - verification does not require a right to
 redeploy, and granting one would change what the deposit protects. The artworks are the work
 itself.
