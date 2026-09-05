@@ -16,6 +16,8 @@
 //   Enterprise Server · push rulesets = Team). La fenêtre d'exposition publique est donc NON
 //   NULLE : quelques minutes entre le push et le rouge. Le gate réel vit dans un hook
 //   `commit-msg` local, qui ne couvre que le poste où il est posé.
+//   Sur un push FORCÉ, il juge ce que la branche porte de plus que `main` (ou la tête seule, en
+//   le disant) : les commits réécrits qui ne sont plus atteignables ne sont PAS rejugés.
 //
 // ⛔ PARITÉ : le bloc ci-dessous est byte-identique à celui de `outils\motifs_commit.mjs`,
 // hors de ce dépôt. La duplication est assumée parce qu'`outils\` n'est pas publié — et
@@ -81,7 +83,25 @@ if (process.argv.includes('--message')) {
   const i = process.argv.indexOf('--plage');
   const avant = process.argv[i + 1], apres = process.argv[i + 2];
   // Une création de branche donne `avant` = 40 zéros : il n'y a pas de plage, on juge la tête.
-  const spec = (!avant || ZERO.test(avant)) ? ['-1', apres] : [`${avant}..${apres}`];
+  // ⚠️ 05/09/2026 — un push FORCÉ (rebase de Dependabot, `--force-with-lease` de réparation) donne
+  // un `avant` qui n'est plus un ancêtre de `apres`, parfois plus un objet du tout : `git log
+  // avant..après` lève « Invalid revision range » et ce garde rougissait SANS AVOIR JUGÉ — un rouge
+  // pour une non-faute, mesuré sur nexus-art#1 (run 33985262839). On juge alors ce que la branche
+  // porte de plus que `main` ; si c'est vide (push forcé sur main même), la tête seule — et on le DIT,
+  // parce qu'un garde qui juge moins qu'il n'en a l'air est pire qu'un garde rouge.
+  const existe = ref => { try { git('cat-file', '-e', `${ref}^{commit}`); return true; } catch { return false; } };
+  const ancetre = (a, b) => { try { git('merge-base', '--is-ancestor', a, b); return true; } catch { return false; } };
+  let spec, note = '';
+  if (!avant || ZERO.test(avant)) spec = ['-1', apres];
+  else if (existe(avant) && ancetre(avant, apres)) spec = [`${avant}..${apres}`];
+  else if (existe('origin/main') && git('rev-list', `origin/main..${apres}`).trim()) {
+    spec = [`origin/main..${apres}`];
+    note = `push forcé : ${avant.slice(0, 7)} n'est plus un ancêtre de ${apres.slice(0, 7)} — jugé : ce que la branche porte de plus que main`;
+  } else {
+    spec = ['-1', apres];
+    note = `push forcé sans écart avec main : seule la TÊTE ${apres.slice(0, 7)} est jugée, pas les commits réécrits en dessous`;
+  }
+  if (note) console.log(`::warning title=garde_commit_ci — plage recalculée::${note}`);
   const brut = git('log', ...spec, '--format=%H' + US + '%an <%ae>' + US + '%B' + RS);
   aJuger = brut.split(RS).map(s => s.replace(/^\s+/, '')).filter(Boolean).map(bloc => {
     const [sha, auteur, msg] = bloc.split(US);
