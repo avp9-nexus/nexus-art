@@ -1407,7 +1407,10 @@ const WLT = {
 };
 WLT.init();
 
-// Turnstile — gate les 2 formulaires sur le token Cloudflare (validation serveur = Netlify Function)
+// Turnstile — gate CLIENT SEUL des 2 formulaires : refuse l'envoi tant que le widget n'a pas rendu de jeton.
+// ⚠️ Le jeton n'est vérifié par AUCUN serveur : ce dépôt ne contient pas de Netlify Function et /.netlify/functions/*
+//    répond 404 (mesuré le 05/09/2026). Ce gate décourage un robot naïf, il ne prouve rien : un POST direct le contourne.
+//    La protection réelle des formulaires = le honeypot `bot-field` + le filtre anti-spam de Netlify Forms.
 (function(){
   function guard(form){ if(!form) return;
     form.addEventListener('submit',function(e){
