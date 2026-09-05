@@ -10,8 +10,7 @@
   X-Frame-Options: DENY
   # Block MIME sniffing
   X-Content-Type-Options: nosniff
-  # XSS Protection (legacy browsers)
-  X-XSS-Protection: 1; mode=block
+  # (X-XSS-Protection retiré le 05/09/2026 : en-tête déprécié, le filtre qu'il pilotait n'existe plus ; la CSP fait ce travail)
   # Referrer Policy
   Referrer-Policy: strict-origin-when-cross-origin
   # Permissions Policy — minimal attack surface
@@ -19,8 +18,13 @@
   # Cross-Origin policies (COEP retiré pour compatibilité Web3 RPC)
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-site
-  # Content Security Policy — étendu pour Web3 + Netlify Forms
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.base.org wss://*.base.org https://*.basescan.org https://*.coinbase.com https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; frame-ancestors 'none'; form-action 'self' https://*.netlify.com https://*.netlify.app; base-uri 'self'; upgrade-insecure-requests; block-all-mixed-content;
+  # Content Security Policy, resserrée le 05/09/2026 sur ce que la page FAIT (mesuré) :
+  #   - la page n'émet AUCUN appel réseau (0 fetch/XHR/WebSocket) : le RPC wallet passe par l'extension, pas par la page
+  #     => connect-src ne porte que 'self' (+ l'hôte du widget Turnstile) ; les jokers *.base.org / *.basescan.org / *.coinbase.com étaient sans usage
+  #   - toutes les images, polices et feuilles sont locales ou Google Fonts => img-src sans `https:` ; gstatic ne sert que des polices (font-src), googleapis que du CSS (style-src)
+  #   - Turnstile exige script-src + frame-src https://challenges.cloudflare.com (doc Cloudflare)
+  #   - block-all-mixed-content retiré : déprécié, upgrade-insecure-requests suffit
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; frame-ancestors 'none'; form-action 'self' https://*.netlify.com https://*.netlify.app; base-uri 'self'; upgrade-insecure-requests;
   # Cache Control pour HTML
   Cache-Control: no-cache, no-store, must-revalidate
 
