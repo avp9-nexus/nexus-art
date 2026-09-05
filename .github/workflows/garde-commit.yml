@@ -25,7 +25,7 @@ jobs:
       # sur un push de plusieurs commits, et un contrôle qui ne lit rien rend un vert.
       # Épinglé par SHA (05/09/2026) : un tag `v4` est mobile, un SHA ne l'est pas. Dependabot
       # (.github/dependabot.yml, écosystème github-actions) propose les montées de version.
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
