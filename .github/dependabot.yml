@@ -1,0 +1,11 @@
+# Dependabot — ce dépôt n'a aucune dépendance de paquet (pas de package.json) :
+# le seul artefact tiers est l'action `actions/checkout`, épinglée par SHA dans
+# .github/workflows/garde-commit.yml. Dependabot met à jour le SHA et son commentaire de version.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "ci"
