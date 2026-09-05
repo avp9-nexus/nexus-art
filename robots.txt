@@ -9,10 +9,6 @@ User-agent: *
 Allow: /
 Allow: /assets/
 Allow: /en/
-Disallow: /admin/
-Disallow: /api/
-Disallow: /.env
-Disallow: /config/
 Disallow: *.json$
 Crawl-delay: 2
 
