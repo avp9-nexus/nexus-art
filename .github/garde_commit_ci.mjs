@@ -45,13 +45,20 @@ const INTERDITS = [
 ];
 const ADRESSE_AVP9 = /^[^<]*<avp9pro@gmail\.com>$/i;
 const NOM_AGENT = /\b(claude|gpt|copilot|codex|cursor|devin|bot|assistant)\b/i;
+// ⭐ 05/09/2026 — Dependabot (GitHub) signe SES commits à visage découvert, badge « Verified » : ce
+// n'est pas un agent qui co-signe les nôtres. Exemption sur l'identité EXACTE (nom ET adresse),
+// mesurée sur nexus-art#1 le jour où le garde a rougi dessus. Tout autre nom, toute autre adresse
+// reste refusé — et le MESSAGE reste jugé sur les sept motifs comme n'importe quel autre.
+const AUTEURS_EXEMPTES = [
+  /^dependabot\[bot\] <49699333\+dependabot\[bot\]@users\.noreply\.github\.com>$/,
+];
 function jugerMessage(message, auteur) {
   const fautes = [];
   for (const m of INTERDITS) {
     const t = message.match(m.re);
     if (t) fautes.push(`${m.nom} — « ${t[0].trim().slice(0, 60)} » : ${m.dit}`);
   }
-  if (auteur != null) {
+  if (auteur != null && !AUTEURS_EXEMPTES.some(re => re.test(auteur))) {
     if (!ADRESSE_AVP9.test(auteur)) fautes.push(`adresse d'auteur non conforme — « ${auteur} », attendu <avp9pro@gmail.com>`);
     else if (NOM_AGENT.test(auteur)) fautes.push(`nom d'auteur d'agent — « ${auteur} » : l'adresse est bonne, le nom signe un agent`);
   }
