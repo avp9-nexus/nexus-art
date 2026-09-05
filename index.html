@@ -1319,7 +1319,10 @@ function libBindControls(){
 }
 
 rTicker();rGal();rBids();rFeed();rAgs();rLib();libBindControls();
-document.querySelectorAll('.eml').forEach(function(a){var e=(a.getAttribute('data-e')||'').split('').reverse().join('');if(!e)return;a.textContent=e;if(a.tagName==='A')a.setAttribute('href','mailto:'+e);});
+// L'adresse est écrite à l'envers dans `data-e` (anti-moissonneur). La valeur décodée doit RESSEMBLER à
+// une adresse avant d'atteindre `href` : un `javascript:` n'y passe pas, même si ce HTML changeait un jour
+// (CodeQL js/xss-through-dom #1, 05/09/2026 — `data-e` est statique, la garde ferme le chemin quand même).
+document.querySelectorAll('.eml').forEach(function(a){var e=(a.getAttribute('data-e')||'').split('').reverse().join('');if(!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(e))return;a.textContent=e;if(a.tagName==='A')a.setAttribute('href','mailto:'+e);});
 setInterval(updTimer,1000);
 setInterval(newBid,16000+Math.random()*10000);
 setInterval(mktEvt,12000+Math.random()*8000);
