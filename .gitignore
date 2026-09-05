@@ -12,6 +12,8 @@ id_rsa*
 
 # Sessions / artefacts runtime agents
 .nexus_*
+# Journaux des serveurs MCP (poc-001/mcp-servers/*), écrits dans leur propre dossier par défaut
+*.log
 
 # Sauvegardes et temporaires
 *.bak
