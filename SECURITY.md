@@ -77,6 +77,15 @@ paid audit:
 - **Blind signing is enabled on the hardware wallet** during operations. Mitigated by
   out-of-band confirmation and by decoding the transaction before signing, not by the
   device itself.
+- **Refunds and payouts are pushed, and a failed push reverts.** `placeBid` refunds the
+  previous highest bidder inline (`previousBidder.call{value: previousBid}`, revert on
+  failure) and `settleAuction` pays the royalty, curator and platform recipients the same
+  way (`_safeSendEth`). A whitelisted bidder that is a contract rejecting ETH therefore
+  freezes the auction at its own bid — nobody can outbid it; settlement still works and
+  delivers the token to it — and a payout recipient that rejects ETH blocks settlement.
+  Bounded by the bidder whitelist and by owner-set recipients. Found by our own scan on
+  5 September 2026, not by a report; the successor contract will use pull payments
+  (`pendingRefunds` + `withdraw()`).
 
 ## What was checked against the deployed contract, and what was not
 
@@ -87,13 +96,13 @@ wei with no auction open; `auctions(27)` still reports `exists = true` alongside
 selectors for `cancelAuction(uint256)` and `cancel(uint256)` are **absent** from the
 deployed bytecode, checked with three known-present selectors as a positive control.
 
-Four statements on this page are **not** verifiable from the chain and are not claimed to
+Five statements on this page are **not** verifiable from the chain and are not claimed to
 be. The `EXPECTED_CHAIN_ID` guard runs in the constructor and cannot be observed after
 deployment; it is read from the source, which Sourcify reports as an exact match to the
 deployed bytecode. The escrow behaviour between bid and settlement is behavioural, and a
-zero balance today is consistent with it rather than proof of it. `owner == seller` and
-the absence of anti-sniping are properties of the source. Blind signing is a state of a
-hardware device and is reported by its operator.
+zero balance today is consistent with it rather than proof of it. `owner == seller`, the
+absence of anti-sniping and the push-then-revert refund are properties of the source.
+Blind signing is a state of a hardware device and is reported by its operator.
 
 ## No bug bounty
 
