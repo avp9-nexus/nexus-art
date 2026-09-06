@@ -30,6 +30,9 @@ those, since they are not security findings, and the correction will land in
 Use **GitHub private vulnerability reporting** — the *Report a vulnerability* button under
 the Security tab. It opens a private channel visible only to the maintainer.
 
+If that button is not available to you, email **avp9pro@gmail.com** with the same content
+instead. Either route reaches the maintainer privately.
+
 Please do not open a public issue for a security finding.
 
 ## Safe harbor
