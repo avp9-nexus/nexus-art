@@ -3,7 +3,7 @@ SPDX-License-Identifier: LicenseRef-NEXUS-Reference-Only-1.0
 SPDX-FileCopyrightText: 2026 avp9 (M.J) — INPI DSO2026016080
 -->
 
-# NEXUS — Licensing / Licence
+# NEXUS - Licensing / Licence
 
 This repository holds three kinds of material under three different terms. The map below says
 which terms apply where; the [default terms](#default-terms-everything-not-listed-in-the-map-above)
@@ -48,7 +48,7 @@ DOI.
 
 ## Default terms (everything not listed in the map above)
 
-**NEXUS POC-001 — Licence / License**
+**NEXUS POC-001 - Licence / License**
 Copyright (c) 2026 avp9 (M.J). Tous droits reserves / All rights reserved.
 INPI DSO2026016080.
 
