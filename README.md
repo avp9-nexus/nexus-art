@@ -8,7 +8,7 @@ commit money without ever giving it the last word**. Handmade, solo.
 
 ---
 
-## What has been proven — and anyone can verify
+## What has been proven - and anyone can verify
 
 Four public demonstrations on **Base Sepolia** (testnet, no real value at stake).
 Contract `0x471796C1644d87f30AD81D36f6d4A56f0e270c23`, source verified.
@@ -33,8 +33,8 @@ curation rubric: [`poc-001/`](poc-001/) ·
 claim, and why the human gesture is the medium: [`MANIFESTE.md`](MANIFESTE.md)
 *(in French)*.
 
-**→ You came for the agents.** The rules that stop an agent — and the human
-directing it — from asserting what neither has verified, each one paired with the
+**→ You came for the agents.** The rules that stop an agent - and the human
+directing it - from asserting what neither has verified, each one paired with the
 real mistake that produced it: [`AGENT-GOVERNANCE.md`](AGENT-GOVERNANCE.md).
 
 ---
@@ -47,13 +47,13 @@ harm alone.**
 
 The answer here is two keys. A weak key, with no spending power, which the agent uses
 to negotiate as freely and as often as it likes. A separate vault, which signs exactly
-one thing: the step that actually moves the money — and only after a human gesture made
+one thing : the step that actually moves the money - and only after a human gesture made
 outside the system. The agent chains ten decisions on its own; the eleventh, the one
 that costs, requires a hand.
 
 That hand covers one thing, and only one: **A human authorises the spend. Nobody
 authorises the payout.** Once the auction is won, the split is what the contract
-says it is, and the step that releases it needs no special right — in the last
+says it is, and the step that releases it needs no special right - in the last
 cycle the agent triggered it itself. See [`poc-004/`](poc-004/).
 
 The reusable patterns, independent of this project, are documented in
