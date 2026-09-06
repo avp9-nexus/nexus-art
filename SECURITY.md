@@ -6,8 +6,8 @@ This repository contains a **proof-of-concept** deployed on a public **test netw
 
 | In scope | Out of scope |
 |---|---|
-| `contracts/NexusPOC.sol` — deployed at `0x471796C1644d87f30AD81D36f6d4A56f0e270c23` on Base Sepolia (chainId 84532) | Any mainnet deployment — there is none |
-| The two governance documents, for factual errors | The website, the agents' runtime, the VPS infrastructure — not published here |
+| `contracts/NexusPOC.sol` - deployed at `0x471796C1644d87f30AD81D36f6d4A56f0e270c23` on Base Sepolia (chainId 84532) | Any mainnet deployment - there is none |
+| The two governance documents, for factual errors | The website, the agents' runtime, the VPS infrastructure - not published here |
 
 **No real value is at stake.** All funds involved are testnet ETH obtained from faucets;
 the contract escrows only the highest bid between bid and settlement, and its balance is
@@ -27,7 +27,7 @@ those, since they are not security findings, and the correction will land in
 
 ## Reporting a vulnerability
 
-Use **GitHub private vulnerability reporting** — the *Report a vulnerability* button under
+Use **GitHub private vulnerability reporting** - the *Report a vulnerability* button under
 the Security tab. It opens a private channel visible only to the maintainer.
 
 If that button is not available to you, email **avp9pro@gmail.com** with the same content
@@ -59,7 +59,7 @@ This project is maintained by one person, alongside other work. Reports are read
 acknowledged as soon as they are seen. There is no on-call rotation, no service level and
 no guaranteed remediation timeline. A report that needs a fast answer should say so.
 
-## Known limitations — please do not report these
+## Known limitations, please do not report these
 
 The contract is a proof of concept with documented design limits. These are **assumed
 trade-offs, not defects**, and a new contract (`NexusV1`) is planned after an external
@@ -72,10 +72,10 @@ paid audit:
   therefore pay a party that did not win.
 - **The split assumes `owner == seller`.** In the POC the deployer is also the creator of
   the works. A distinct `sellerRecipient` is required before third-party artists deposit
-  work — a rewrite, not a patch. This is stated in the contract header.
+  work, a rewrite, not a patch. This is stated in the contract header.
 - **No anti-sniping.** A bid in the final seconds does not extend the auction. Deliberate:
   per the project's locked specification, anti-sniping is the responsibility of the
-  **off-chain auction platform**, which implements it — not of the contract, and the
+  **off-chain auction platform**, which implements it - not of the contract, and the
   successor contract deliberately keeps no time-extension logic either.
 - **Blind signing is enabled on the hardware wallet** during operations. Mitigated by
   out-of-band confirmation and by decoding the transaction before signing, not by the
@@ -84,8 +84,8 @@ paid audit:
   previous highest bidder inline (`previousBidder.call{value: previousBid}`, revert on
   failure) and `settleAuction` pays the royalty, curator and platform recipients the same
   way (`_safeSendEth`). A whitelisted bidder that is a contract rejecting ETH therefore
-  freezes the auction at its own bid — nobody can outbid it; settlement still works and
-  delivers the token to it — and a payout recipient that rejects ETH blocks settlement.
+  freezes the auction at its own bid - nobody can outbid it; settlement still works and
+  delivers the token to it, and a payout recipient that rejects ETH blocks settlement.
   Bounded by the bidder whitelist and by owner-set recipients. Found by our own scan on
   5 September 2026, not by a report; the successor contract will use pull payments
   (`pendingRefunds` + `withdraw()`).
