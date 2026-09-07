@@ -8,6 +8,8 @@ Claims published in this repository that were false, and the commit that fixed e
 
 Why we keep this at all, and what it could not tell us, is in [WHAT-CAUGHT-IT.md](WHAT-CAUGHT-IT.md).
 
+**The complete register is elsewhere.** Since 7 September 2026, every erratum of the internal journal, not only the ones about this repository, is rendered in English with what caught it in [ERRATA.md](ERRATA.md). That file is generated from the journal at each engraving and pinned to its source by SHA-256; this one stays a hand-written, dated selection of what was published here and the commits that fixed it.
+
 **On the `[CORRECTED]` marker.** Every false claim quoted below sits on its own line behind that marker. It is not decoration. A corrections file necessarily re-publishes the wrong sentences it corrects, so the automated judge that scans our public surfaces for banned formulations flags this file by construction, and it was right to. The marker is what tells it the string is a citation rather than a live claim, on that line and nowhere else. Any of these sentences written here as normal prose would still be reported.
 
 ---

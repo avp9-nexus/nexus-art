@@ -25,6 +25,10 @@ curation rubric: [`poc-001/`](poc-001/) ·
 [annotated demonstration](poc-001/DEMONSTRATION-POC-001.md) *(in French)* ·
 [`poc-004/`](poc-004/) *(in French)* — the cycle where the agent settled.
 
+What this project got wrong, and what caught it, is public too: [ERRATA.md](ERRATA.md)
+is generated from the internal register at each engraving and pinned to it by SHA-256;
+[CORRECTIONS.md](CORRECTIONS.md) lists the false sentences that were published here and the commits that fixed them.
+
 ---
 
 ## Two ways in
