@@ -1,0 +1,595 @@
+{
+  "generated_at": "2026-09-07 15:31Z",
+  "source": {
+    "file": "Gouvernance/doctrine_active/JOURNAL_PHASE2.md",
+    "block": "## ⚠️ ERRATA",
+    "block_sha256": "875107d6a2531a994e156d11949faace5103615f4f11bb19056a66761ff927a2",
+    "rows": 48
+  },
+  "counts": {
+    "rendered": 43,
+    "withheld": 5,
+    "by_caught_by": {
+      "instrument": 30,
+      "human": 10,
+      "third-party": 3,
+      "undetermined": 4,
+      "rule-superseded": 1
+    }
+  },
+  "entries": [
+    {
+      "id": "E47",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J106",
+        "date": "2026-09-04"
+      },
+      "title": "A property declared in a tool's notice that its code did not have",
+      "row_sha256": "78a017578090afe5e9671f9866082b12eda5910d5914e3c8a9715036f2760c1f",
+      "published": "The door probe's notice said it measured two channels separately, pull requests and issues, and reported both.",
+      "truth": "The code only read pull requests; the \"issue\" comments it counted were PR comments, and the JSON output had no issue field. A published 9/9 issue score had been counted by hand. Fixed the same evening: a pure issue classifier with four states never merged into the PR score, bench 33 to 48 cases."
+    },
+    {
+      "id": "E48",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J106",
+        "date": "2026-09-04"
+      },
+      "title": "Repository \"door\" verdicts rendered on truncated lists",
+      "row_sha256": "05e30297af79c39fb27f5bd8a6026347f466345717e29855c8910a7b757c3649",
+      "published": "Several external repositories were rated GREEN / RED / MUTE by the door probe, run without an API token.",
+      "truth": "Unauthenticated, the API truncates pull-request lists: on one repository the authenticated probe read 13 PRs where the anonymous one read 3. The numbers were right, the denominator was not. The probe now refuses to conclude without a token, and every cited door was re-measured with one."
+    },
+    {
+      "id": "E46",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J106",
+        "date": "2026-09-04"
+      },
+      "title": "The house counted among the visitors",
+      "row_sha256": "d830e9e0e4c84d7aa0a9f36039e432291c5089a29f46a53007baaeec40e91d27",
+      "published": "A repository was given as a dead door because one of its pull requests had been open for 451 days.",
+      "truth": "Its three open PRs were from two collaborators and a bot: no outside contributor was waiting. The manual count mixed maintainers with visitors; the instrument partitions on who merged and rates the door ORANGE, which is not \"closed to outsiders\". The world had not moved, our measurement was wrong."
+    },
+    {
+      "id": "E44",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J103",
+        "date": "2026-08-31"
+      },
+      "title": "An inference published in the present tense of an observation",
+      "row_sha256": "4f342bca8861729c0031634db52aa94026a73e6dc243726916f89de3b053643c",
+      "published": "A public issue comment stated, in the present tense of an observation, that in a real browser the Cloudflare interstitial renders and then the site does, so the site is up.",
+      "truth": "We never saw the site. The browser rendered the interstitial and nothing else: zero later requests, zero real-content markers. Found by four refuters run against our own sentences, then corrected by editing the same comment 45 minutes later with a note saying what changed. The recommendation survived: treat a challenge header as inconclusive precisely because we do not know."
+    },
+    {
+      "id": "E43",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J101",
+        "date": "2026-08-28"
+      },
+      "title": "A correct mechanism used as a wrong argument, in public",
+      "row_sha256": "b49a95a78c65466b03552e0a97e29e60cd8b4539bd4362dbc370cc271e50ebb3",
+      "published": "A PR comment presented a configuration-time case as \"the same shape\" as the defect the PR fixed.",
+      "truth": "The cited state is set at execution time, not declared in policy, so no load-time check can reason about it; the parallel did not hold. Found two greps after posting by searching for what would break our own sentence, never by a run. Corrected by editing the same comment 25 minutes later, with a note."
+    },
+    {
+      "id": "E42",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J99",
+        "date": "2026-08-27"
+      },
+      "title": "A graved \"not posted yet\" that had been posted for four days",
+      "row_sha256": "77177d8088e4951cab1c5c5c156807aa072046c15041f9b1421497ab2a34170b",
+      "published": "The journal said a reply on an OWASP thread was ready and not posted, and two later entries repeated it.",
+      "truth": "It had been posted four days earlier and was the last message of the thread, measurable by one API call. A graved line is true at its date and becomes a cache of unknown freshness the moment the world moves. A leftover that names a public surface is re-measured before being carried forward, never copied."
+    },
+    {
+      "id": "E41",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J94",
+        "date": "2026-08-21"
+      },
+      "title": "A correct figure with its meaning inverted",
+      "row_sha256": "b3c2a343ab51b25493298f735383f08891e4e262c3f9d710e446ba0c266da59e",
+      "published": "A paper's \"-8.6 points\" was read as the utility cost of adding a human approval gate.",
+      "truth": "In the paper, the interactive condition is the one WITH human approval, and -8.6 is better than the strict condition's -13.9: the gate gains 5.3 points, it does not cost 8.6. Caught by fetching the paper body before citing it; no public text ever carried the wrong reading."
+    },
+    {
+      "id": "E40",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J93",
+        "date": "2026-08-20"
+      },
+      "title": "What an anonymous fetch can do is not what an account can do",
+      "row_sha256": "f4d9368bab9c3420e3c6ce76e3accf2a2be2192655b14d19089063f009fdfc12",
+      "published": "A draft said issue creation was restricted on a repository, on the strength of an unauthenticated fetch.",
+      "truth": "The form was open, and our issue #1 was created there the same evening. An anonymous fetch measures what an anonymous visitor can do, never what the account can do; the positive control was missing. Caught by the maintainer with a screenshot before the draft left."
+    },
+    {
+      "id": "E39",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J92",
+        "date": "2026-08-18"
+      },
+      "title": "A remedy that existed and protected nothing",
+      "row_sha256": "b510f8c142df1ac795cada3694661745e3b7b6e3e83f933d69a01b3429bdd236",
+      "published": "The journal said a monitoring report no longer printed amounts it could not qualify, and that the fix was live in production.",
+      "truth": "The rendered object reduced the on-chain verdict to a boolean, so the \"measurable\" flag was always true and the report would have printed amounts even on a mute scan. The bench checked that the right strings existed in the source, not the flow of the value. Caught because the maintainer demanded a manual run instead of waiting for the cron; fixed and deployed the same day, with a flow check in the bench."
+    },
+    {
+      "id": "E37",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J89",
+        "date": "2026-08-18"
+      },
+      "title": "A function selector written by hand in the sentence that forbade it",
+      "row_sha256": "670e2b59ebd2672df0f4fe3841be457fd3ee6ba6a0df16633dbd67e3d1116bee",
+      "published": "A contract selector was quoted as one 4-byte value in prose, documentation and a bench.",
+      "truth": "Measured on three disjoint channels, the selector is a different value; the code always computed it at run time, so no behaviour was ever wrong, only prose. The bench could not catch it: it fabricated bytecode containing its own constant and then found it there. Structural remedy: the selector is computed in the bench, and a parity test refuses any 4-byte literal in the shared block."
+    },
+    {
+      "id": "E31",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J78",
+        "date": "2026-08-10"
+      },
+      "title": "An off-by-one in a procedure, followed to the letter, targets an existing token",
+      "row_sha256": "dbaa687acf22086d5e0fe35e787d096e6cba6dd820ea5aad914101ae49ae0723",
+      "published": "A pre-flight step said the next token id equals the current total supply.",
+      "truth": "The contract increments first, so the next id is total supply plus one; measured on a live cycle (26 before mint, token 27 minted). Closed by an instrument that computes the id from the contract; the dated document keeps its wrong line and carries an erratum pointer instead of being rewritten."
+    },
+    {
+      "id": "E32",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J78",
+        "date": "2026-08-10"
+      },
+      "title": "A tool alias assumed universal was directory-scoped",
+      "row_sha256": "7d513d2c86acb5bd9a03d48c4a92355a1abd9e2bd3edd1fcda48dcb40bba831a",
+      "published": "Procedures used a named RPC alias everywhere.",
+      "truth": "The alias only exists inside one project directory; elsewhere the tool reads it as a file path and fails. Cost one failed mint attempt. The pre-flight instrument now emits the literal URL."
+    },
+    {
+      "id": "E1",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J42",
+        "date": null
+      },
+      "title": "A \"sourced\" 60 s ceiling pointing at a line that said nothing of the kind",
+      "row_sha256": "6680a8026615f2a417cc61fbb869a78e96f29e3c97b2579a63a172f51e6b6482",
+      "published": "A tool-call ceiling was attributed to a specific source line, under a \"sourced reason\" label.",
+      "truth": "That line is an unrelated configuration guard. The ceiling was unsourced until it was measured: 60,000 ms to the millisecond. The architectural conclusion survived on its other, correctly sourced leg."
+    },
+    {
+      "id": "E2",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J42",
+        "date": null
+      },
+      "title": "A \"fixed at construction\" address that the owner could redirect",
+      "row_sha256": "c9aa35dc292279f7d8622cf8a4442956aa8bcdaca2d1178e86c3049a4a5bce12",
+      "published": "The journal and the public site said the curator address was fixed in the constructor.",
+      "truth": "The deployed bytecode carries an owner-only setter for it. The address is initialised at construction and redirectable by the owner; the real debt is \"not dynamic per auction\". The false claim had crossed the journal and the public site before being caught by reading the bytecode."
+    },
+    {
+      "id": "E3",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J42",
+        "date": null
+      },
+      "title": "A self-audit that refuted a real 45-second window by looking at the wrong clock",
+      "row_sha256": "375975840494bdc95cef728588934bcdef9411b13964323a6470c22f01183205",
+      "published": "An earlier claim that the maintainer had only 45 seconds to confirm was declared false because the client had no timeout.",
+      "truth": "The server side had a 45,000 ms timeout and abandoned the pending action regardless of the client. The refutation aimed at the wrong clock; the self-audit that denounced \"invented obstacles\" was wrong on one of its two examples."
+    },
+    {
+      "id": "E4",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J42",
+        "date": null
+      },
+      "title": "True of the contract, false of the key ring",
+      "row_sha256": "ede3d35ec869d418202363934343389a8012080808da80961b19403b90aafaab",
+      "published": "Settlement was described as callable by any funded wallet, with no hardware device and no secret needed.",
+      "truth": "True of the contract; false in practice, because every funded wallet sat behind a hardware signer or a paper password and the free keys held zero ETH by design. No \"free\" path existed. Same family as E7: right property, wrong sentence."
+    },
+    {
+      "id": "E5",
+      "caught_by": "rule-superseded",
+      "discovered": {
+        "entry": "J42",
+        "date": null
+      },
+      "title": "Not a false claim: a rule that was reversed",
+      "row_sha256": "669ebc2cf1230347dd2a12bebad29a15295c158c051081b96fcdc1ec52c38cc5",
+      "published": "A rule said canonical backups were purged after upload.",
+      "truth": "Reversed: the rule destroyed the version history of the document that carries the project's priority evidence, leaving the journal with weaker traceability than the code. Backups are now moved to a history folder and never purged."
+    },
+    {
+      "id": "E8",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J46",
+        "date": null
+      },
+      "title": "A capability the device has, and refuses to use for us",
+      "row_sha256": "2449536e6b294c31bd8e728f1dd593236e95d0fed109df7cbf427a14ba4249ce",
+      "published": "The state of the art said the hardware device already knows how to sign a delegation.",
+      "truth": "On silicon, the device parses the delegation and refuses any target outside its allow-list: \"Back to safety\". True as a capability, false in practice for a bespoke contract; a whole path closed by a two-minute test on the device."
+    },
+    {
+      "id": "E9",
+      "caught_by": "undetermined",
+      "discovered": {
+        "entry": "J47",
+        "date": null
+      },
+      "title": "A submission recorded as \"frozen\" that had been sent",
+      "row_sha256": "c0f18c5fd3129ed7399e0093d9e2bb20753327d78b0f0595d89ecc0fa6c281c2",
+      "published": "A status block listed a partner-program submission as unchanged and frozen.",
+      "truth": "It had been unfrozen and submitted two entries earlier, confirmed on screen by the maintainer. The error was introduced while assembling the status block, not while measuring."
+    },
+    {
+      "id": "E10",
+      "caught_by": "undetermined",
+      "discovered": {
+        "entry": "J47",
+        "date": null
+      },
+      "title": "Eight months of solo work that were four",
+      "row_sha256": "b0cf9c60518951e5f568d9880565439c918945358bde6c718cd0b146d1ce4902",
+      "published": "Public texts spoke of eight months of continuous solo work.",
+      "truth": "The project started on 1 April 2026: about four months at the time. Corrected on the public project page; two locked applications still carry the error and cannot be edited."
+    },
+    {
+      "id": "E11",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J53",
+        "date": null
+      },
+      "title": "A green invariant suite covering an almost empty state",
+      "row_sha256": "1dea7a690d58dc2434c1cd44a1cfc7079dbcd8063486c6e7d30baf457f6bb65a",
+      "published": "A 54/54 invariant suite was presented as real coverage, tested under random sequences.",
+      "truth": "The campaigns produced one to three accepted bids, zero winning settlements and zero claims per run: six stateful invariants were green on a near-empty state, and the one that graved a regulatory decision had an empty loop body. Found by a sensitivity probe added the same day; the green was real, the coverage was not."
+    },
+    {
+      "id": "E12",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J55",
+        "date": null
+      },
+      "title": "A ceremony said to be wasted after the human confirm, that failed before it",
+      "row_sha256": "c1fc6051f5af0ce7a38ed2ee74ca60fa55cfd200cc35b4731b96edefcf9399b1",
+      "published": "A handover said a stale-selector transaction would revert only after the human confirmation and password.",
+      "truth": "Gas estimation runs before the transaction is frozen and before any human is asked, so the failure surfaces first. But the guarantee is an ordering accident, not a guard: freezing gas or skipping estimation would move the failure back behind the confirm. The real vector for a burned ceremony is time, not the stale ABI."
+    },
+    {
+      "id": "E13",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J55",
+        "date": null
+      },
+      "title": "An \"exhaustive\" list of four components that were eight",
+      "row_sha256": "71f64650f2e9fe6d0a131bfc90da6f6b995ea34e7e50073a06f9a2853108a7b2",
+      "published": "A handover listed the four remaining off-chain components as exhaustive.",
+      "truth": "Measured: seven code files and one document, including a validation bench that encoded the old interface, a verbatim copy of a scanner carrying the same defect twice, and three event decoders that appeared in no catalogue."
+    },
+    {
+      "id": "E14",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J55",
+        "date": null
+      },
+      "title": "A specification document three items out of date, left intact with a pointer",
+      "row_sha256": "8bd7fca596cfa15399e1833bc8888d950362fe743fff8628e1770b58da05267f",
+      "published": "A specification described an anti-sniping buffer, a sketched bid signature and a settlement name, and declared itself to be graved before the contract was written.",
+      "truth": "The buffer had been removed, the real signature and selectors differ, and the contract was already written. The document body is left byte for byte; an erratum sits at its head. A dated document receives a pointer, it is not rewritten."
+    },
+    {
+      "id": "E15",
+      "caught_by": "undetermined",
+      "discovered": {
+        "entry": "J56",
+        "date": null
+      },
+      "title": "A contradiction and an arbitration that did not exist",
+      "row_sha256": "2a8f99005360db743c52554459655b8e0192bfc40668ca78ad15fa3bb2d31abd",
+      "published": "Two documents were said to contradict each other on cycle duration (\"1 h vs at least 3 h\"), presented as the only measured vector for a burned ceremony and as a decision for the maintainer.",
+      "truth": "One states a floor, the other satisfies it. The margin was also over-escalated: the worst anti-snipe case was presented as the common case. A prudence pointer, not a conflict erratum."
+    },
+    {
+      "id": "E16",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J62",
+        "date": null
+      },
+      "title": "A royalty figure wrong by one thousandth, and the cited source was what falsified it",
+      "row_sha256": "282679afc4a2832fafeb6683366e9b9b24d7aa0e904ff6718916e4a4dbf0f5cd",
+      "published": "The facts register said 8.333 % creator royalty, under a source line claiming splits verified to the wei.",
+      "truth": "The on-chain value is 833 basis points, i.e. 8.33 %; the addition decides (8.33 + 45.835 + 45.835 = 100.000, where 8.333 gives 100.003). Found by reading a public note that faithfully copied the register: the copy was not at fault, the source was. Corrected at the source and publicly in the same pass."
+    },
+    {
+      "id": "E16b",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J62",
+        "date": null
+      },
+      "title": "E16, one link further: the root is a frozen comment in the verified contract",
+      "row_sha256": "699c04c94ec055525369d6c61ce18a9422ee4810f769c1f80122dbf1143e4d86",
+      "published": "The E16 line stopped at the register and blamed it.",
+      "truth": "The root is the contract's own source comment (\"833 for 8.333%\"), which the register cited. The file is byte-identical to the source verified on chain, and a single whitespace change would break that verification. E16 is documented, not repaired: editing the comment would make the repository copy non-reproducible against the chain."
+    },
+    {
+      "id": "E17",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J63",
+        "date": null
+      },
+      "title": "Two successive causal explanations for a fault whose cause is unknown",
+      "row_sha256": "22e2c2559e79c84540c66fcb4f0af6ba25750e2a8e282bf1249f15bb26e7dc6b",
+      "published": "The journal explained a wrong rule first by a translation from a field still carrying an old hardening, then by a field that was never updated.",
+      "truth": "Both were false: the field carried the corrected version, measured before any rewrite. The cause of the original fault remains unknown; what got explained were the explanations. A causal explanation produced without measurement is a state assertion."
+    },
+    {
+      "id": "E18",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J65",
+        "date": null
+      },
+      "title": "\"Ten months apart\" was 39 days",
+      "row_sha256": "e3b8f900f19e507248e2b0d138446b7ddfc748e74ca344ec5d281364527b4ec8",
+      "published": "An article draft said two rule sets were elaborated ten months apart, and the journal graved it.",
+      "truth": "First commits: 20 June and 29 July 2026, 39 days. The whole project was four months old. Caught the same evening by the git audit of that very article; the article was corrected, the journal body stays intact and this line arbitrates."
+    },
+    {
+      "id": "E19",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J66",
+        "date": "2026-08-01"
+      },
+      "title": "Three occurrences declared wrong, one of which was a target, and the real error was a sentence",
+      "row_sha256": "cdf8fc2a42423fd95ea75fb5cd03421a77d7b6190d13ba8d4dd82e52eb0d2f9e",
+      "published": "Three occurrences of a royalty figure on the public site were listed as wrong.",
+      "truth": "Two described the deployed contract and were wrong; the third described a future phase and was right, correcting it would have created a new falsehood. The uncounted error was a sentence that attributed the right number to the live contract. A count classifies numbers; a public surface is judged on its sentences."
+    },
+    {
+      "id": "E20",
+      "caught_by": "undetermined",
+      "discovered": {
+        "entry": "J66",
+        "date": "2026-08-01"
+      },
+      "title": "A suite said not to cover a requirement, after reading three files out of six",
+      "row_sha256": "9c8342c471b250224cf68479789e8c872016d45ccd48e2773935fdb603000e40",
+      "published": "A draft reply said a third party's conformance suite did not cover a requirement.",
+      "truth": "The suite's scenario file covers it. Absence declared outside the measured perimeter. Caught before sending; graved because a draft read as a source contaminates what follows."
+    },
+    {
+      "id": "E21",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J66",
+        "date": "2026-08-01"
+      },
+      "title": "A paper version paired with the wrong date",
+      "row_sha256": "fa802058e9f8723de0c9fc8869d4c60969fdd615ed9dff10b336d13b433a64f6",
+      "published": "A reference cited version 2 of a preprint with the date of version 1.",
+      "truth": "Version 2 is dated two months later. Corrected before the archive deposit."
+    },
+    {
+      "id": "E23",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J68",
+        "date": "2026-08-03"
+      },
+      "title": "A claim declared dead on all surfaces that lived on four more",
+      "row_sha256": "9de996ae914c1fb09a8b2d7f1e543d2cde61ec3195d325b9b80b508f82720bb3",
+      "published": "The journal declared a false public claim extinct on every surface after a grep and three article fetches.",
+      "truth": "It survived on the profile bio, the repository description, the profile README and the repository README, in other words than the grep looked for. Root cause: bio, description and profile repository were in no inventory at all. Produced the 23-surface inventory and its judge."
+    },
+    {
+      "id": "E24",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J68",
+        "date": "2026-08-03"
+      },
+      "title": "A third extinction declared and refuted, this time by the surfaces judge on its first run",
+      "row_sha256": "f3c6b45231fb1fba7591f382ac9f94946ed6b00bcd673d35427fafa08845e4f0",
+      "published": "The state block said the E16 figure was closed on all surfaces except its frozen root.",
+      "truth": "A public article still carried the wrong figure, 18 days later, two lines after describing the real settlement. Found by the surfaces judge on its very first pass, not by a reader. Corrected by the maintainer, adding the source the wrong version lacked."
+    },
+    {
+      "id": "E25",
+      "caught_by": "third-party",
+      "discovered": {
+        "entry": "J71",
+        "date": "2026-08-04"
+      },
+      "title": "A hash-chained log does not prove that nothing is missing",
+      "row_sha256": "37173d08ae5b0e1af124e3f980f19f5a69be94222c7dfc123cbc110236d8f0f1",
+      "published": "The registry specification said a chained log proves that no entry is missing, and the whole design rested on it.",
+      "truth": "Chaining proves the interior, not exhaustiveness: with nothing outside the file recording the expected head or count, full erasure, tail truncation and last-entry rewrite all re-verify green. Falsified by an adversarial review (confirmed 3/3) and corrected at the source before any public text carried it. What would close it is a witness the writer cannot rewrite."
+    },
+    {
+      "id": "E22",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J66",
+        "date": "2026-08-01"
+      },
+      "title": "A human signature required, when the human gesture was an out-of-band confirmation",
+      "row_sha256": "e3420b83c78cb90b2f16128382a5c9fc84dde95e4087a3ebc2ba0fb3a12c1362",
+      "published": "The governance document, a public article and a paper draft said every commitment of funds requires a human signature made outside the system.",
+      "truth": "For the first two cycles the signature came from a keystore inside the server; the human gesture was a confirmation on a separate channel. An earlier fix had changed one noun and left the verb intact for three days on four surfaces. This is the origin of rule 12: a claim is checked in the code path, not in the wording."
+    },
+    {
+      "id": "E27",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J74",
+        "date": "2026-08-06"
+      },
+      "title": "Nine prevented faults presented as proof, four of which had left an instrument",
+      "row_sha256": "249a1c97a8102e8a38f283f75345639e9649fa21b0c99f9e1abfb7b3831dddc7",
+      "published": "A public article presented nine near-faults as evidence that prevention works, each with what stopped it.",
+      "truth": "Nothing false, and nothing verifiable: by the criterion of what measurement the prevention had caused, only four of nine had left an instrument a third party could re-run; two of the guards believed strongest lived in a scratch script rewritten every pass. The criterion came from an outside reader. The article stays; this line arbitrates any reuse of the nine."
+    },
+    {
+      "id": "E28",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J76",
+        "date": "2026-08-08"
+      },
+      "title": "\"Authentication required\" given as the reason a surface could not be monitored",
+      "row_sha256": "8faa5c7e0b996f9f0b143f7a542935018951af40227a51185a802bb72f6de7bf",
+      "published": "The surfaces inventory said an article platform required authentication and had no public API.",
+      "truth": "A plain unauthenticated GET returns the full article body. The real cause was simpler: the public URL had never been captured. Nuance measured the same pass: readable is not monitorable, two identical requests return two different fingerprints."
+    },
+    {
+      "id": "E30",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J76",
+        "date": "2026-08-08"
+      },
+      "title": "A contradiction built from a source that could not answer the question",
+      "row_sha256": "d3c4235167da208064aa02ceab6bdf76afb5d2e39da15a46d8528e0aba4b212d",
+      "published": "A few hours of prose said the vendor documentation contradicted a measurement about a model parameter.",
+      "truth": "The general API page does not list per-model restrictions; absence of mention was taken for absence of restriction. Measured the same evening from two hosts with a positive control: the parameter is refused for that model, the original measurement holds. The probe that decides is the one you must obtain, not the one you can write alone."
+    },
+    {
+      "id": "E34",
+      "caught_by": "third-party",
+      "discovered": {
+        "entry": "J78",
+        "date": "2026-08-10"
+      },
+      "title": "A count obtained by subtraction instead of counting",
+      "row_sha256": "2c47e5c8f95c69a1636566c2249c68bc18f6538e9f66c75c4a8612dde44d1271",
+      "published": "A draft said the discovery column was off by one entry on 18 of 25 errata.",
+      "truth": "The subtraction counted four undetermined lines as shifted; counted line by line the figure is 14 of 21. Caught by a second reader before publication, in the very pass that graved that attribution is not deduced."
+    },
+    {
+      "id": "E33",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J78",
+        "date": "2026-08-10"
+      },
+      "title": "A bid attributed to a software keystore that was signed on the hardware signer",
+      "row_sha256": "6aec9cdaa6a1b45212440f2133e3a532427c70daa69671351cd0ac8c76b8762a",
+      "published": "A cycle table said the bid came from the server keystore.",
+      "truth": "The keystore bid key has nonce 0 and balance 0: it never issued a transaction. The bid came from the hardware-backed address. The wording was inherited from an earlier architecture and survived the change unread."
+    },
+    {
+      "id": "E29",
+      "caught_by": "third-party",
+      "discovered": {
+        "entry": "J76",
+        "date": "2026-08-08"
+      },
+      "title": "No probe exists, because a reasoning has no version string",
+      "row_sha256": "d5f72bee3cbac379c75d73dcf7a449bcc737973ef0306ec7a22da2c1898c488b",
+      "published": "A published methodological reserve said judge independence could not be measured, only declared.",
+      "truth": "The judgement has no version, the evidence it is drawn from does: record the observation instead of the conclusion and independence becomes computable at the point of use. Falsified by an outside reader replying to the reserve we had published; reading what others answer to our surfaces is the cheapest audit of our own gaps."
+    },
+    {
+      "id": "E35",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J82",
+        "date": "2026-08-15"
+      },
+      "title": "A gesture graved before it was done",
+      "row_sha256": "1cba13339beb8fe985a59abe570bc8a2b34da0729caf6f4744f0ef55881bb454",
+      "published": "The journal said a new judge had entered the instrument register and the dashboard.",
+      "truth": "Sealing the witness does not regenerate the register, and the dashboard entry had never been written: zero occurrences. A gesture graved in the future perfect while writing the fragment; no judge confronts a journal sentence with the state of the code it describes. Repaired before this line was written."
+    }
+  ],
+  "withheld": [
+    {
+      "id": "E38",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J91",
+        "date": "2026-08-18"
+      },
+      "title": "Two hosts said to diverge with only one declared",
+      "row_sha256": "e6a64f8d6a7e7dccbe6900576340a6fba6faf021f977549cbe57e6e571fa4774",
+      "reason": "internal"
+    },
+    {
+      "id": "E6",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J45",
+        "date": null
+      },
+      "title": "A service reported stopped that was running",
+      "row_sha256": "f72d376cddaedd5cbd28afa44c1dc1b9790bfd0e1356f9ad090a4c542db0a727",
+      "reason": "internal"
+    },
+    {
+      "id": "E7",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J45",
+        "date": null
+      },
+      "title": "A configuration key reported absent that lived in a second block",
+      "row_sha256": "ff5a2efb569bc09ca83b32e93629194cb67ec7e7235606fc59a47716e4fdfb00",
+      "reason": "internal"
+    },
+    {
+      "id": "E26",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J72",
+        "date": "2026-08-04"
+      },
+      "title": "A \"0 hit\" that was 1, in a permissions file that is not a configuration",
+      "row_sha256": "768314127a7b6767720d94225956ef1793c149899076c4c0a50c2694524611d2",
+      "reason": "internal"
+    },
+    {
+      "id": "E36",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J83",
+        "date": "2026-08-16"
+      },
+      "title": "Two canonical documents contradicting each other on who runs the deployment",
+      "row_sha256": "a876310b209ea6859e08e723d168f373ae5f985be4fcdde04b3aeb9e02412015",
+      "reason": "internal"
+    }
+  ]
+}
