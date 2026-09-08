@@ -11,7 +11,7 @@ readable by tooling and not only by people. The root `LICENSE` carries
 
 | What | Where | Terms |
 | --- | --- | --- |
-| **Governance and method documents** | `AGENT-GOVERNANCE.md`, `MANIFESTE.md`, `CORRECTIONS.md`, `WHAT-CAUGHT-IT.md`, `poc-001/PATTERNS-SECURITE-AGENTIQUE.md`, `poc-001/DEMONSTRATION-POC-001.md`, `poc-001/VALIDATION.md` | **CC BY 4.0** - [full text](https://creativecommons.org/licenses/by/4.0/legalcode) |
+| **Governance and method documents** | `AGENT-GOVERNANCE.md`, `MANIFESTE.md`, `CORRECTIONS.md`, `WHAT-CAUGHT-IT.md`, `poc-001/PATTERNS-AGENTIC-SECURITY.md`, `poc-001/DEMONSTRATION-POC-001.md`, `poc-001/VALIDATION.md` | **CC BY 4.0** - [full text](https://creativecommons.org/licenses/by/4.0/legalcode) |
 | **Tooling and reference code** | `.github/garde_commit_ci.mjs`, `.github/workflows/garde-commit.yml`, `poc-001/mcp-servers/**`, `poc-001/*.SKILL.md`, `poc-001/weights.json` | **Apache-2.0** - [full text](https://www.apache.org/licenses/LICENSE-2.0) |
 | **Artworks, website, and the deployed contract** | the `.webp` files, `index.html`, `claim.html`, favicons and site assets, `contracts/NexusPOC.sol` | **Reserved** - [`LICENSE`](LICENSE.md), `LicenseRef-NEXUS-Reference-Only-1.0` |
 

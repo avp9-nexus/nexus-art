@@ -61,8 +61,7 @@ says it is, and the step that releases it needs no special right - in the last
 cycle the agent triggered it itself. See [`poc-004/`](poc-004/).
 
 The reusable patterns, independent of this project, are documented in
-[`poc-001/PATTERNS-SECURITE-AGENTIQUE.md`](poc-001/PATTERNS-SECURITE-AGENTIQUE.md)
-*(in French)*.
+[`poc-001/PATTERNS-AGENTIC-SECURITY.md`](poc-001/PATTERNS-AGENTIC-SECURITY.md).
 
 ---
 

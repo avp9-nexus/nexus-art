@@ -73,7 +73,7 @@ Conformément au principe de **Kerckhoffs**, les *principes* de sécurité sont 
 - **Isolation de la clé** — la clé de signature n'est déchiffrée qu'**après** la confirmation humaine, n'est **jamais** exposée à l'agent et n'apparaît dans aucun journal.
 - **Garde anti-SSRF** — les contenus d'œuvres ne sont récupérés que depuis une **source épinglée**.
 
-Le détail réutilisable de ces patrons figure dans [`PATTERNS-SECURITE-AGENTIQUE.md`](PATTERNS-SECURITE-AGENTIQUE.md) (neutre, sans secret).
+Le détail réutilisable de ces patrons figure dans [`PATTERNS-AGENTIC-SECURITY.md`](PATTERNS-AGENTIC-SECURITY.md) (en anglais, neutre, sans secret).
 
 ---
 
@@ -89,7 +89,7 @@ Le détail réutilisable de ces patrons figure dans [`PATTERNS-SECURITE-AGENTIQU
 
 - Source du contrat : [`../contracts/NexusPOC.sol`](../contracts/NexusPOC.sol) (identique à la source vérifiée sur Basescan).
 - Grilles curatoriales de l'agent : les fichiers `*.SKILL.md` et `weights.json` de ce dossier.
-- Patrons de sécurité agentique : [`PATTERNS-SECURITE-AGENTIQUE.md`](PATTERNS-SECURITE-AGENTIQUE.md).
+- Patrons de sécurité agentique : [`PATTERNS-AGENTIC-SECURITY.md`](PATTERNS-AGENTIC-SECURITY.md) (en anglais).
 - Grille de validation (33 critères) : [`VALIDATION.md`](VALIDATION.md).
 - Site : https://nexus-art.org
 - Antériorité : **INPI DSO2026016080**.

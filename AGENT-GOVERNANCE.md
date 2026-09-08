@@ -353,8 +353,8 @@ The demonstrations are public and verifiable: contract
 at stake). See [`README.md`](README.md) and [`poc-001/`](poc-001/).
 
 These epistemic rules have a material counterpart.
-[`poc-001/PATTERNS-SECURITE-AGENTIQUE.md`](poc-001/PATTERNS-SECURITE-AGENTIQUE.md)
-(in French) documents the security patterns that bound what a compromised agent can
+[`poc-001/PATTERNS-AGENTIC-SECURITY.md`](poc-001/PATTERNS-AGENTIC-SECURITY.md)
+documents the security patterns that bound what a compromised agent can
 *do*; this file documents what bounds what an agent can *claim*. Both rest on the same
 premise - the agent is not assumed reliable - and both answer it the same way: the
 constraint lives outside the agent, where the agent cannot reach it. Out-of-band
