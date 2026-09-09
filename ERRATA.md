@@ -1,11 +1,11 @@
 # Errata
 
-![errata](https://img.shields.io/badge/errata-48-111) ![caught by an instrument](https://img.shields.io/badge/caught%20by%20an%20instrument-63%25-2f7d32) ![withheld](https://img.shields.io/badge/withheld-5-777) ![source sha256](https://img.shields.io/badge/source%20sha256-875107d6a2531a99-555)
+![errata](https://img.shields.io/badge/errata-49-111) ![caught by an instrument](https://img.shields.io/badge/caught%20by%20an%20instrument-63%25-2f7d32) ![withheld](https://img.shields.io/badge/withheld-6-777) ![source sha256](https://img.shields.io/badge/source%20sha256-bd3b3d66830ca92a-555)
 
 > [!NOTE]
 > Every claim this project graved in its journal or published on a public surface that later proved **false**, with **what caught it** and **what is true**. The internal register is append-only: a wrong sentence is never rewritten, it receives a line here. This file is **generated** from that register by `outils/sync_errata.mjs` at every engraving and is never edited by hand; the table it renders is pinned by its SHA-256 below, so a reader can check that the rendering matches the source.
 
-Generated 2026-09-07 15:31Z from the ERRATA block of the internal journal, 48 rows, source block sha256 `875107d6a2531a994e156d11949faace5103615f4f11bb19056a66761ff927a2`. Machine-readable copy: [`errata.json`](errata.json). Claims published in *this* repository and the commits that fixed them are listed separately in [CORRECTIONS.md](CORRECTIONS.md); why the register exists, and what it could not tell us, is in [WHAT-CAUGHT-IT.md](WHAT-CAUGHT-IT.md).
+Generated 2026-09-09 12:22Z from the ERRATA block of the internal journal, 49 rows, source block sha256 `bd3b3d66830ca92ab75078858741df4967ddef730631d369a655b04de6c4e541`. Machine-readable copy: [`errata.json`](errata.json). Claims published in *this* repository and the commits that fixed them are listed separately in [CORRECTIONS.md](CORRECTIONS.md); why the register exists, and what it could not tell us, is in [WHAT-CAUGHT-IT.md](WHAT-CAUGHT-IT.md).
 
 ## What caught it
 
@@ -13,8 +13,8 @@ The column that matters. A falsehood caught by an instrument was caught by somet
 
 ```mermaid
 pie showData
-    title Errata by what caught them (48)
-    "instrument" : 30
+    title Errata by what caught them (49)
+    "instrument" : 31
     "human" : 10
     "third-party" : 3
     "undetermined" : 4
@@ -23,7 +23,7 @@ pie showData
 
 | class | meaning | count |
 |---|---|---:|
-| `instrument` | an instrument or a measurement, not a reader | 30 |
+| `instrument` | an instrument or a measurement, not a reader | 31 |
 | `human` | a human (the maintainer, or a fresh instance reading with no context) | 10 |
 | `third-party` | someone outside the project | 3 |
 | `undetermined` | not attributable to a detector | 4 |
@@ -77,12 +77,13 @@ pie showData
 | **E29** | `third-party` | J76 (2026-08-08) | **No probe exists, because a reasoning has no version string** A published methodological reserve said judge independence could not be measured, only declared. | The judgement has no version, the evidence it is drawn from does: record the observation instead of the conclusion and independence becomes computable at the point of use. Falsified by an outside reader replying to the reserve we had published; reading what others answer to our surfaces is the cheapest audit of our own gaps. |
 | **E35** | `instrument` | J82 (2026-08-15) | **A gesture graved before it was done** The journal said a new judge had entered the instrument register and the dashboard. | Sealing the witness does not regenerate the register, and the dashboard entry had never been written: zero occurrences. A gesture graved in the future perfect while writing the fragment; no judge confronts a journal sentence with the state of the code it describes. Repaired before this line was written. |
 
-## Withheld rows (5)
+## Withheld rows (6)
 
 Counted, not hidden. Each of these lines exists in the internal register with its full correction; only the rendering is withheld here, for the reason given.
 
 | # | caught by | found in | title | reason |
 |---|---|---|---|---|
+| **E49** | `instrument` | J109 (2026-09-07) | A section-reference token in the journal pointing at the wrong journal | describes internal infrastructure or configuration; the correction is in the internal register |
 | **E38** | `human` | J91 (2026-08-18) | Two hosts said to diverge with only one declared | describes internal infrastructure or configuration; the correction is in the internal register |
 | **E6** | `instrument` | J45 | A service reported stopped that was running | describes internal infrastructure or configuration; the correction is in the internal register |
 | **E7** | `instrument` | J45 | A configuration key reported absent that lived in a second block | describes internal infrastructure or configuration; the correction is in the internal register |

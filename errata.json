@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-09-07 15:31Z",
+  "generated_at": "2026-09-09 12:22Z",
   "source": {
     "file": "Gouvernance/doctrine_active/JOURNAL_PHASE2.md",
     "block": "## ⚠️ ERRATA",
-    "block_sha256": "875107d6a2531a994e156d11949faace5103615f4f11bb19056a66761ff927a2",
-    "rows": 48
+    "block_sha256": "bd3b3d66830ca92ab75078858741df4967ddef730631d369a655b04de6c4e541",
+    "rows": 49
   },
   "counts": {
     "rendered": 43,
-    "withheld": 5,
+    "withheld": 6,
     "by_caught_by": {
-      "instrument": 30,
+      "instrument": 31,
       "human": 10,
       "third-party": 3,
       "undetermined": 4,
@@ -536,6 +536,17 @@
     }
   ],
   "withheld": [
+    {
+      "id": "E49",
+      "caught_by": "instrument",
+      "discovered": {
+        "entry": "J109",
+        "date": "2026-09-07"
+      },
+      "title": "A section-reference token in the journal pointing at the wrong journal",
+      "row_sha256": "ba6a703aa8ed1c3733107c8880ca8c2536443b3455f2115089242fda0431911e",
+      "reason": "internal"
+    },
     {
       "id": "E38",
       "caught_by": "human",
