@@ -1,11 +1,11 @@
 # Errata
 
-![errata](https://img.shields.io/badge/errata-50-111) ![caught by an instrument](https://img.shields.io/badge/caught%20by%20an%20instrument-64%25-2f7d32) ![withheld](https://img.shields.io/badge/withheld-6-777) ![source sha256](https://img.shields.io/badge/source%20sha256-66adabd097f9cc97-555)
+![errata](https://img.shields.io/badge/errata-51-111) ![caught by an instrument](https://img.shields.io/badge/caught%20by%20an%20instrument-63%25-2f7d32) ![withheld](https://img.shields.io/badge/withheld-6-777) ![source sha256](https://img.shields.io/badge/source%20sha256-2881e1df4a08aa8d-555)
 
 > [!NOTE]
 > Every claim this project graved in its journal or published on a public surface that later proved **false**, with **what caught it** and **what is true**. The internal register is append-only: a wrong sentence is never rewritten, it receives a line here. This file is **generated** from that register by `outils/sync_errata.mjs` at every engraving and is never edited by hand; the table it renders is pinned by its SHA-256 below, so a reader can check that the rendering matches the source.
 
-Generated 2026-09-11 15:20Z from the ERRATA block of the internal journal, 50 rows, source block sha256 `66adabd097f9cc973631546a53c6c5fc4cfe3d449130fff1bc6735902dccf67d`. Machine-readable copy: [`errata.json`](errata.json). Claims published in *this* repository and the commits that fixed them are listed separately in [CORRECTIONS.md](CORRECTIONS.md); why the register exists, and what it could not tell us, is in [WHAT-CAUGHT-IT.md](WHAT-CAUGHT-IT.md).
+Generated 2026-09-12 13:25Z from the ERRATA block of the internal journal, 51 rows, source block sha256 `2881e1df4a08aa8dde7327021792bf00f02dae5401b009283a778e1573b81607`. Machine-readable copy: [`errata.json`](errata.json). Claims published in *this* repository and the commits that fixed them are listed separately in [CORRECTIONS.md](CORRECTIONS.md); why the register exists, and what it could not tell us, is in [WHAT-CAUGHT-IT.md](WHAT-CAUGHT-IT.md).
 
 ## What caught it
 
@@ -13,9 +13,9 @@ The column that matters. A falsehood caught by an instrument was caught by somet
 
 ```mermaid
 pie showData
-    title Errata by what caught them (50)
+    title Errata by what caught them (51)
     "instrument" : 32
-    "human" : 10
+    "human" : 11
     "third-party" : 3
     "undetermined" : 4
     "rule-superseded" : 1
@@ -24,7 +24,7 @@ pie showData
 | class | meaning | count |
 |---|---|---:|
 | `instrument` | an instrument or a measurement, not a reader | 32 |
-| `human` | a human (the maintainer, or a fresh instance reading with no context) | 10 |
+| `human` | a human (the maintainer, or a fresh instance reading with no context) | 11 |
 | `third-party` | someone outside the project | 3 |
 | `undetermined` | not attributable to a detector | 4 |
 | `rule-superseded` | not a false claim: a rule that was reversed | 1 |
@@ -33,6 +33,7 @@ pie showData
 
 | # | caught by | found in | what was published or graved | what is true, and how we know |
 |---|---|---|---|---|
+| **E51** | `human` | J113 (2026-09-11) | **Guards that stood in front of every repository except the one they lived in** Our record described third-party code as running only inside a sandbox, and our commit and push guards as standing in front of the repositories we work in. | On 11 September a directory change failed inside a bench script, and the commands after it ran where the shell happened to be: the root of the corpus itself. `git init` and `git remote add` executed there, and the root stayed a git repository pointing at an unrelated third-party remote, with no guard of ours, no token, and an editor offering to open a pull request from it. Nothing was pushed and nothing was lost, measured at the reflog, and the operator saw the offer before anything was clicked. The sandbox never gave way: it was not in play. The gap was the transport that starts it, which inherited the corpus directory while the sandbox itself cannot reach it. Four remedies are in place since 12 September: the transport is anchored outside the corpus, the session banner reddens when the root is a git repository and names its remote, a ratchet refuses `git init` and `git remote add` in any command that does not name a sandbox, and a fourth refuses the directory change itself unless the command is a return to the root. The lesson is not that a guard failed. It is that every guard we had was aimed at a repository we had decided to protect, and none of them was aimed at the ground they stood on. |
 | **E50** | `instrument` | J112 (2026-09-10) | **A cause stated as measured in a guard's notice that had only been inferred** Our command guard's notice, and the journal entry of 29 August, said the harness no longer honoured a PreToolUse deny returned as JSON with exit code 0, and gave that as the reason the guard moved to exit code 2. | The observation held: commands the guard had refused did run. The cause did not. Another guard returns the same JSON deny with exit 0 and blocks every day, and on 10 September a JSON deny with exit 0, placed on the shell tool beside our guard, blocked too (Claude Code 2.1.260, the version read from the process running the hooks). The cause of 29 August is unknown; four candidates are named and none is chosen. Exit 2 stays, now for a measured reason: when two hooks deny the same event, only the exit-2 hook's reason reaches the model, and it is attributed; a JSON deny beside it disappears from what the model sees. |
 | **E48** | `instrument` | J106 (2026-09-04) | **Repository "door" verdicts rendered on truncated lists** Several external repositories were rated GREEN / RED / MUTE by the door probe, run without an API token. | Unauthenticated, the API truncates pull-request lists: on one repository the authenticated probe read 13 PRs where the anonymous one read 3. The numbers were right, the denominator was not. The probe now refuses to conclude without a token, and every cited door was re-measured with one. |
 | **E47** | `instrument` | J106 (2026-09-04) | **A property declared in a tool's notice that its code did not have** The door probe's notice said it measured two channels separately, pull requests and issues, and reported both. | The code only read pull requests; the "issue" comments it counted were PR comments, and the JSON output had no issue field. A published 9/9 issue score had been counted by hand. Fixed the same evening: a pure issue classifier with four states never merged into the PR score, bench 33 to 48 cases. |

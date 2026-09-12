@@ -1,23 +1,35 @@
 {
-  "generated_at": "2026-09-11 15:20Z",
+  "generated_at": "2026-09-12 13:25Z",
   "source": {
     "file": "Gouvernance/doctrine_active/JOURNAL_PHASE2.md",
     "block": "## ⚠️ ERRATA",
-    "block_sha256": "66adabd097f9cc973631546a53c6c5fc4cfe3d449130fff1bc6735902dccf67d",
-    "rows": 50
+    "block_sha256": "2881e1df4a08aa8dde7327021792bf00f02dae5401b009283a778e1573b81607",
+    "rows": 51
   },
   "counts": {
-    "rendered": 44,
+    "rendered": 45,
     "withheld": 6,
     "by_caught_by": {
       "instrument": 32,
-      "human": 10,
+      "human": 11,
       "third-party": 3,
       "undetermined": 4,
       "rule-superseded": 1
     }
   },
   "entries": [
+    {
+      "id": "E51",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J113",
+        "date": "2026-09-11"
+      },
+      "title": "Guards that stood in front of every repository except the one they lived in",
+      "row_sha256": "f0bc09732e5c64bf7e29a050d7b18c1abdcaefc087a55617acbbe4574986a72f",
+      "published": "Our record described third-party code as running only inside a sandbox, and our commit and push guards as standing in front of the repositories we work in.",
+      "truth": "On 11 September a directory change failed inside a bench script, and the commands after it ran where the shell happened to be: the root of the corpus itself. `git init` and `git remote add` executed there, and the root stayed a git repository pointing at an unrelated third-party remote, with no guard of ours, no token, and an editor offering to open a pull request from it. Nothing was pushed and nothing was lost, measured at the reflog, and the operator saw the offer before anything was clicked. The sandbox never gave way: it was not in play. The gap was the transport that starts it, which inherited the corpus directory while the sandbox itself cannot reach it. Four remedies are in place since 12 September: the transport is anchored outside the corpus, the session banner reddens when the root is a git repository and names its remote, a ratchet refuses `git init` and `git remote add` in any command that does not name a sandbox, and a fourth refuses the directory change itself unless the command is a return to the root. The lesson is not that a guard failed. It is that every guard we had was aimed at a repository we had decided to protect, and none of them was aimed at the ground they stood on."
+    },
     {
       "id": "E50",
       "caught_by": "instrument",
