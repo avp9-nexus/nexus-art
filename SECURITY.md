@@ -35,6 +35,35 @@ instead. Either route reaches the maintainer privately.
 
 Please do not open a public issue for a security finding.
 
+## CVE attribution
+
+This project is not a CVE Numbering Authority and does not allocate CVE identifiers. If a
+finding here warrants one, you can request it directly from MITRE:
+https://mitre.github.io/mitre-cve-roles/cve-id-request/
+
+## LLM-assisted research
+
+If a code assistant or a generative model was used to find, reproduce or write up a
+finding, please:
+
+- **say so, and name the tool** - model and version - and what it was used for: research,
+  proof of concept, report writing;
+- **confirm the finding is real** against this project's threat model and its actual use,
+  not against a generic pattern;
+- **provide a proof of concept**;
+- **provide a tested patch**, without regression, with a test that fails before it and
+  passes after.
+
+These four are the set published by **ANSSI** - the French national cybersecurity agency -
+in its [repository template](https://github.com/ANSSI-FR/template/blob/main/modeles/SECURITY_EN.md)
+(Apache-2.0). This project applies them to the reports it sends to others, not only to the
+ones it receives: the last three are the same evidence this repository asks of itself, and
+the first is what tells a reader which is which.
+
+Assistants make all four easy to produce and none of them easy to verify, which is exactly
+why they are asked for. A declared tool with the three proofs attached is a stronger report
+than an undeclared one, not a weaker one.
+
 ## Safe harbor
 
 If you research this repository in good faith and within the scope above, I will not
@@ -89,6 +118,32 @@ paid audit:
   Bounded by the bidder whitelist and by owner-set recipients. Found by our own scan on
   5 September 2026, not by a report; the successor contract will use pull payments
   (`pendingRefunds` + `withdraw()`).
+
+## Documented limits of the published record, please do not report these either
+
+The limitations above are the contract's. The governance documents in this repository
+carry their own, stated on the page rather than discovered by a reader:
+
+- [`AGENT-GOVERNANCE.md`, *What this does not solve*](AGENT-GOVERNANCE.md#what-this-does-not-solve)
+  - it does not make an agent truthful, does not remove the need for a human, does not
+  scale to unsupervised operation, does not certify its own instruments, and does not
+  close the gap it names: the labels are **self-issued**, and provenance issued by an
+  artefact would require an artefact for every class of claim, prose included.
+- [`ERRATA.md`](ERRATA.md) - every claim this project published that later proved false,
+  with what caught it. Generated from the internal register and pinned by the SHA-256 of
+  its source, so the rendering can be checked against what it renders.
+- [`CORRECTIONS.md`](CORRECTIONS.md) and [`WHAT-CAUGHT-IT.md`](WHAT-CAUGHT-IT.md) - the
+  same for claims made in this repository, each with the commit that fixed it, and what
+  that register could **not** tell us.
+
+**Re-describing one of these is not a finding.** Reporting a documented limit is useful
+only if it adds something the record does not already have: a **new exploit path**, a
+**measurement** showing the limit is wider or worse than stated, or a **mitigation**.
+Observing that a self-issued label is self-issued repeats the page that says so.
+
+This is not a way to dismiss reports, and the rule is symmetric: a follow-up that restates
+what the other party already wrote costs them time and adds nothing, whichever direction it
+travels in. A report that brings one of the three above is read here, every time.
 
 ## What was checked against the deployed contract, and what was not
 
