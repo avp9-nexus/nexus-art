@@ -1,23 +1,35 @@
 {
-  "generated_at": "2026-09-12 13:25Z",
+  "generated_at": "2026-10-10 16:21Z",
   "source": {
     "file": "Gouvernance/doctrine_active/JOURNAL_PHASE2.md",
     "block": "## ⚠️ ERRATA",
-    "block_sha256": "2881e1df4a08aa8dde7327021792bf00f02dae5401b009283a778e1573b81607",
-    "rows": 51
+    "block_sha256": "74ee4d54b076c1f883de625bbe630cc2895b23ff167324db90a00753e8ffa179",
+    "rows": 52
   },
   "counts": {
-    "rendered": 45,
+    "rendered": 46,
     "withheld": 6,
     "by_caught_by": {
-      "instrument": 32,
-      "human": 11,
-      "third-party": 3,
+      "instrument": 33,
+      "human": 12,
+      "third-party": 2,
       "undetermined": 4,
       "rule-superseded": 1
     }
   },
   "entries": [
+    {
+      "id": "E52",
+      "caught_by": "third-party",
+      "discovered": {
+        "entry": "J66",
+        "date": "2026-08-01"
+      },
+      "title": "A claim about a published standard, posted without reading the published document",
+      "row_sha256": "a63de972c7fca7b498d2938c7ddabc81303a9c03f0cb4a3549afd8af6b3bd10b",
+      "published": "A public issue comment said that ASI09 treats misleading output as a vector for approval, and that the terminal case, where the statement itself is the damage, has no action to classify.",
+      "truth": "The published ASI09 entry carries nine mitigations, not only action gates, and its sixth is content provenance. We had worked from secondary write-ups and from template files in the repository that were unfilled, and had not read the published document. The author of the issue corrected it on the thread the next day and we acknowledged it there the same day; the original comment was left unedited. What survives is narrower: the enforcement clause of that sixth item blocks actions, so the metadata reaches the statement and the enforcement does not. This row itself was missing for ten weeks. Our acknowledgement said the error would be entered, the journal recorded the exchange without it, and the gap was found on 3 October by an adversarial review of our own draft reply on that same thread, as we were about to link this register as complete."
+    },
     {
       "id": "E51",
       "caught_by": "human",
@@ -176,13 +188,13 @@
     },
     {
       "id": "E34",
-      "caught_by": "third-party",
+      "caught_by": "human",
       "discovered": {
         "entry": "J78",
         "date": "2026-08-10"
       },
       "title": "A count obtained by subtraction instead of counting",
-      "row_sha256": "2c47e5c8f95c69a1636566c2249c68bc18f6538e9f66c75c4a8612dde44d1271",
+      "row_sha256": "1a0771eb56e30d99fe84f35ac815425e7a2d86ca9ec8434a570a6274a9e0e82a",
       "published": "A draft said the discovery column was off by one entry on 18 of 25 errata.",
       "truth": "The subtraction counted four undetermined lines as shifted; counted line by line the figure is 14 of 21. Caught by a second reader before publication, in the very pass that graved that attribution is not deduced."
     },
@@ -272,15 +284,15 @@
     },
     {
       "id": "E25",
-      "caught_by": "third-party",
+      "caught_by": "instrument",
       "discovered": {
         "entry": "J71",
         "date": "2026-08-04"
       },
       "title": "A hash-chained log does not prove that nothing is missing",
-      "row_sha256": "37173d08ae5b0e1af124e3f980f19f5a69be94222c7dfc123cbc110236d8f0f1",
+      "row_sha256": "5b2c6af27282e9c871f90d6bda0b47f31feca0490f2c2530e8cdf9641592224c",
       "published": "The registry specification said a chained log proves that no entry is missing, and the whole design rested on it.",
-      "truth": "Chaining proves the interior, not exhaustiveness: with nothing outside the file recording the expected head or count, full erasure, tail truncation and last-entry rewrite all re-verify green. Falsified by an adversarial review (confirmed 3/3) and corrected at the source before any public text carried it. What would close it is a witness the writer cannot rewrite."
+      "truth": "Chaining proves the interior, not exhaustiveness: with nothing outside the file recording the expected head or count, full erasure, tail truncation and last-entry rewrite all re-verify green. Falsified by our own adversarial review (confirmed 3/3) and corrected at the source before any public text carried it. What would close it is a witness the writer cannot rewrite."
     },
     {
       "id": "E24",
