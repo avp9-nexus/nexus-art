@@ -1,23 +1,47 @@
 {
-  "generated_at": "2026-10-10 16:21Z",
+  "generated_at": "2026-11-07 17:05Z",
   "source": {
     "file": "Gouvernance/doctrine_active/JOURNAL_PHASE2.md",
     "block": "## ⚠️ ERRATA",
-    "block_sha256": "74ee4d54b076c1f883de625bbe630cc2895b23ff167324db90a00753e8ffa179",
-    "rows": 52
+    "block_sha256": "33a4cd29848220fe0de49566d0b16c604b629dd0b4c11039764ff3fddc595342",
+    "rows": 54
   },
   "counts": {
-    "rendered": 46,
+    "rendered": 48,
     "withheld": 6,
     "by_caught_by": {
       "instrument": 33,
-      "human": 12,
-      "third-party": 2,
+      "human": 13,
+      "third-party": 3,
       "undetermined": 4,
       "rule-superseded": 1
     }
   },
   "entries": [
+    {
+      "id": "E54",
+      "caught_by": "human",
+      "discovered": {
+        "entry": "J134",
+        "date": null
+      },
+      "title": "A sandbox phase described in public as running only dependencies, which ran any command",
+      "row_sha256": "4e91075edd17510b0a8414bd7f305b041949560df5d27602df7925d44c1e8db1",
+      "published": "Our public pattern on running other people's code said that installation, the phase that has the network, runs only the declared dependencies of a package manager.",
+      "truth": "The code did not enforce it until 7 November. The installation phase ran any command, outside the sandbox's namespaces, with the network and the host's disk visible. Re-reading our own transcripts, 9 of 164 real installation-phase calls ran the target project's own code there: repository scripts, its tests, an import of the package. On 7 November an instance fetched a third party's history in that phase, then displayed it through the execution phase without the scans our reading path applies. No guard stopped it, because our reading guard exempted any command that named the sandbox; the operator did. Since 7 November the installation phase refuses, by name and with the exact remedy, the target's code, scripts, installing the target project itself, and `python -m` without `-P`; network input is named, and every output of both phases is scanned. What remains true, and declared: the installation phase still runs outside the sandbox's namespaces, and confining it is the next piece of work; dependency install scripts still run there; commits and pushes are made there by design. The sentence in the pattern is to be rewritten."
+    },
+    {
+      "id": "E53",
+      "caught_by": "third-party",
+      "discovered": {
+        "entry": "J133",
+        "date": "2026-11-06"
+      },
+      "title": "A cause named from a single case in a public conformance report",
+      "row_sha256": "43544598cfd64706c9887921d755006b59190c18a8211c0ee253c95e6eea913f",
+      "published": "Our conformance report on a public agent-control standard (10 September) said that when two hooks answer the same event, a hook that exits 2 owns the transcript and is named in it, and that a JSON deny from a hook that exits 0 is rendered only when no sibling exits 2. It proposed two sentences for the repository on that basis.",
+      "truth": "The observation held, the cause did not. On 10 September the block held and only one reason was shown, but the hook that exited 2 had also finished last, 34 ms after the other: one case cannot separate two causes that moved together. Another contributor measured on two later builds that, when two hooks deny, the reason shown is the one of the hook that finishes last, whatever its exit code; we then measured the same rule on a third build: when two hooks both allow and rewrite the input, the rewrite of the hook that finishes last is the one that runs, five times out of five in each order. We acknowledged it on the thread on 6 November: both proposed sentences were wrong, and a pull request there proposes their replacement. The wrong cause had also become a reason in our own record: row E50 and our command guard's notice gave it as the measured reason to keep exit 2. Both are corrected. Exit 2 stays because it blocks; it does not guarantee that its reason is the one shown."
+    },
     {
       "id": "E52",
       "caught_by": "third-party",
@@ -50,9 +74,9 @@
         "date": "2026-09-10"
       },
       "title": "A cause stated as measured in a guard's notice that had only been inferred",
-      "row_sha256": "52dbee32abbfabe0f898f85058d37a5543defac36c6ce9ea20dd82c8785f98b3",
+      "row_sha256": "476f39197b760fc6460977ad1dfacfa4f99fe8ff4558cc5fb465270fb85fafa3",
       "published": "Our command guard's notice, and the journal entry of 29 August, said the harness no longer honoured a PreToolUse deny returned as JSON with exit code 0, and gave that as the reason the guard moved to exit code 2.",
-      "truth": "The observation held: commands the guard had refused did run. The cause did not. Another guard returns the same JSON deny with exit 0 and blocks every day, and on 10 September a JSON deny with exit 0, placed on the shell tool beside our guard, blocked too (Claude Code 2.1.260, the version read from the process running the hooks). The cause of 29 August is unknown; four candidates are named and none is chosen. Exit 2 stays, now for a measured reason: when two hooks deny the same event, only the exit-2 hook's reason reaches the model, and it is attributed; a JSON deny beside it disappears from what the model sees."
+      "truth": "The observation held: commands the guard had refused did run. The cause did not. Another guard returns the same JSON deny with exit 0 and blocks every day, and on 10 September a JSON deny with exit 0, placed on the shell tool beside our guard, blocked too (Claude Code 2.1.260, the version read from the process running the hooks). The cause of 29 August is unknown; four candidates are named and none is chosen. Exit 2 stays because it blocks. The reason this row first gave for keeping it, that when two hooks deny the same event only the exit-2 hook's reason reaches the model, was itself a cause named from a single case, corrected in E53: the reason shown is the one of the hook that finishes last."
     },
     {
       "id": "E48",
