@@ -1,6 +1,6 @@
 # ═══════════════════════════════════════════════════════════
-# NEXUS Protocol — NEXUS-ART — robots.txt
-# Atelier où un agent IA curateur (SIGMA-∑) évalue et acquiert de l'art, sous contrôle humain — par avp9
+# NEXUS Protocol - NEXUS-ART - robots.txt
+# Atelier où un agent IA curateur (SIGMA-∑) évalue et acquiert de l'art, sous contrôle humain - par avp9
 # https://nexus-art.org/
 # ═══════════════════════════════════════════════════════════
 
@@ -9,6 +9,7 @@ User-agent: *
 Allow: /
 Allow: /assets/
 Allow: /en/
+Allow: /errata.json
 Disallow: *.json$
 Crawl-delay: 2
 
@@ -68,7 +69,6 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://nexus-art.org/sitemap.xml
-Sitemap: https://nexus-art.org/sitemap-images.xml
 
 # Host
 Host: https://nexus-art.org

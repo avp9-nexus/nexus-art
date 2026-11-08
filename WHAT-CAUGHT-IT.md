@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+
 # What caught it
 
 A note on a measurement problem we ran into on our own records. It is published because the answer was uncomfortable, and because the question is not ours alone.

@@ -1,22 +1,24 @@
 <!--
 SPDX-License-Identifier: LicenseRef-NEXUS-Reference-Only-1.0
-SPDX-FileCopyrightText: 2026 avp9 (M.J) — INPI DSO2026016080
+SPDX-FileCopyrightText: 2026 avp9 (M.J) - INPI DSO2026016080
 -->
 
 # NEXUS - Licensing / Licence
 
-This repository holds three kinds of material under three different terms. The map below says
+This repository holds four kinds of material under four different terms. The map below says
 which terms apply where; the [default terms](#default-terms-everything-not-listed-in-the-map-above)
-at the end of this file apply to anything not listed. Files under the two open licences carry an
-`SPDX-License-Identifier` line, so the terms are readable by tooling and not only by people.
+at the end of this file apply to anything not listed. The map is the authority: a file that
+carries an `SPDX-License-Identifier` line repeats it, so the terms are readable by tooling and
+not only by people.
 
 ## The map
 
 | What | Where | Terms |
 | --- | --- | --- |
-| **Governance and method documents** | `AGENT-GOVERNANCE.md`, `MANIFESTE.md`, `CORRECTIONS.md`, `WHAT-CAUGHT-IT.md`, `poc-001/PATTERNS-AGENTIC-SECURITY.md`, `poc-001/DEMONSTRATION-POC-001.md`, `poc-001/VALIDATION.md` | **CC BY 4.0** - [full text](https://creativecommons.org/licenses/by/4.0/legalcode) |
+| **Governance and method documents, the errata, and the guides** | `AGENT-GOVERNANCE.md`, `MANIFESTE.md`, `CORRECTIONS.md`, `WHAT-CAUGHT-IT.md`, `ERRATA.md`, `errata.json`, `README.md`, `llms.txt`, `poc-001/README.md`, `poc-001/PATTERNS-AGENTIC-SECURITY.md`, `poc-001/DEMONSTRATION-POC-001.md`, `poc-001/VALIDATION.md`, `poc-004/README.md` | **CC BY 4.0** - [full text](https://creativecommons.org/licenses/by/4.0/legalcode) |
 | **Tooling and reference code** | `.github/garde_commit_ci.mjs`, `.github/workflows/garde-commit.yml`, `poc-001/mcp-servers/**`, `poc-001/*.SKILL.md`, `poc-001/weights.json` | **Apache-2.0** - [full text](https://www.apache.org/licenses/LICENSE-2.0) |
-| **Artworks, website, and the deployed contract** | the `.webp` files, `index.html`, `claim.html`, favicons and site assets, `contracts/NexusPOC.sol` | **Reserved** - default terms below, `LicenseRef-NEXUS-Reference-Only-1.0` |
+| **The deployed contract's source** | `contracts/NexusPOC.sol` | **MIT** - its own `SPDX-License-Identifier` header, part of the bytes verified on-chain |
+| **Artworks and website** | the `.webp` files, `index.html`, `claim.html`, favicons and site assets | **Reserved** - default terms below, `LicenseRef-NEXUS-Reference-Only-1.0` |
 
 ## Why the split is shaped this way
 
@@ -24,16 +26,20 @@ at the end of this file apply to anything not listed. Files under the two open l
 an all-rights-reserved notice made that citation legally awkward for the people most likely to do
 it. CC BY 4.0 removes the friction and **makes attribution mandatory** rather than optional, which
 is the outcome this project actually wants: the material is reusable, and every reuse carries the
-provenance.
+provenance. The errata and the guides to the repository go with them: the evidence and the map
+travel under the same terms.
 
 **The code is small and was written to be lifted.** Apache-2.0 is the license already used by the
 projects this work is contributed to, so a maintainer can take a file across without a licence
 review.
 
-**The artworks and the deployed contract stay reserved, and that is deliberate.** They carry the
-INPI prior-art deposits listed below. The contract is published so that anyone can verify the
-on-chain deployment byte for byte - verification does not require a right to redeploy, and
-granting one would change what the deposit protects. The artworks are the work itself.
+**The artworks stay reserved, and that is deliberate.** They carry the INPI prior-art deposits
+listed below, and the artworks are the work itself.
+
+**The deployed contract keeps the licence it was deployed with.** Its source carries an MIT
+header, chosen at deployment so that anyone can audit the contract and fork it to learn from it.
+That header is part of the bytes verified on-chain; changing it would make the published source
+stop reproducing against the chain. The NEXUS PROTOCOL name and brand stay reserved.
 
 ## Attribution
 

@@ -5,9 +5,9 @@
 
 ⚠️ **This repository does not accept pull requests that add or modify code or artworks.**
 
-Most of it - the artworks, the website, the deployed contract - carries INPI prior-art deposits and
-is reserved. Taking a contribution into that material would blur an authorship record the deposits
-exist to fix. See [`CONTRIBUTING.md`](../CONTRIBUTING.md) and [`LICENSING.md`](../LICENSING.md).
+Most of it - the artworks and the website - carries INPI prior-art deposits and is reserved; the
+deployed contract's source keeps the MIT header it was verified with. Taking a contribution into the
+reserved material would blur an authorship record the deposits exist to fix. See [`CONTRIBUTING.md`](../CONTRIBUTING.md) and [`LICENSING.md`](../LICENSING.md).
 
 **If you found something wrong, that is wanted** - please open an issue instead. A precise report
 is more useful here than a patch, and reports that turn out to be right go into

@@ -6,12 +6,13 @@ thing. It is a clarification, not an invitation.
 ## What this repository is
 
 A **public record**, not a collaborative codebase. It publishes the governance rules of an
-agentic system, each paired with the dated failure that produced it, the corrections made to
+agentic system, all but one paired with the failure that produced it, the corrections made to
 claims that turned out to be false, and the on-chain artefacts that let a reader verify the record
 without trusting it.
 
-It is maintained by one person. Most of it - the artworks, the website, the deployed contract -
-carries INPI prior-art deposits and is reserved. See [`LICENSING.md`](LICENSING.md) for the map.
+It is maintained by one person. Most of it - the artworks and the website - carries INPI
+prior-art deposits and is reserved; the deployed contract's source keeps the MIT header it was
+verified with. See [`LICENSING.md`](LICENSING.md) for the map.
 
 ## What is not accepted, and why
 
@@ -63,7 +64,8 @@ and the maintainers can carry them.
 
 ## Using the material from here
 
-The governance and method documents are **CC BY 4.0**: reuse is granted, attribution is required.
+The governance and method documents, the errata and the guides are **CC BY 4.0**: reuse is
+granted, attribution is required.
 
 ```text
 avp9 / NEXUS - INPI DSO2026016080 - https://github.com/avp9-nexus/nexus-art

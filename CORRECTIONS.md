@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+
 # Corrections
 
 Claims published in this repository that were false, and the commit that fixed each one.

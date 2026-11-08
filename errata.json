@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07 17:05Z",
+  "generated_at": "2026-11-08 14:36Z",
   "source": {
     "file": "Gouvernance/doctrine_active/JOURNAL_PHASE2.md",
     "block": "## ⚠️ ERRATA",
@@ -436,7 +436,7 @@
       "title": "E16, one link further: the root is a frozen comment in the verified contract",
       "row_sha256": "699c04c94ec055525369d6c61ce18a9422ee4810f769c1f80122dbf1143e4d86",
       "published": "The E16 line stopped at the register and blamed it.",
-      "truth": "The root is the contract's own source comment (\"833 for 8.333%\"), which the register cited. The file is byte-identical to the source verified on chain, and a single whitespace change would break that verification. E16 is documented, not repaired: editing the comment would make the repository copy non-reproducible against the chain."
+      "truth": "The root is the contract's own source comment (\"833 for 8.333%\"), which the register cited. The file is byte-identical to the source verified on chain, and a single whitespace change would give different metadata and bytecode. E16 is documented, not repaired: editing the comment would not revoke the recorded verification, but the repository copy would stop reproducing against the chain."
     },
     {
       "id": "E15",

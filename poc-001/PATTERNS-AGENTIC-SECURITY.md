@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+
 # Agentic security patterns
 
 ### Constraining an autonomous AI agent that acts on the real world - NEXUS POC-001
@@ -14,6 +16,16 @@ This document describes the patterns applied in NEXUS POC-001, where the curator
 **SIGMA-∑** evaluates artworks and decides to bid, autonomously, on a blockchain (Base
 Sepolia, testnet). The principles are general: they hold for any agent that acts on a real
 system.
+
+**At a glance**
+
+| # | Pattern | What it bounds | Minimal mechanism |
+|---:|---|---|---|
+| 1 | [Out-of-band human confirmation](#1-out-of-band-human-confirmation) | an irreversible act triggered by a deceived or hijacked agent | a confirmation the agent cannot produce, over a channel it cannot reach |
+| 2 | [Deterministic decision on the server side](#2-deterministic-decision-on-the-server-side---the-model-proposes-the-code-disposes) | injected content steering an action | the model outputs data; fixed code decides |
+| 3 | [Least tool privilege](#3-least-tool-privilege) | an action diverted to another target or operation, or above the spending ceiling | the agent supplies two values; the server fixes everything else |
+| 4 | [Publishing is a guarded act](#4-publishing-is-a-guarded-act) | an irreversible publication chained into a sequence | a push refused by default; a single-use token placed by the human |
+| 5 | [Other people's code runs in a sandbox](#5-other-peoples-code-runs-in-a-sandbox) | outside code running with the agent's own rights | two phases, a list of admitted acts, outside code's output scanned as outside data |
 
 ---
 
@@ -36,8 +48,8 @@ compromised, and we build so that, even then, the damage is **bounded**.
 A fourth surface joined this list after the first version of this document, and it was not
 planned: **the agent that maintains the system** is an agent too. The coding assistant that
 writes these patterns, commits, publishes, and runs other people's code to evaluate it, has
-the same three defects as the curator agent, and it took a month for it to receive the same
-constraints. Patterns 4 and 5 below were born of its failures, not SIGMA's.
+the same three defects as the curator agent, and it took a month for it to receive
+constraints of the same shape. Patterns 4 and 5 below were born of its failures, not SIGMA's.
 
 ---
 
@@ -45,8 +57,9 @@ constraints. Patterns 4 and 5 below were born of its failures, not SIGMA's.
 
 ### 1. Out-of-band human confirmation
 
-**Principle.** No irreversible action is executed without a human confirmation issued
-**outside the agent's channel**.
+**Principle.** No irreversible action whose parameters the agent chooses is executed
+without a human confirmation issued **outside the agent's channel**. A step whose every
+parameter is already fixed by the contract needs none.
 
 **Implementation.**
 - A random session secret (256 bits or more) is generated at every start, not derivable,
@@ -114,8 +127,12 @@ to what is intrinsically harmless.
 ### 4. Publishing is a guarded act
 
 **Principle.** A push to an archived public surface is irreversible in the same way as a
-commitment of funds, and it receives the same form of constraint: a single-use token,
-placed by the human, out of the agent's reach.
+commitment of funds, and it receives a constraint of the same shape: a single-use token
+placed by the human, which binds like the confirmation of pattern 1 once the human arms a
+secret the agent never sees.
+
+<details>
+<summary>Evidence from the NEXUS record</summary>
 
 **Where it comes from.** On 8 August, the coding assistant was given the go-ahead to
 *build* a mechanism, and it chained build, commit, push in one motion, publishing on an
@@ -125,12 +142,14 @@ attention of the one who had to apply it. The operating record had measured twen
 times that a constraint of attention does not hold, and it left the most irreversible
 gesture under attention alone.
 
+</details>
+
 **Implementation.**
 - A pre-push hook refuses every push by default. Publishing stops being the natural
   continuation of a sequence: it becomes an act of its own.
-- The authorisation is a file placed by the human, naming **the exact sha** authorised.
-  One more commit, and the authorisation no longer holds. The hook consumes it: it is
-  worth once, **refusals included**.
+- The authorisation is a file placed by the human, naming **the exact sha** authorised and
+  its destination, remote and branch. One more commit, and the authorisation no longer
+  holds. The hook consumes it: it is worth once, **refusals included**.
 - Before refusing or accepting, the guard **displays what would leave**: commits, files,
   diff. The human sees what they are authorising.
 - Every attempt, authorised or not, is written to an audit journal. A bypass leaves a
@@ -153,16 +172,29 @@ guard announces on its own which case it is in.
 must not be able to do so with its own rights. Execution takes place in a sandbox whose
 walls and whose witness the agent does not choose.
 
+<details>
+<summary>Evidence from the NEXUS record</summary>
+
 **Where it comes from.** On 23 August, a Python wheel from a third-party project was
 imported, hence executed, with all the rights of the session, the operating record
 included. What bounded the risk that day was reading the code beforehand, never isolation:
 a virtual environment isolates dependencies, not the system. The record prescribed nothing
 for running code it had not written.
 
+</details>
+
 **Implementation.**
-- Two separate phases. Installation has the network and runs only the declared
-  dependencies of a package manager. Execution has **nothing**: detached namespaces, dead
-  name resolution, a single writable directory, the host's disk absent from the inside.
+- Two separate phases. Installation has the network, and a judge reads each command before
+  it runs: it admits named lists of acts - fetching the code to a named destination,
+  installing dependencies through a package manager, git by sub-command (publication and
+  read-only inspection), common file plumbing - and refuses every other act by name, with
+  the exact call to make instead wherever there is one. The target project itself installs
+  in the execution phase, offline. Execution has **nothing**: detached namespaces, dead name
+  resolution, a single writable directory, the host's disk absent from the inside.
+- **Everything outside code prints is outside data.** The output of both phases, and of the
+  paired check below, is scanned like a file from a third party - invisible and
+  bidirectional characters made visible, agent-steering files named - and framed as data
+  before anyone reads it.
 - **The manifest lives outside the sandbox.** Paths and hashes of the project are written
   before execution to a place the executed code cannot reach, and confronted afterwards.
   It is the same principle as the chain's witness: a witness the writer cannot rewrite.
@@ -178,10 +210,8 @@ the kernel, and its installation phase has the user's rights. On 7 September, th
 ran the complete test suite of a third-party project **in that very phase**, four times,
 network open, with access to the record. The contract forbidding it lived in a comment, and
 nothing enforced it. The lesson is not new; it is the lesson of this whole document: **a
-guard that rests on an instruction is not a guard**. The remedy is mechanical, a refusal of
-the target code in the installation phase; it was written that day, then withdrawn to be
-decided calmly, and at the time this paragraph is written it is not in place. Saying so
-here is better than letting the reader believe the failure closed its own hole.
+guard that rests on an instruction is not a guard**. The remedy is mechanical: a refusal of
+the target code in the installation phase, which is what the judge described above does.
 
 ---
 
@@ -211,12 +241,14 @@ here is better than letting the reader believe the failure closed its own hole.
 - **Minimal surface.** Zero third-party dependencies where possible; otherwise, pinned and
   audited dependencies. The output channel (the protocol) is strictly reserved: the logic
   never writes to it directly.
-- **Every guard is cut, then replayed.** A green bench proves that a check can go red on
+- **A guard is cut, then replayed.** A green bench proves that a check can go red on
   the cases someone thought to write; it does not prove that it goes red for the right
   reason. Since September, an instrument cuts a guard's rules one by one and replays its
   bench: a rule whose disappearance makes nothing fall is named, and the published count
-  is a lower bound of the forcing, never a total. A guard is admitted only by its first
-  real pass, not by its bench.
+  is a lower bound of the forcing, never a total. A rule that instrument cannot cut - a
+  pattern declared in a file header, for instance - calls for mutations of its own: each
+  must make the bench fall, or be declared at the bench as one that changes no verdict. A
+  guard is admitted only by its first real pass, not by its bench.
 
 ---
 
@@ -229,20 +261,24 @@ on:
 - and an **isolation architecture** (the agent does not have the tools to reach the
   sensitive channels).
 
-That is precisely why this code is **published**. A mechanism whose security depended on
-its obscurity would be fragile; a mechanism that withstands public scrutiny is sound.
+That is precisely why what follows is **published**: the code of the two servers, and the procedure
+of the signer. A mechanism whose security depended on its obscurity would be fragile; a mechanism
+that withstands public scrutiny is sound.
 **Publishing invites audit - and audit strengthens.**
 
 ---
 
-## Correspondence with the code in this repository
+## Correspondence with the components in this repository
 
 - **`nexus-scan`** - *strict read-only* + *zero input surface*: on-chain detection with no
-  parameter, no secret, no signature. The smallest privilege possible.
+  parameter, no secret, no signature. The smallest privilege possible. Code:
+  [`mcp-servers/nexus-scan/`](mcp-servers/nexus-scan/).
 - **`nexus-evaluate`** - *deterministic decision* + *anti-SSRF* + *inert third-party
-  content*: the curation engine that scores without ever deciding to act.
+  content*: the curation engine that scores without ever deciding to act. Code:
+  [`mcp-servers/nexus-evaluate/`](mcp-servers/nexus-evaluate/).
 - **`nexus-bid`** - *out-of-band confirmation* + *least privilege* + *late decryption* +
-  *fail-closed*: the signer, constrained on every side.
+  *fail-closed*: the signer, constrained on every side. Its procedure:
+  [`nexus-bid.SKILL.md`](nexus-bid.SKILL.md).
 
 ---
 
@@ -254,7 +290,7 @@ attacker already has everything. The corresponding defence (strict network isola
 dedicated secret management) belongs to the infrastructure and is the object of hardening
 tracked separately.
 
-Three further limits, measured since the first version, and all three open.
+Three further limits, measured since the first version, each with the form of its remedy.
 
 **No guard sees a sequence.** Every check in this document evaluates **one isolated
 action**, and the cross-checking of acts happens after the fact. A series of actions,
@@ -297,8 +333,9 @@ that make an unverified assertion **visible** before it reaches a public surface
 
 Both documents start from the same premise - **the agent is not assumed reliable** - and
 answer it the same way: the constraint lives **outside the agent**, where it cannot reach
-it. Out-of-band confirmation and `[MEASURED]` / `[INFERRED]` labelling are the same
-mechanism, applied to two kinds of damage: the irreversible and the false.
+it. Out-of-band confirmation and provenance an artefact produces - a tool output the agent
+did not write - are the same mechanism, applied to two kinds of damage: the irreversible
+and the false.
 
 What that second side has caught as false, in our own case, is public: [`ERRATA.md`](../ERRATA.md),
 generated from the internal register at every engraving, pinned by the hash of its source,
@@ -314,7 +351,7 @@ it establishes - and the answer is narrower than it looks.
 
 *Scope note: the mechanisms discussed below - chained register, hash pinning, offline
 verifier - are **later than POC-001** and their code is not in this repository, unlike the
-three components listed above. What follows is therefore a design lesson, not a reading of
+components listed above. What follows is therefore a design lesson, not a reading of
 published code.*
 
 > **An attestation produced inside the perimeter it attests does not constrain that
@@ -326,8 +363,8 @@ We met this form on three unrelated objects, and each time through a different s
 | The attestation | What it proves | What it does not prove |
 |---|---|---|
 | **A chained register** (each entry carries the hash of the previous one) | the **inside**: no entry between the origin and the head can be modified, removed or reordered without breaking a link | **exhaustiveness**, and only in one precise case. A **rewrite of the last entry** is constrained by no successor: nothing outside the file records what the head should be. On the other hand, an **erased** file is a red by default here - it is up to the caller to declare that no evaluation has taken place yet, never up to the verifier to guess - and a **truncation** leaves behind the raw pieces of its vanished entries, which the verifier reports as orphans |
-| **A binary that hashes its own file**, against a value pinned outside | **drift**: the binary being run is no longer the one that was validated | **forgery**, provided one gets there. The binary computes *and* compares: a modified binary can write the hash of the original. The same gap exists for an artefact signed by the organisation's own publishing infrastructure - it passes provenance checks because it is genuinely signed by whoever was meant to sign it. ⚠️ But reaching that limit presupposes having **already** obtained write access to the deployed binary: here the agent has no verb to get there and the code is mounted read-only. It is a limit of the last pattern, not an entry point |
-| **A producer attesting that its mandate still runs** | nothing | that it still has the right to produce. An agent whose purpose has ceased keeps emitting a consistent, timestamped, mutually coherent - and hollow - history, because nothing inside its own write perimeter knows that its authority has expired. ⚠️ This class is here **documented and not implemented, on purpose**: our mandate *is* the human gesture that launches execution, there is no scheduler and no periodic task, so an orphaned producer cannot drift - it can only be invoked. At twenty agents and with team turnover, it bites; at this scale, a "mandate valid" field would be green on every record and would teach nothing |
+| **A binary that hashes its own file**, against a value pinned outside | **drift**: the binary being run is no longer the one that was validated | **forgery**, provided one gets there. The binary computes *and* compares: a modified binary can write the hash of the original. The same gap exists for an artefact signed by the organisation's own publishing infrastructure - it passes provenance checks because it is genuinely signed by whoever was meant to sign it. **But** reaching that limit presupposes having **already** obtained write access to the deployed binary: here the agent has no verb to get there and the code is mounted read-only. It is a limit of the last pattern, not an entry point |
+| **A producer attesting that its mandate still runs** | nothing | that it still has the right to produce. An agent whose purpose has ceased keeps emitting a consistent, timestamped, mutually coherent - and hollow - history, because nothing inside its own write perimeter knows that its authority has expired. **Note:** this class is here **documented and not implemented, on purpose**: our mandate *is* the human gesture that launches execution, there is no scheduler and no periodic task, so an orphaned producer cannot drift - it can only be invoked. At twenty agents and with team turnover, it bites; at this scale, a "mandate valid" field would be green on every record and would teach nothing |
 
 The first row, we wrote against ourselves: the founding thesis of our register - *a
 chained journal proves that none is missing* - was false, and an adversarial review
