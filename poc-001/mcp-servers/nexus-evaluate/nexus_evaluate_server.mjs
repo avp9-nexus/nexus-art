@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 // nexus_evaluate_server.mjs — serveur MCP stdio (JSON-RPC 2.0 newline-delimited), pur Node, ZÉRO dépendance npm.
 //
 // Rôle : UN tool MCP "evaluate" = jugement curatorial d'une œuvre + décision bid/watch/skip (+ abstain §12.10).

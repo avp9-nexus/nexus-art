@@ -1,10 +1,11 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
 <!-- VERSION PUBLIQUE — copie de transparence. Agent nommé SIGMA-∑ ; le moteur de
      raisonnement est l'API Anthropic. Détails d'infrastructure retirés. -->
 ```yaml
 name: nexus-evaluate
 description: Évalue une œuvre identifiée par nexus-monitor selon les 6 catégories curatoriales NEXUS (Matière, Lumière, Mémoire, Géométrie, Cosmos, Concept) et produit un scoring multi-critères + une décision d'enchère (bid / skip / watch) avec prix plafond justifié.
 version: 0.1.0
-license: proprietary
+license: Apache-2.0
 metadata:
   openclaw:
     requires:

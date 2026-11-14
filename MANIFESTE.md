@@ -1,9 +1,11 @@
-# NEXUS — Manifeste
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
+
+# NEXUS - Manifeste
 
 >  "Une industrie mobilise des armées pour que l'IA remplace les artistes.
 > Seul, derrière un clavier à 500 €, je construis l'IA qui les finance."
 
-**NEXUS — l'atelier d'une IA faite pour découvrir et financer les artistes vivants.**
+**NEXUS - l'atelier d'une IA faite pour découvrir et financer les artistes vivants.**
 
 ---
 

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 // nexus_scan_server.mjs — serveur MCP stdio (JSON-RPC 2.0 newline-delimited), pur Node, ZÉRO dépendance npm.
 //
 // Rôle : exposer UN tool MCP "scan" = détection ON-CHAIN-ONLY des enchères NEXUS actives (Base Sepolia).

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 name: garde-commit
 
 # Contrôle EN AVAL des messages de commit poussés sur ce dépôt : aucun `Co-Authored-By`,

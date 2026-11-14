@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// SPDX-License-Identifier: Apache-2.0
 // garde_commit_ci.mjs — contrôle EN AVAL des messages de commit poussés sur ce dépôt.
 // Sortie 0 = conforme · 1 = un message porte une signature d'agent.
 //

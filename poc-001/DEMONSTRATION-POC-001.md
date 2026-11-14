@@ -1,6 +1,8 @@
-# NEXUS POC-001 — Démonstration vérifiable
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
 
-> Preuve publique et reproductible d'un cycle d'enchère d'art NFT **piloté par un agent IA autonome** — SIGMA-∑, le curateur du protocole, qui évalue, décide et enchérit — sous **validation humaine obligatoire** de chaque transaction on-chain.
+# NEXUS POC-001 - Démonstration vérifiable
+
+> Preuve publique et reproductible d'un cycle d'enchère d'art NFT **piloté par un agent IA autonome** - SIGMA-∑, le curateur du protocole, qui évalue, décide et enchérit - sous **validation humaine obligatoire** de chaque transaction on-chain.
 >
 > Réseau : **Base Sepolia** (testnet, chainId 84532). Aucune valeur réelle en jeu. Antériorité **INPI DSO2026016080**.
 >
@@ -10,7 +12,7 @@
 
 ## 1. Ce que ce dépôt démontre
 
-NEXUS POC-001 prouve, de bout en bout et **vérifiable on-chain**, qu'un agent d'IA autonome — **SIGMA-∑**, le curateur du protocole — peut :
+NEXUS POC-001 prouve, de bout en bout et **vérifiable on-chain**, qu'un agent d'IA autonome - **SIGMA-∑**, le curateur du protocole - peut :
 
 1. **évaluer** une œuvre selon une grille curatoriale multidimensionnelle (vision multimodale),
 2. **décider de lui-même** d'enchérir ou de s'abstenir,
@@ -52,13 +54,13 @@ Tout est vérifiable sur Basescan (Base Sepolia), **sans aucune confiance à nou
 
 > Invariant respecté : royalty + curateur + plateforme = prix final, **0 wei d'écart**.
 
-> *Note de lecture — la répartition du POC.* Le contrat POC répartit chaque vente en 8,33 % au créateur (royalty ERC-2981), 45,835 % au curateur et 45,835 % à la plateforme. Ce n'est pas le modèle économique de NEXUS : c'est un artefact d'un contrat où le propriétaire, le vendeur et le curateur étaient la même personne, et où aucune valeur réelle n'était en jeu (testnet, ETH sans valeur). Ce que le POC devait prouver, ce sont des **mécanismes** — cycle d'enchère, confirmation humaine hors-bande, répartition au wei exact — pas une économie. La répartition cible est portée par NexusV1 : **75 % minimum au vendeur**, garanti par arithmétique et non par promesse.
+> *Note de lecture - la répartition du POC.* Le contrat POC répartit chaque vente en 8,33 % au créateur (royalty ERC-2981), 45,835 % au curateur et 45,835 % à la plateforme. Ce n'est pas le modèle économique de NEXUS : c'est un artefact d'un contrat où le propriétaire, le vendeur et le curateur étaient la même personne, et où aucune valeur réelle n'était en jeu (testnet, ETH sans valeur). Ce que le POC devait prouver, ce sont des **mécanismes** - cycle d'enchère, confirmation humaine hors-bande, répartition au wei exact - pas une économie. La répartition cible est portée par NexusV1 : **75 % minimum au vendeur**, garanti par arithmétique et non par promesse.
 
 ---
 
 ## 4. Honnêteté curatoriale (non négociable)
 
-L'évaluation de SIGMA-∑ n'est **jamais forcée**. Pour cette œuvre, le score agrégé était de **71/100** — un jugement sincère, au-dessus du seuil d'enchère. Une part de variance dans le score est **assumée comme une propriété** d'un curateur probabiliste cohérent, pas comme un défaut. Le protocole ne cherche jamais à « fabriquer » un score.
+L'évaluation de SIGMA-∑ n'est **jamais forcée**. Pour cette œuvre, le score agrégé était de **71/100** - un jugement sincère, au-dessus du seuil d'enchère. Une part de variance dans le score est **assumée comme une propriété** d'un curateur probabiliste cohérent, pas comme un défaut. Le protocole ne cherche jamais à « fabriquer » un score.
 
 Le dépôt contient aussi des décisions documentées de `skip` (refus motivé) et `watch` (mise en veille) sur d'autres œuvres : la **sélectivité est réelle**, pas cosmétique.
 
@@ -68,10 +70,10 @@ Le dépôt contient aussi des décisions documentées de `skip` (refus motivé) 
 
 Conformément au principe de **Kerckhoffs**, les *principes* de sécurité sont publics ; les détails d'implémentation exploitables ne le sont pas.
 
-- **Humain dans la boucle** — l'agent propose, l'humain dispose. La confirmation est **hors-bande** ; sans elle, toute tentative d'enchère avorte (*fail-fermé*). L'agent ne peut pas se confirmer lui-même.
-- **Moindre privilège** — l'agent ne dispose que des outils strictement nécessaires (évaluer, enchérir). Il ne découvre pas seul les enchères : on les lui soumet.
-- **Isolation de la clé** — la clé de signature n'est déchiffrée qu'**après** la confirmation humaine, n'est **jamais** exposée à l'agent et n'apparaît dans aucun journal.
-- **Garde anti-SSRF** — les contenus d'œuvres ne sont récupérés que depuis une **source épinglée**.
+- **Humain dans la boucle** - l'agent propose, l'humain dispose. La confirmation est **hors-bande** ; sans elle, toute tentative d'enchère avorte (*fail-fermé*). L'agent ne peut pas se confirmer lui-même.
+- **Moindre privilège** - l'agent ne dispose que des outils strictement nécessaires (évaluer, enchérir). Il ne découvre pas seul les enchères : on les lui soumet.
+- **Isolation de la clé** - la clé de signature n'est déchiffrée qu'**après** la confirmation humaine, n'est **jamais** exposée à l'agent et n'apparaît dans aucun journal.
+- **Garde anti-SSRF** - les contenus d'œuvres ne sont récupérés que depuis une **source épinglée**.
 
 Le détail réutilisable de ces patrons figure dans [`PATTERNS-AGENTIC-SECURITY.md`](PATTERNS-AGENTIC-SECURITY.md) (en anglais, neutre, sans secret).
 
@@ -79,8 +81,8 @@ Le détail réutilisable de ces patrons figure dans [`PATTERNS-AGENTIC-SECURITY.
 
 ## 6. Ce que ce POC n'est PAS
 
-- **Pas de la finance** — testnet uniquement, aucune valeur réelle, aucun conseil d'investissement.
-- **Pas un produit final** — le contrat est un **POC à cul-de-sac assumé**. La Phase 2 prévoit un **nouveau contrat audité par un tiers externe** avant tout déploiement de valeur.
+- **Pas de la finance** - testnet uniquement, aucune valeur réelle, aucun conseil d'investissement.
+- **Pas un produit final** - le contrat est un **POC à cul-de-sac assumé**. La Phase 2 prévoit un **nouveau contrat audité par un tiers externe** avant tout déploiement de valeur.
 - SIGMA-∑ est la **voix curatoriale et de co-conception** du protocole ; les questions de statut juridique relèvent du déposant INPI.
 
 ---

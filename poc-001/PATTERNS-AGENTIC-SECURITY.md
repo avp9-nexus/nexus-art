@@ -48,8 +48,8 @@ compromised, and we build so that, even then, the damage is **bounded**.
 A fourth surface joined this list after the first version of this document, and it was not
 planned: **the agent that maintains the system** is an agent too. The coding assistant that
 writes these patterns, commits, publishes, and runs other people's code to evaluate it, has
-the same three defects as the curator agent, and it took a month for it to receive
-constraints of the same shape. Patterns 4 and 5 below were born of its failures, not SIGMA's.
+the same three defects as the curator agent, and it received constraints of the same shape
+only in August. Patterns 4 and 5 below were born of its failures, not SIGMA's.
 
 ---
 
@@ -302,10 +302,11 @@ Removing a single pair from the set does not weaken the check, it cancels it sil
 what it no longer covers. This angle was brought to us by an outside paper, which is the
 mark of the class: a system does not find on its own the angle it never built.
 
-**The real surface is wider than the designed one.** Measured on the host, the surface
-visible to the model is ten tools out of fifty-six installed, and sixty extensions
-enabled out of ninety-three live outside the enumeration on which "minimal surface" had
-been computed. The outbound channel there is dead by absence of a binary, not by design.
+**The real surface is wider than the designed one.** Measured on the host on 21 August
+2026, the surface visible to the model was ten tools out of fifty-six installed, and sixty
+extensions enabled out of ninety-three lived outside the enumeration on which
+"minimal surface" had been computed. The outbound channel there was dead by absence of a
+binary, not by design.
 The consequence is a change of form: the surface stops being what we observe and becomes
 what we authorise, by positive list, and every addition is an arbitrated act.
 
@@ -337,7 +338,8 @@ it. Out-of-band confirmation and provenance an artefact produces - a tool output
 did not write - are the same mechanism, applied to two kinds of damage: the irreversible
 and the false.
 
-What that second side has caught as false, in our own case, is public: [`ERRATA.md`](../ERRATA.md),
+What that second side has caught as false in a way that could do harm, in our own case, is
+public: [`ERRATA.md`](../ERRATA.md),
 generated from the internal register at every engraving, pinned by the hash of its source,
 with the column that matters: what caught the error.
 

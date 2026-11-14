@@ -1,10 +1,11 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
 <!-- VERSION PUBLIQUE — copie de transparence. Détails d'infrastructure (chemins,
      endpoints privés, secrets) retirés. Agent nommé SIGMA-∑. -->
 ```yaml
 name: nexus-monitor
 description: Surveille le contrat NEXUS Auction sur Base Sepolia et détecte les nouvelles enchères ouvertes éligibles pour SIGMA-∑. Renvoie une liste structurée d'œuvres avec leurs métadonnées, prix de réserve, deadline et URI Arweave.
 version: 0.1.0
-license: proprietary
+license: Apache-2.0
 metadata:
   openclaw:
     requires:
